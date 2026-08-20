@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "1.0.0",
+  "reviewStatus": {
+    "reviewedBy": "",
+    "reviewedAt": "",
+    "notes": "Starting rule set for medical review. Every rule below must be reviewed and signed off by a qualified medical professional before clinical deployment. Rules deliberately over-trigger (conservative bias): false positives redirect users to care, false negatives endanger them."
+  },
+  "levels": {
+    "low": {
+      "message": "Your symptoms appear manageable at home for now, but monitor them closely and consult a doctor if they worsen."
+    },
+    "medium": {
+      "message": "Your symptoms may benefit from medical attention. Consider booking an appointment in the near future."
+    },
+    "high": {
+      "message": "Your symptoms may require prompt medical attention."
+    },
+    "emergency": {
+      "message": "Your symptoms suggest a possible medical emergency. Seek immediate professional medical attention."
+    }
+  },
+  "showTemporaryGuidance": {
+    "low": true,
+    "medium": true,
+    "high": false,
+    "emergency": false
+  },
+  "emergencyRules": [
+    {
+      "id": "ER-001",
+      "phrase": "chest pain",
+      "rationale": "Could indicate a cardiac event. Must never be substituted with self-care advice.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-002",
+      "phrase": "shortness of breath",
+      "rationale": "Could indicate respiratory or cardiac compromise.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-003",
+      "phrase": "breathing difficulty",
+      "rationale": "Respiratory compromise requires immediate evaluation.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-004",
+      "phrase": "unconscious",
+      "rationale": "Loss of consciousness is an acute emergency.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-005",
+      "phrase": "fainting",
+      "rationale": "Syncope can indicate cardiac or neurological emergencies.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-006",
+      "phrase": "seizure",
+      "rationale": "Active or recent seizure requires emergency evaluation.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-007",
+      "phrase": "paralysis",
+      "rationale": "Sudden weakness or paralysis is a stroke signal.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-008",
+      "phrase": "severe bleeding",
+      "rationale": "Uncontrolled bleeding requires immediate care.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-009",
+      "phrase": "high fever",
+      "rationale": "High fever can accompany serious infection. Threshold values intentionally left to medical review.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-010",
+      "phrase": "blood in stool",
+      "rationale": "GI bleeding requires prompt evaluation.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-011",
+      "phrase": "vomiting blood",
+      "rationale": "Upper GI bleeding requires prompt evaluation.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-012",
+      "phrase": "stroke",
+      "rationale": "Stroke symptoms require immediate intervention.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-013",
+      "phrase": "difficulty speaking",
+      "rationale": "Speech difficulty can be a stroke signal.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "ER-014",
+      "phrase": "suicidal thoughts",
+      "rationale": "Mental health emergency. User should be directed to immediate support, not self-care.",
+      "reviewStatus": "pending-review"
+    }
+  ],
+  "highRules": [
+    {
+      "id": "HR-001",
+      "phrase": "severe abdominal pain",
+      "rationale": "Severe abdominal pain may require prompt evaluation.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "HR-002",
+      "phrase": "swelling in legs",
+      "rationale": "New leg swelling can indicate vascular issues.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "HR-003",
+      "phrase": "blurred vision",
+      "rationale": "Sudden visual changes can indicate serious conditions.",
+      "reviewStatus": "pending-review"
+    },
+    {
+      "id": "HR-004",
+      "phrase": "persistent vomiting",
+      "rationale": "Inability to keep fluids down risks dehydration.",
+      "reviewStatus": "pending-review"
+    }
+  ],
+  "thresholds": {
+    "severity": {
+      "moderate": "medium",
+      "severe": "high"
+    },
+    "durationDays": {
+      "gt7": "medium",
+      "gt14": "high"
+    }
+  }
+}

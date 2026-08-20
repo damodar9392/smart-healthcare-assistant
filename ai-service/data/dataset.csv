@@ -1,0 +1,2001 @@
+symptoms,duration_days,severity,specialty
+fatigue,8,mild,General Physician
+"lack of energy, sweating",1,mild,General Physician
+"sweating, fatigue",8,mild,General Physician
+"weakness, weight loss, fatigue",25,mild,General Physician
+"weight loss, feeling unwell",26,mild,General Physician
+"tiredness, sweating, fatigue, weight loss",23,mild,General Physician
+"tiredness, loss of appetite",13,mild,General Physician
+"sweating, weakness, malaise",20,moderate,General Physician
+"chills, weakness",22,mild,General Physician
+body ache,26,mild,General Physician
+"tiredness, malaise, body ache",29,severe,General Physician
+"weakness, loss of appetite, tiredness, low energy",29,moderate,General Physician
+"weakness, chills, mild discomfort, body ache",26,moderate,General Physician
+weight loss,15,moderate,General Physician
+tiredness,18,moderate,General Physician
+"weight loss, loss of appetite, tiredness",17,moderate,General Physician
+loss of appetite,17,moderate,General Physician
+"weakness, malaise",20,mild,General Physician
+tiredness,29,severe,General Physician
+"fatigue, low energy, body ache",24,moderate,General Physician
+sweating,5,moderate,General Physician
+"loss of appetite, sweating",7,severe,General Physician
+"loss of appetite, weight loss",15,severe,General Physician
+"fatigue, tiredness, sweating, body ache",1,mild,General Physician
+"body ache, mild discomfort",3,moderate,General Physician
+"chills, body ache, weakness",8,moderate,General Physician
+"body ache, sweating, tiredness, malaise",28,moderate,General Physician
+fatigue,11,moderate,General Physician
+body ache,18,mild,General Physician
+"chills, tiredness, loss of appetite, weakness",2,moderate,General Physician
+tiredness,28,mild,General Physician
+"body ache, low energy, weight loss, chills",1,severe,General Physician
+"chills, loss of appetite, weight loss",5,mild,General Physician
+"sweating, feeling unwell, fatigue",19,moderate,General Physician
+"sweating, occasional pain, fatigue",22,severe,General Physician
+"loss of appetite, tiredness, body ache, fatigue, loss of appetite",22,moderate,General Physician
+"loss of appetite, loss of appetite, weight loss",11,severe,General Physician
+fatigue,19,severe,General Physician
+sweating,9,mild,General Physician
+"tiredness, malaise, body ache",20,severe,General Physician
+sweating,22,mild,General Physician
+"tiredness, loss of appetite",9,mild,General Physician
+"malaise, body ache",17,moderate,General Physician
+tiredness,27,mild,General Physician
+malaise,21,severe,General Physician
+"sweating, chills",4,mild,General Physician
+"fatigue, sweating",14,mild,General Physician
+"fatigue, low energy, malaise",12,moderate,General Physician
+"body ache, low energy, weight loss, weakness",6,moderate,General Physician
+"body ache, weight loss, loss of appetite",13,severe,General Physician
+"weakness, chills, body ache, low energy",22,mild,General Physician
+"loss of appetite, tiredness, low energy",22,severe,General Physician
+"loss of appetite, fatigue, tiredness",4,moderate,General Physician
+"weight loss, malaise, tiredness",9,mild,General Physician
+"fatigue, sweating, weakness, body ache",22,moderate,General Physician
+"sweating, loss of appetite, weight loss",18,mild,General Physician
+"body ache, loss of appetite, weakness, weight loss",7,mild,General Physician
+"chills, low energy, sweating",26,severe,General Physician
+"tiredness, loss of appetite",3,moderate,General Physician
+"body ache, loss of appetite",1,mild,General Physician
+"low energy, body ache, chills, tiredness",16,mild,General Physician
+"tiredness, fatigue",6,moderate,General Physician
+"fatigue, occasional pain, sweating, body ache, weight loss",27,severe,General Physician
+"weakness, chills, low energy, sweating",21,mild,General Physician
+"loss of appetite, body ache, weakness, tiredness",8,mild,General Physician
+"body ache, tiredness",18,moderate,General Physician
+body ache,13,severe,General Physician
+low energy,1,severe,General Physician
+"weight loss, body ache, low energy",16,mild,General Physician
+"weakness, weight loss, chills",30,mild,General Physician
+tiredness,5,severe,General Physician
+"loss of appetite, fatigue",15,mild,General Physician
+"low energy, sweating, weight loss, loss of appetite, mild discomfort",21,mild,General Physician
+fatigue,7,moderate,General Physician
+"weakness, body ache",19,severe,General Physician
+"weakness, malaise, low energy, loss of appetite",4,moderate,General Physician
+"weight loss, sweating, low energy",19,moderate,General Physician
+"loss of appetite, tiredness",26,severe,General Physician
+malaise,22,mild,General Physician
+"weight loss, fatigue, chills, feeling unwell",14,mild,General Physician
+"low energy, sweating, chills",11,severe,General Physician
+loss of appetite,8,moderate,General Physician
+"chills, fatigue, malaise, weight loss",26,mild,General Physician
+"loss of appetite, fatigue, low energy",8,moderate,General Physician
+"body ache, chills, sweating, malaise",10,mild,General Physician
+"loss of appetite, malaise",14,severe,General Physician
+"chills, loss of appetite, malaise",24,mild,General Physician
+sweating,23,mild,General Physician
+"chills, loss of appetite",4,moderate,General Physician
+"malaise, body ache, weakness",9,mild,General Physician
+sweating,5,moderate,General Physician
+"fatigue, body ache, tiredness, loss of appetite",9,severe,General Physician
+"weight loss, body ache, loss of appetite, low energy, tiredness",3,severe,General Physician
+sweating,20,moderate,General Physician
+"sweating, weight loss",10,severe,General Physician
+"tiredness, loss of appetite, weight loss, fatigue",6,mild,General Physician
+"weakness, lack of energy",10,mild,General Physician
+"tiredness, loss of appetite, chills",14,mild,General Physician
+"loss of appetite, weakness",2,mild,General Physician
+"low energy, loss of appetite, loss of appetite, chills",9,moderate,General Physician
+"tiredness, body ache, chills, fatigue",8,severe,General Physician
+loss of appetite,25,moderate,General Physician
+"sweating, chills, loss of appetite, tiredness",3,moderate,General Physician
+"malaise, low energy, tiredness, weight loss",10,moderate,General Physician
+"low energy, fatigue, sweating, chills",28,moderate,General Physician
+sweating,2,mild,General Physician
+"sweating, chills, low energy",18,mild,General Physician
+"loss of appetite, chills, tiredness, low energy",10,moderate,General Physician
+"tiredness, low energy, sweating, body ache",17,moderate,General Physician
+"low energy, body ache, chills, sweating",28,mild,General Physician
+"loss of appetite, sweating, malaise, weight loss, loss of appetite",18,moderate,General Physician
+"weight loss, sweating, low energy",23,mild,General Physician
+"fatigue, body ache, weight loss, weakness",16,severe,General Physician
+"sweating, malaise",4,moderate,General Physician
+"weight loss, chills, fatigue, weakness",26,severe,General Physician
+"low energy, weight loss, tiredness",11,moderate,General Physician
+"fatigue, chills, sweating, tiredness",14,severe,General Physician
+chills,10,severe,General Physician
+malaise,10,mild,General Physician
+"loss of appetite, weight loss, weakness, body ache",3,moderate,General Physician
+"lack of energy, low energy, body ache, loss of appetite, chills",29,moderate,General Physician
+"sweating, tiredness, weakness",21,severe,General Physician
+"body ache, chills, loss of appetite",8,mild,General Physician
+"sweating, low energy, loss of appetite, loss of appetite",19,severe,General Physician
+low energy,27,severe,General Physician
+"body ache, malaise, low energy",22,moderate,General Physician
+"tiredness, fatigue",2,moderate,General Physician
+"tiredness, loss of appetite",6,mild,General Physician
+"sweating, loss of appetite, low energy",26,mild,General Physician
+"tiredness, chills, low energy, occasional pain",3,moderate,General Physician
+loss of appetite,15,mild,General Physician
+"malaise, weight loss, low energy, occasional pain",30,moderate,General Physician
+chills,10,moderate,General Physician
+"weakness, mild discomfort",16,mild,General Physician
+"sweating, weakness",22,severe,General Physician
+"weight loss, low energy, weakness, malaise, lack of energy",23,mild,General Physician
+"chills, body ache, fatigue, malaise",2,mild,General Physician
+"chills, tiredness, occasional pain",2,moderate,General Physician
+"body ache, sleep problems, weakness",27,severe,General Physician
+"fatigue, loss of appetite, weakness",18,mild,General Physician
+"feeling unwell, fatigue, tiredness",1,mild,General Physician
+weakness,17,mild,General Physician
+chills,12,moderate,General Physician
+chills,20,mild,General Physician
+"chills, sweating, fatigue",22,mild,General Physician
+"tiredness, loss of appetite, low energy, occasional pain, malaise",15,moderate,General Physician
+"tiredness, body ache, chills, low energy",27,moderate,General Physician
+"weakness, malaise, tiredness, weight loss",3,mild,General Physician
+tiredness,24,moderate,General Physician
+"sweating, fatigue",22,mild,General Physician
+"loss of appetite, weight loss, fatigue",19,moderate,General Physician
+"chills, body ache",28,moderate,General Physician
+loss of appetite,26,mild,General Physician
+low energy,27,moderate,General Physician
+weakness,25,mild,General Physician
+"malaise, fatigue, weakness",3,mild,General Physician
+tiredness,7,mild,General Physician
+"weakness, low energy, sweating, malaise",6,moderate,General Physician
+tiredness,22,mild,General Physician
+"low energy, weight loss, loss of appetite, body ache",10,moderate,General Physician
+"loss of appetite, fatigue, tiredness, sweating",10,severe,General Physician
+"low energy, loss of appetite",16,moderate,General Physician
+"weight loss, weakness",17,moderate,General Physician
+"fatigue, tiredness, weight loss",28,mild,General Physician
+"low energy, weakness, mild discomfort, weight loss, sweating",27,moderate,General Physician
+"tiredness, weight loss, low energy",17,mild,General Physician
+"body ache, low energy, malaise",17,moderate,General Physician
+"feeling unwell, body ache, malaise, weakness",25,moderate,General Physician
+weakness,21,moderate,General Physician
+"low energy, sweating, malaise, tiredness",26,mild,General Physician
+malaise,10,moderate,General Physician
+fatigue,10,mild,General Physician
+low energy,13,moderate,General Physician
+chills,19,moderate,General Physician
+"weakness, low energy, chills",26,severe,General Physician
+"weakness, tiredness, sweating, loss of appetite",12,mild,General Physician
+"malaise, low energy, weight loss",3,mild,General Physician
+"loss of appetite, chills, loss of appetite, weakness, low energy",5,moderate,General Physician
+loss of appetite,21,moderate,General Physician
+"sweating, tiredness",17,mild,General Physician
+"body ache, loss of appetite, weakness",8,severe,General Physician
+"loss of appetite, tiredness",17,moderate,General Physician
+malaise,20,mild,General Physician
+"weakness, weight loss, sweating, low energy",2,mild,General Physician
+"chills, loss of appetite",8,moderate,General Physician
+"chills, body ache, malaise",15,moderate,General Physician
+"weight loss, sweating, tiredness, low energy",21,moderate,General Physician
+"low energy, tiredness, sweating",15,severe,General Physician
+"tiredness, weight loss",27,moderate,General Physician
+"low energy, fatigue, weight loss",13,severe,General Physician
+"body ache, fatigue, malaise",26,mild,General Physician
+loss of appetite,16,moderate,General Physician
+"low energy, chills",1,mild,General Physician
+"sweating, low energy",8,mild,General Physician
+body ache,26,moderate,General Physician
+tiredness,16,moderate,General Physician
+sweating,23,mild,General Physician
+"loss of appetite, malaise, body ache, fatigue",3,severe,General Physician
+weight loss,2,moderate,General Physician
+"malaise, loss of appetite, fatigue",24,moderate,General Physician
+low energy,11,mild,General Physician
+"sweating, malaise, weakness",23,moderate,General Physician
+"weakness, tiredness",2,mild,General Physician
+body ache,11,severe,General Physician
+"sweating, loss of appetite, fatigue, chills",28,moderate,General Physician
+"loss of appetite, malaise, tiredness",29,severe,General Physician
+"weakness, chills, sweating",26,mild,General Physician
+"weakness, weight loss, loss of appetite, tiredness",22,mild,General Physician
+"weakness, weight loss, low energy, malaise",20,severe,General Physician
+"tiredness, fatigue, weight loss",1,mild,General Physician
+"fatigue, chills, weakness, tiredness",19,mild,General Physician
+"malaise, chills",19,mild,General Physician
+"malaise, loss of appetite, weight loss",24,mild,General Physician
+"loss of appetite, tiredness, sweating, weight loss",23,severe,General Physician
+"occasional pain, tiredness, weakness, body ache, weight loss",22,mild,General Physician
+sweating,29,mild,General Physician
+"malaise, weakness",7,moderate,General Physician
+"chills, fatigue",15,moderate,General Physician
+"low energy, tiredness, lack of energy",17,mild,General Physician
+"low energy, weakness, tiredness, chills",5,severe,General Physician
+"weight loss, weakness",27,mild,General Physician
+"weakness, loss of appetite",12,severe,General Physician
+"tiredness, loss of appetite, body ache",5,moderate,General Physician
+sweating,19,severe,General Physician
+"malaise, weakness",27,severe,General Physician
+fatigue,25,moderate,General Physician
+"weight loss, low energy",16,severe,General Physician
+"loss of appetite, chills, body ache",10,moderate,General Physician
+weakness,16,moderate,General Physician
+"low energy, malaise, weakness",13,mild,General Physician
+"tiredness, sweating, low energy",9,mild,General Physician
+"tiredness, fatigue",28,moderate,General Physician
+"weakness, malaise",7,moderate,General Physician
+"weakness, low energy, chills, sweating",8,mild,General Physician
+"fatigue, low energy, loss of appetite",10,moderate,General Physician
+"weight loss, feeling unwell",25,mild,General Physician
+"sleep problems, weight loss",12,moderate,General Physician
+weight loss,25,moderate,General Physician
+weakness,13,mild,General Physician
+"sweating, malaise, weakness",17,mild,General Physician
+weakness,26,moderate,General Physician
+"chills, sweating, weakness, low energy",20,moderate,General Physician
+"low energy, chills, malaise",27,mild,General Physician
+"weight loss, tiredness, loss of appetite",20,moderate,General Physician
+"fatigue, chills",5,moderate,General Physician
+"fatigue, tiredness",11,mild,General Physician
+"weight loss, sweating, chills, body ache",17,mild,General Physician
+"weight loss, sweating, chills",30,moderate,General Physician
+"loss of appetite, body ache, chills",8,severe,General Physician
+"loss of appetite, chills, body ache",10,mild,General Physician
+"loss of appetite, acne, hives, redness, dry skin",24,moderate,Dermatologist
+"eczema, acne",5,mild,Dermatologist
+"rash, skin peeling",21,mild,Dermatologist
+dry skin,16,mild,Dermatologist
+"eczema, rash",14,moderate,Dermatologist
+"skin peeling, acne, hives, blisters",18,moderate,Dermatologist
+redness,27,mild,Dermatologist
+dry skin,6,severe,Dermatologist
+"acne, scaly patches, rash",10,moderate,Dermatologist
+"blisters, acne, eczema, redness",24,moderate,Dermatologist
+"rash, redness, hives",6,moderate,Dermatologist
+"eczema, hives, itching, dry skin",16,mild,Dermatologist
+"rash, acne",25,mild,Dermatologist
+"rash, acne, skin pigmentation",2,moderate,Dermatologist
+"scaly patches, acne, redness, dry skin",8,severe,Dermatologist
+"blisters, redness, hives, dry skin",25,mild,Dermatologist
+eczema,23,mild,Dermatologist
+rash,29,moderate,Dermatologist
+"redness, hives",4,moderate,Dermatologist
+"blisters, itching, eczema, rash",18,moderate,Dermatologist
+"dry skin, rash, acne",19,mild,Dermatologist
+"eczema, rash, itching, hives",10,mild,Dermatologist
+"scaly patches, dry skin",15,severe,Dermatologist
+"itching, redness, dry skin, eczema",18,mild,Dermatologist
+"skin peeling, rash",15,moderate,Dermatologist
+"skin peeling, eczema, scaly patches, dry skin",30,severe,Dermatologist
+rash,14,moderate,Dermatologist
+skin peeling,4,moderate,Dermatologist
+"scaly patches, skin pigmentation, skin peeling, rash",25,severe,Dermatologist
+redness,10,mild,Dermatologist
+"scaly patches, hives, skin pigmentation",14,mild,Dermatologist
+eczema,29,moderate,Dermatologist
+"dry skin, scaly patches",12,severe,Dermatologist
+"lack of energy, dry skin, eczema, scaly patches, hives",10,severe,Dermatologist
+"blisters, rash",18,moderate,Dermatologist
+"scaly patches, skin peeling, acne, hives",18,moderate,Dermatologist
+"acne, rash",28,mild,Dermatologist
+"blisters, skin peeling",10,severe,Dermatologist
+skin peeling,24,mild,Dermatologist
+"skin peeling, dry skin, skin pigmentation, scaly patches",15,moderate,Dermatologist
+"acne, hives, scaly patches",4,moderate,Dermatologist
+"eczema, hives, scaly patches, skin peeling",1,mild,Dermatologist
+"acne, skin peeling, hives, redness",9,moderate,Dermatologist
+"blisters, redness, scaly patches, skin pigmentation",24,moderate,Dermatologist
+"rash, eczema",27,moderate,Dermatologist
+"loss of appetite, dry skin",3,moderate,Dermatologist
+skin peeling,12,mild,Dermatologist
+"blisters, rash, scaly patches, eczema",17,moderate,Dermatologist
+"eczema, dry skin, rash",30,mild,Dermatologist
+"skin peeling, scaly patches",27,mild,Dermatologist
+"dry skin, itching, blisters, hives",21,severe,Dermatologist
+itching,13,moderate,Dermatologist
+"occasional pain, scaly patches",16,moderate,Dermatologist
+"itching, eczema, skin pigmentation",29,severe,Dermatologist
+"itching, rash, scaly patches, acne",1,severe,Dermatologist
+"itching, dry skin",19,moderate,Dermatologist
+"dry skin, scaly patches, hives, eczema",17,moderate,Dermatologist
+"dry skin, itching, rash",20,moderate,Dermatologist
+"hives, rash, blisters, acne",14,mild,Dermatologist
+"acne, skin peeling, skin pigmentation, itching",13,moderate,Dermatologist
+"hives, dry skin",1,severe,Dermatologist
+"acne, itching, hives, lack of energy, redness",3,mild,Dermatologist
+skin pigmentation,11,severe,Dermatologist
+acne,25,mild,Dermatologist
+"skin pigmentation, eczema",6,mild,Dermatologist
+"acne, lack of energy, blisters, redness",16,moderate,Dermatologist
+"blisters, skin peeling, acne",4,mild,Dermatologist
+dry skin,20,mild,Dermatologist
+"hives, blisters, dry skin",10,mild,Dermatologist
+"blisters, hives",11,mild,Dermatologist
+"hives, skin pigmentation, skin peeling, dry skin",30,moderate,Dermatologist
+"loss of appetite, scaly patches, eczema",15,moderate,Dermatologist
+dry skin,5,moderate,Dermatologist
+"acne, redness",3,mild,Dermatologist
+"dry skin, skin pigmentation, scaly patches, eczema",4,moderate,Dermatologist
+"redness, skin pigmentation, rash",25,mild,Dermatologist
+"itching, scaly patches, acne, rash",13,moderate,Dermatologist
+"hives, rash",14,severe,Dermatologist
+itching,24,mild,Dermatologist
+"hives, skin peeling, blisters",4,mild,Dermatologist
+"acne, itching, rash, hives",21,mild,Dermatologist
+"eczema, skin peeling",11,moderate,Dermatologist
+"redness, skin peeling, dry skin, eczema",24,moderate,Dermatologist
+"skin pigmentation, blisters",23,mild,Dermatologist
+"skin pigmentation, itching, scaly patches",12,mild,Dermatologist
+"acne, itching, blisters, hives",12,mild,Dermatologist
+"redness, itching, skin pigmentation, acne",10,mild,Dermatologist
+"dry skin, eczema, redness",14,mild,Dermatologist
+"redness, eczema",6,mild,Dermatologist
+"skin pigmentation, hives, scaly patches, rash",14,moderate,Dermatologist
+"redness, blisters, itching, scaly patches",9,mild,Dermatologist
+"blisters, skin pigmentation, redness",9,moderate,Dermatologist
+"blisters, eczema, rash",24,moderate,Dermatologist
+"acne, rash",28,moderate,Dermatologist
+"skin peeling, skin pigmentation, itching, hives",26,mild,Dermatologist
+"rash, skin pigmentation",20,moderate,Dermatologist
+"scaly patches, acne, skin pigmentation",5,severe,Dermatologist
+"eczema, acne, rash, redness",16,mild,Dermatologist
+"dry skin, scaly patches, skin pigmentation",13,moderate,Dermatologist
+"blisters, skin pigmentation, hives",24,severe,Dermatologist
+"dry skin, itching, eczema",16,mild,Dermatologist
+"hives, redness, eczema",29,moderate,Dermatologist
+"lack of energy, rash",4,severe,Dermatologist
+"scaly patches, lack of energy, blisters",29,moderate,Dermatologist
+"acne, itching",3,mild,Dermatologist
+"dry skin, rash",14,moderate,Dermatologist
+rash,3,mild,Dermatologist
+"loss of appetite, eczema, blisters",28,mild,Dermatologist
+"itching, blisters",24,moderate,Dermatologist
+hives,10,mild,Dermatologist
+"redness, sleep problems, scaly patches",15,mild,Dermatologist
+"scaly patches, redness",28,mild,Dermatologist
+redness,19,moderate,Dermatologist
+"hives, dry skin, redness",8,moderate,Dermatologist
+"acne, rash, skin peeling",24,mild,Dermatologist
+skin peeling,4,mild,Dermatologist
+eczema,1,severe,Dermatologist
+"dry skin, redness, skin pigmentation",25,moderate,Dermatologist
+rash,1,mild,Dermatologist
+rash,13,moderate,Dermatologist
+"scaly patches, redness, dry skin, itching",26,mild,Dermatologist
+"itching, dry skin, skin pigmentation",2,mild,Dermatologist
+"acne, rash, itching, blisters",23,mild,Dermatologist
+redness,12,moderate,Dermatologist
+"scaly patches, redness, hives",25,severe,Dermatologist
+"loss of appetite, eczema, acne, dry skin",17,mild,Dermatologist
+"redness, scaly patches, hives, skin pigmentation",8,moderate,Dermatologist
+rash,1,mild,Dermatologist
+"eczema, dry skin, redness, hives",8,mild,Dermatologist
+"scaly patches, itching, loss of appetite, acne, hives",13,mild,Dermatologist
+"hives, itching, scaly patches, acne",10,moderate,Dermatologist
+"blisters, skin pigmentation, skin peeling",24,severe,Dermatologist
+"rash, redness",8,moderate,Dermatologist
+"hives, loss of appetite",28,moderate,Dermatologist
+"itching, eczema, skin peeling",2,severe,Dermatologist
+"acne, itching, occasional pain",23,severe,Dermatologist
+"skin pigmentation, scaly patches, itching, redness",14,moderate,Dermatologist
+"skin peeling, acne",30,moderate,Dermatologist
+"blisters, acne, hives",25,moderate,Dermatologist
+"redness, lack of energy",11,mild,Dermatologist
+"blisters, acne, skin peeling",6,moderate,Dermatologist
+"skin peeling, skin pigmentation, rash",3,moderate,Dermatologist
+"rash, dry skin, eczema",1,severe,Dermatologist
+"itching, skin peeling, eczema, scaly patches",2,moderate,Dermatologist
+"redness, skin peeling",22,moderate,Dermatologist
+skin pigmentation,30,moderate,Dermatologist
+itching,21,mild,Dermatologist
+"hives, lack of energy, itching",30,moderate,Dermatologist
+"dry skin, eczema, blisters, rash",9,mild,Dermatologist
+"skin pigmentation, rash",21,mild,Dermatologist
+"rash, eczema, itching, blisters",21,severe,Dermatologist
+"scaly patches, eczema",26,moderate,Dermatologist
+"hives, scaly patches, eczema, blisters",20,mild,Dermatologist
+"blisters, rash, eczema",6,mild,Dermatologist
+"eczema, acne",25,severe,Dermatologist
+"dry skin, skin pigmentation",6,mild,Dermatologist
+"rash, hives, skin pigmentation",19,severe,Dermatologist
+"redness, blisters, eczema, mild discomfort, acne",1,mild,Dermatologist
+"redness, hives",2,mild,Dermatologist
+"eczema, itching",12,moderate,Dermatologist
+"skin pigmentation, acne, hives, itching",26,moderate,Dermatologist
+"scaly patches, redness, skin pigmentation, hives",24,moderate,Dermatologist
+"redness, rash",28,severe,Dermatologist
+redness,30,moderate,Dermatologist
+"lack of energy, skin pigmentation, scaly patches",24,mild,Dermatologist
+"hives, redness, itching",15,mild,Dermatologist
+"itching, skin peeling",24,mild,Dermatologist
+"blisters, redness, dry skin, skin pigmentation",4,moderate,Dermatologist
+"mild discomfort, redness, blisters",11,mild,Dermatologist
+itching,29,mild,Dermatologist
+eczema,3,mild,Dermatologist
+"redness, skin pigmentation, dry skin, rash",7,mild,Dermatologist
+"skin pigmentation, acne, scaly patches",19,moderate,Dermatologist
+"redness, rash, skin pigmentation, hives",7,mild,Dermatologist
+"redness, acne",28,mild,Dermatologist
+"acne, scaly patches, blisters, itching",29,mild,Dermatologist
+"blisters, rash",9,mild,Dermatologist
+"rash, skin pigmentation, redness",3,moderate,Dermatologist
+"skin pigmentation, skin peeling, eczema, rash",19,severe,Dermatologist
+"dry skin, rash, acne, itching",6,severe,Dermatologist
+"lack of energy, scaly patches, skin peeling",7,severe,Dermatologist
+"acne, skin pigmentation",3,mild,Dermatologist
+"blisters, hives, acne, eczema",4,mild,Dermatologist
+"scaly patches, skin pigmentation",30,mild,Dermatologist
+acne,29,mild,Dermatologist
+"acne, feeling unwell, blisters, dry skin, eczema",2,mild,Dermatologist
+"blisters, skin peeling, rash",11,moderate,Dermatologist
+"scaly patches, acne, blisters",28,mild,Dermatologist
+"hives, blisters, acne",7,mild,Dermatologist
+"hives, rash, blisters, eczema",23,moderate,Dermatologist
+"skin pigmentation, occasional pain, eczema",8,mild,Dermatologist
+hives,9,mild,Dermatologist
+"eczema, dry skin, itching, rash",6,severe,Dermatologist
+"eczema, skin pigmentation, scaly patches, hives",10,mild,Dermatologist
+redness,25,severe,Dermatologist
+"scaly patches, skin peeling",21,mild,Dermatologist
+"occasional pain, scaly patches",20,moderate,Dermatologist
+"acne, skin pigmentation",23,severe,Dermatologist
+"hives, scaly patches, dry skin",10,moderate,Dermatologist
+"hives, skin pigmentation, itching, rash",16,mild,Dermatologist
+"scaly patches, hives, acne",7,mild,Dermatologist
+"rash, skin pigmentation",22,mild,Dermatologist
+scaly patches,10,mild,Dermatologist
+"dry skin, skin peeling, rash, scaly patches",30,severe,Dermatologist
+"acne, eczema, redness",10,mild,Dermatologist
+"eczema, acne",22,severe,Dermatologist
+skin peeling,24,severe,Dermatologist
+"acne, eczema, scaly patches, hives",28,moderate,Dermatologist
+blisters,17,mild,Dermatologist
+"rash, dry skin, eczema, acne",11,mild,Dermatologist
+"scaly patches, redness, itching, hives",1,moderate,Dermatologist
+"redness, skin pigmentation",26,moderate,Dermatologist
+redness,21,mild,Dermatologist
+"eczema, dry skin, blisters, rash",25,moderate,Dermatologist
+"scaly patches, rash",8,moderate,Dermatologist
+"acne, redness, itching",6,mild,Dermatologist
+acne,15,moderate,Dermatologist
+"dry skin, hives, redness",25,mild,Dermatologist
+"skin peeling, redness, skin pigmentation, rash",4,mild,Dermatologist
+dry skin,9,moderate,Dermatologist
+skin pigmentation,22,mild,Dermatologist
+rash,14,mild,Dermatologist
+eczema,23,mild,Dermatologist
+acne,4,moderate,Dermatologist
+"scaly patches, redness, skin pigmentation",10,mild,Dermatologist
+blisters,7,moderate,Dermatologist
+"dry skin, hives",18,moderate,Dermatologist
+"hives, blisters",22,mild,Dermatologist
+skin pigmentation,5,severe,Dermatologist
+itching,21,mild,Dermatologist
+"occasional pain, rash, blisters, acne",26,moderate,Dermatologist
+"itching, rash, eczema, scaly patches",29,mild,Dermatologist
+"itching, skin pigmentation, hives",15,mild,Dermatologist
+"redness, itching, loss of appetite, dry skin, blisters",30,moderate,Dermatologist
+"redness, dry skin, hives, skin pigmentation",4,severe,Dermatologist
+"rash, hives, acne, itching, loss of appetite",17,moderate,Dermatologist
+dry skin,8,moderate,Dermatologist
+"redness, skin pigmentation, rash, eczema",28,moderate,Dermatologist
+"itching, blisters",9,mild,Dermatologist
+"dry skin, eczema",3,moderate,Dermatologist
+"hives, skin pigmentation, blisters, lack of energy, itching",2,moderate,Dermatologist
+itching,20,moderate,Dermatologist
+"scaly patches, blisters",27,mild,Dermatologist
+"blisters, hives",23,moderate,Dermatologist
+"itching, scaly patches, rash, skin peeling",23,mild,Dermatologist
+"blisters, redness",4,mild,Dermatologist
+"skin peeling, itching",7,moderate,Dermatologist
+"itching, hives",30,moderate,Dermatologist
+blisters,19,severe,Dermatologist
+"rash, blisters",18,severe,Dermatologist
+"mouth ulcer, gum bleeding, tooth sensitivity, jaw pain",22,moderate,Dentist
+"mouth ulcer, bad breath, loose tooth",13,severe,Dentist
+"swollen gums, loose tooth, sleep problems, gum bleeding",23,moderate,Dentist
+"bad breath, gum bleeding",22,mild,Dentist
+"tooth sensitivity, mouth ulcer",23,mild,Dentist
+"swollen gums, mouth ulcer, loose tooth",22,moderate,Dentist
+"toothache, swollen gums, loose tooth",5,mild,Dentist
+bad breath,26,mild,Dentist
+"toothache, mouth ulcer, gum bleeding",25,moderate,Dentist
+"toothache, swollen gums, mouth ulcer",24,moderate,Dentist
+"tooth sensitivity, jaw pain, mouth ulcer, bad breath",14,severe,Dentist
+"toothache, swollen gums, jaw pain",27,mild,Dentist
+"bad breath, jaw pain, loose tooth",6,severe,Dentist
+tooth sensitivity,24,moderate,Dentist
+"toothache, mouth ulcer, tooth sensitivity, bad breath",1,mild,Dentist
+"gum bleeding, toothache",25,severe,Dentist
+"mouth ulcer, loose tooth, swollen gums",17,mild,Dentist
+"gum bleeding, loose tooth",18,moderate,Dentist
+jaw pain,7,moderate,Dentist
+"jaw pain, tooth sensitivity, gum bleeding",18,moderate,Dentist
+gum bleeding,15,mild,Dentist
+"toothache, jaw pain",30,moderate,Dentist
+loose tooth,24,mild,Dentist
+"bad breath, swollen gums, toothache",11,moderate,Dentist
+tooth sensitivity,25,moderate,Dentist
+gum bleeding,21,moderate,Dentist
+"swollen gums, bad breath, mouth ulcer, gum bleeding",1,moderate,Dentist
+"swollen gums, feeling unwell, loose tooth, toothache",30,mild,Dentist
+"jaw pain, swollen gums, bad breath, loose tooth",18,mild,Dentist
+toothache,3,mild,Dentist
+mouth ulcer,10,moderate,Dentist
+"loose tooth, bad breath, swollen gums",6,moderate,Dentist
+"loose tooth, swollen gums",21,mild,Dentist
+"mild discomfort, mouth ulcer, loose tooth, toothache",18,moderate,Dentist
+mouth ulcer,24,severe,Dentist
+"swollen gums, jaw pain, bad breath",6,mild,Dentist
+"toothache, bad breath, gum bleeding",28,moderate,Dentist
+"gum bleeding, toothache, jaw pain, tooth sensitivity",11,mild,Dentist
+"tooth sensitivity, gum bleeding",11,moderate,Dentist
+"mouth ulcer, jaw pain, swollen gums",26,mild,Dentist
+"tooth sensitivity, swollen gums, toothache, gum bleeding",5,moderate,Dentist
+"swollen gums, loose tooth, bad breath",18,mild,Dentist
+mouth ulcer,5,severe,Dentist
+"jaw pain, mouth ulcer",24,mild,Dentist
+toothache,19,mild,Dentist
+"toothache, mouth ulcer",21,moderate,Dentist
+"mouth ulcer, loose tooth, gum bleeding",15,moderate,Dentist
+loose tooth,1,moderate,Dentist
+"bad breath, tooth sensitivity",24,moderate,Dentist
+"toothache, bad breath, gum bleeding",8,mild,Dentist
+"jaw pain, bad breath",29,mild,Dentist
+"gum bleeding, mouth ulcer, jaw pain",19,moderate,Dentist
+"jaw pain, loose tooth",17,mild,Dentist
+"loose tooth, tooth sensitivity",16,moderate,Dentist
+tooth sensitivity,8,mild,Dentist
+"gum bleeding, bad breath, loose tooth",22,mild,Dentist
+"bad breath, jaw pain, gum bleeding",21,moderate,Dentist
+"sleep problems, bad breath",5,moderate,Dentist
+"feeling unwell, tooth sensitivity",17,severe,Dentist
+mouth ulcer,7,mild,Dentist
+"swollen gums, bad breath, loose tooth, gum bleeding",6,moderate,Dentist
+"mouth ulcer, loose tooth, swollen gums, lack of energy",1,mild,Dentist
+"mouth ulcer, gum bleeding, toothache, tooth sensitivity",3,moderate,Dentist
+"toothache, loose tooth",17,mild,Dentist
+loose tooth,26,moderate,Dentist
+"mouth ulcer, occasional pain, jaw pain, loose tooth, swollen gums",10,moderate,Dentist
+"gum bleeding, jaw pain, toothache, mouth ulcer",13,moderate,Dentist
+"loose tooth, tooth sensitivity, toothache",9,severe,Dentist
+"jaw pain, mouth ulcer, tooth sensitivity, bad breath",6,mild,Dentist
+"tooth sensitivity, mouth ulcer, swollen gums, loose tooth",28,severe,Dentist
+bad breath,23,severe,Dentist
+bad breath,26,mild,Dentist
+tooth sensitivity,21,mild,Dentist
+tooth sensitivity,20,mild,Dentist
+mouth ulcer,3,moderate,Dentist
+"jaw pain, mouth ulcer, swollen gums, loose tooth",15,mild,Dentist
+"toothache, bad breath, mouth ulcer",20,mild,Dentist
+jaw pain,1,severe,Dentist
+mouth ulcer,12,moderate,Dentist
+"bad breath, mouth ulcer, jaw pain, toothache",12,severe,Dentist
+"gum bleeding, bad breath, mouth ulcer",9,mild,Dentist
+gum bleeding,11,severe,Dentist
+"mouth ulcer, jaw pain, bad breath",25,mild,Dentist
+"bad breath, jaw pain, swollen gums",4,mild,Dentist
+"loose tooth, bad breath, jaw pain, gum bleeding",23,moderate,Dentist
+"mouth ulcer, toothache",3,moderate,Dentist
+"swollen gums, tooth sensitivity",6,severe,Dentist
+"jaw pain, swollen gums",28,mild,Dentist
+"bad breath, loose tooth",5,moderate,Dentist
+gum bleeding,22,moderate,Dentist
+toothache,12,moderate,Dentist
+"swollen gums, mouth ulcer, gum bleeding, bad breath",2,moderate,Dentist
+"toothache, swollen gums, loose tooth, mouth ulcer",23,moderate,Dentist
+"swollen gums, toothache, jaw pain",11,mild,Dentist
+"tooth sensitivity, swollen gums, mouth ulcer",12,mild,Dentist
+"bad breath, jaw pain, swollen gums, tooth sensitivity",6,moderate,Dentist
+"jaw pain, gum bleeding",18,mild,Dentist
+"jaw pain, gum bleeding, loose tooth, bad breath",16,mild,Dentist
+"tooth sensitivity, swollen gums, loose tooth",13,mild,Dentist
+"toothache, gum bleeding",27,moderate,Dentist
+"swollen gums, jaw pain, tooth sensitivity, loose tooth",14,mild,Dentist
+"tooth sensitivity, loose tooth",22,moderate,Dentist
+"mouth ulcer, tooth sensitivity, gum bleeding, bad breath",14,moderate,Dentist
+"gum bleeding, toothache, tooth sensitivity, swollen gums",23,mild,Dentist
+"tooth sensitivity, mouth ulcer, bad breath, swollen gums",6,severe,Dentist
+"jaw pain, bad breath",7,mild,Dentist
+"lack of energy, gum bleeding",1,moderate,Dentist
+gum bleeding,5,mild,Dentist
+"tooth sensitivity, loose tooth, mouth ulcer, gum bleeding",1,mild,Dentist
+"jaw pain, loose tooth, bad breath",18,mild,Dentist
+"swollen gums, jaw pain",17,moderate,Dentist
+"mouth ulcer, bad breath, jaw pain",10,mild,Dentist
+"tooth sensitivity, occasional pain, swollen gums, toothache",18,mild,Dentist
+"toothache, bad breath, swollen gums, tooth sensitivity",7,mild,Dentist
+"swollen gums, loose tooth, bad breath, gum bleeding",14,moderate,Dentist
+"mouth ulcer, loose tooth, jaw pain",7,severe,Dentist
+"tooth sensitivity, swollen gums, lack of energy",9,moderate,Dentist
+"toothache, gum bleeding, sleep problems, tooth sensitivity, bad breath",9,mild,Dentist
+"toothache, occasional pain, gum bleeding, loose tooth, swollen gums",12,moderate,Dentist
+"occasional pain, jaw pain",9,moderate,Dentist
+swollen gums,29,moderate,Dentist
+"swollen gums, jaw pain, toothache, gum bleeding",7,moderate,Dentist
+bad breath,22,severe,Dentist
+"sleep problems, loose tooth, jaw pain, tooth sensitivity",21,mild,Dentist
+"loose tooth, jaw pain, toothache",21,mild,Dentist
+tooth sensitivity,19,mild,Dentist
+"toothache, swollen gums",23,moderate,Dentist
+"gum bleeding, swollen gums, loose tooth",30,severe,Dentist
+toothache,5,moderate,Dentist
+tooth sensitivity,11,severe,Dentist
+"jaw pain, swollen gums, lack of energy, gum bleeding",9,severe,Dentist
+"loose tooth, swollen gums, tooth sensitivity, mouth ulcer",18,mild,Dentist
+"mouth ulcer, swollen gums, jaw pain, loose tooth",27,mild,Dentist
+"toothache, swollen gums, jaw pain",29,mild,Dentist
+"jaw pain, tooth sensitivity, bad breath, sleep problems",25,moderate,Dentist
+"bad breath, swollen gums, jaw pain",2,moderate,Dentist
+"mild discomfort, tooth sensitivity, loose tooth",4,mild,Dentist
+"mouth ulcer, jaw pain, swollen gums, loose tooth",1,severe,Dentist
+"loss of appetite, loose tooth, swollen gums",18,moderate,Dentist
+"loose tooth, jaw pain, toothache, swollen gums",24,mild,Dentist
+"gum bleeding, loss of appetite, mouth ulcer, swollen gums",7,mild,Dentist
+"tooth sensitivity, mouth ulcer",24,mild,Dentist
+"jaw pain, loose tooth, swollen gums",26,mild,Dentist
+"jaw pain, gum bleeding, swollen gums, mouth ulcer",18,severe,Dentist
+"jaw pain, bad breath, swollen gums",20,mild,Dentist
+"loose tooth, swollen gums",12,severe,Dentist
+"toothache, swollen gums, jaw pain, loose tooth",29,mild,Dentist
+"gum bleeding, bad breath, loss of appetite, tooth sensitivity",4,mild,Dentist
+"gum bleeding, tooth sensitivity, swollen gums",8,mild,Dentist
+"mouth ulcer, bad breath, gum bleeding",24,mild,Dentist
+"mouth ulcer, bad breath, jaw pain, tooth sensitivity",2,moderate,Dentist
+"toothache, gum bleeding, loose tooth, tooth sensitivity",28,moderate,Dentist
+"sleep problems, loose tooth",11,moderate,Dentist
+"mouth ulcer, jaw pain",2,moderate,Dentist
+"swollen gums, mouth ulcer, jaw pain, loose tooth",26,mild,Dentist
+"toothache, jaw pain",18,mild,Dentist
+loose tooth,25,moderate,Dentist
+"swollen gums, mouth ulcer",21,moderate,Dentist
+"bad breath, toothache",11,moderate,Dentist
+gum bleeding,14,mild,Dentist
+"tooth sensitivity, jaw pain",25,mild,Dentist
+"mouth ulcer, gum bleeding, swollen gums",22,mild,Dentist
+gum bleeding,8,severe,Dentist
+"toothache, mouth ulcer",10,moderate,Dentist
+jaw pain,18,mild,Dentist
+"mouth ulcer, swollen gums, jaw pain",13,moderate,Dentist
+mouth ulcer,10,mild,Dentist
+"jaw pain, bad breath, toothache",22,mild,Dentist
+"gum bleeding, toothache, tooth sensitivity",8,severe,Dentist
+jaw pain,20,moderate,Dentist
+"mouth ulcer, bad breath",2,mild,Dentist
+"loose tooth, bad breath, jaw pain",22,mild,Dentist
+"bad breath, mouth ulcer, tooth sensitivity",29,mild,Dentist
+mouth ulcer,11,severe,Dentist
+"jaw pain, gum bleeding",14,mild,Dentist
+"loose tooth, tooth sensitivity",15,moderate,Dentist
+"mouth ulcer, tooth sensitivity",28,mild,Dentist
+"sleep problems, swollen gums, loose tooth",3,moderate,Dentist
+tooth sensitivity,29,mild,Dentist
+jaw pain,14,severe,Dentist
+"loose tooth, swollen gums, jaw pain",25,mild,Dentist
+"tooth sensitivity, toothache",20,moderate,Dentist
+"bad breath, gum bleeding",3,moderate,Dentist
+"bad breath, mouth ulcer, tooth sensitivity, loose tooth",16,moderate,Dentist
+"bad breath, mild discomfort, gum bleeding",8,moderate,Dentist
+"bad breath, toothache",28,moderate,Dentist
+"bad breath, gum bleeding, swollen gums",24,mild,Dentist
+gum bleeding,27,severe,Dentist
+"jaw pain, loose tooth, lack of energy",7,mild,Dentist
+"loose tooth, mouth ulcer, bad breath, tooth sensitivity",23,moderate,Dentist
+"loose tooth, swollen gums",24,moderate,Dentist
+"tooth sensitivity, bad breath",1,mild,Dentist
+"toothache, swollen gums",23,moderate,Dentist
+gum bleeding,21,mild,Dentist
+"loose tooth, occasional pain, tooth sensitivity, bad breath, mouth ulcer",6,moderate,Dentist
+loose tooth,24,moderate,Dentist
+"gum bleeding, toothache, mouth ulcer, jaw pain",1,moderate,Dentist
+"toothache, bad breath, mouth ulcer, gum bleeding",15,mild,Dentist
+bad breath,9,moderate,Dentist
+"loss of appetite, toothache, gum bleeding",5,severe,Dentist
+"jaw pain, occasional pain, loose tooth, toothache",20,moderate,Dentist
+"jaw pain, swollen gums",3,moderate,Dentist
+"bad breath, jaw pain, toothache",10,moderate,Dentist
+mouth ulcer,14,moderate,Dentist
+"swollen gums, toothache",16,moderate,Dentist
+"loose tooth, mouth ulcer, tooth sensitivity",30,mild,Dentist
+"bad breath, mouth ulcer, swollen gums, gum bleeding",4,mild,Dentist
+bad breath,14,mild,Dentist
+"mouth ulcer, jaw pain, swollen gums",23,mild,Dentist
+mouth ulcer,18,mild,Dentist
+gum bleeding,11,mild,Dentist
+tooth sensitivity,27,mild,Dentist
+"swollen gums, loose tooth, toothache, gum bleeding",15,moderate,Dentist
+"loose tooth, toothache, tooth sensitivity, mouth ulcer",7,moderate,Dentist
+"gum bleeding, toothache, jaw pain",13,moderate,Dentist
+"loose tooth, gum bleeding",23,severe,Dentist
+mouth ulcer,16,severe,Dentist
+"tooth sensitivity, swollen gums, loose tooth",4,mild,Dentist
+bad breath,15,moderate,Dentist
+"bad breath, tooth sensitivity, gum bleeding, swollen gums",25,severe,Dentist
+"jaw pain, bad breath, lack of energy",1,mild,Dentist
+gum bleeding,29,mild,Dentist
+"tooth sensitivity, mouth ulcer, toothache",7,mild,Dentist
+"bad breath, jaw pain, loose tooth",6,mild,Dentist
+gum bleeding,12,moderate,Dentist
+"jaw pain, swollen gums, tooth sensitivity",10,moderate,Dentist
+"gum bleeding, toothache, loss of appetite, swollen gums",2,mild,Dentist
+"tooth sensitivity, jaw pain, mouth ulcer, loose tooth",10,mild,Dentist
+"loose tooth, gum bleeding",3,moderate,Dentist
+"tooth sensitivity, loose tooth, gum bleeding, bad breath",30,mild,Dentist
+"jaw pain, loose tooth",15,moderate,Dentist
+"swollen gums, lack of energy",28,mild,Dentist
+"mouth ulcer, tooth sensitivity, toothache",11,moderate,Dentist
+mouth ulcer,13,moderate,Dentist
+"bad breath, mouth ulcer",13,mild,Dentist
+"loose tooth, swollen gums",18,moderate,Dentist
+"gum bleeding, jaw pain",4,moderate,Dentist
+"mouth ulcer, toothache, jaw pain, bad breath",22,moderate,Dentist
+"bad breath, swollen gums, toothache, jaw pain, occasional pain",15,moderate,Dentist
+"swollen gums, tooth sensitivity, gum bleeding, loose tooth",3,moderate,Dentist
+"swollen gums, loose tooth, toothache, tooth sensitivity",4,severe,Dentist
+bad breath,19,mild,Dentist
+"bad breath, swollen gums, loose tooth",16,mild,Dentist
+"gum bleeding, bad breath, jaw pain, loose tooth",3,moderate,Dentist
+"jaw pain, swollen gums",3,mild,Dentist
+"swollen gums, jaw pain, mouth ulcer, loose tooth",18,moderate,Dentist
+"gum bleeding, jaw pain, loose tooth, bad breath",23,moderate,Dentist
+"mouth ulcer, toothache, jaw pain, loose tooth",23,mild,Dentist
+"mouth ulcer, swollen gums, toothache",8,moderate,Dentist
+mouth ulcer,29,mild,Dentist
+dizziness on exertion,29,moderate,Cardiologist
+"dizziness on exertion, palpitations, high blood pressure",24,moderate,Cardiologist
+"swelling in legs, chest pain, shortness of breath",22,severe,Cardiologist
+irregular heartbeat,5,moderate,Cardiologist
+"dizziness on exertion, irregular heartbeat, chest tightness",24,mild,Cardiologist
+"swelling in legs, palpitations",9,moderate,Cardiologist
+"chest tightness, dizziness on exertion",11,severe,Cardiologist
+"palpitations, high blood pressure",25,mild,Cardiologist
+"irregular heartbeat, chest tightness, dizziness on exertion, feeling unwell, palpitations",13,moderate,Cardiologist
+"shortness of breath, high blood pressure, swelling in legs, dizziness on exertion",1,mild,Cardiologist
+"palpitations, swelling in legs, irregular heartbeat, high blood pressure",28,mild,Cardiologist
+"swelling in legs, high blood pressure, palpitations",15,moderate,Cardiologist
+"irregular heartbeat, shortness of breath",11,moderate,Cardiologist
+"mild discomfort, chest tightness",22,mild,Cardiologist
+"palpitations, irregular heartbeat",20,mild,Cardiologist
+"swelling in legs, chest tightness",28,moderate,Cardiologist
+"chest pain, palpitations, swelling in legs, chest tightness",21,moderate,Cardiologist
+"high blood pressure, dizziness on exertion, swelling in legs",6,moderate,Cardiologist
+"high blood pressure, shortness of breath, chest pain",27,mild,Cardiologist
+"shortness of breath, dizziness on exertion, chest tightness, irregular heartbeat",18,moderate,Cardiologist
+"shortness of breath, chest tightness",2,mild,Cardiologist
+"shortness of breath, chest pain, loss of appetite, dizziness on exertion",9,mild,Cardiologist
+"high blood pressure, chest pain, irregular heartbeat",14,mild,Cardiologist
+"shortness of breath, loss of appetite",4,moderate,Cardiologist
+"dizziness on exertion, swelling in legs, palpitations",12,moderate,Cardiologist
+"shortness of breath, chest tightness, high blood pressure",6,moderate,Cardiologist
+"dizziness on exertion, shortness of breath, palpitations, swelling in legs",29,moderate,Cardiologist
+"chest pain, palpitations",16,mild,Cardiologist
+"irregular heartbeat, shortness of breath, dizziness on exertion",11,mild,Cardiologist
+"high blood pressure, loss of appetite",22,severe,Cardiologist
+"occasional pain, shortness of breath, chest pain",16,severe,Cardiologist
+shortness of breath,5,mild,Cardiologist
+irregular heartbeat,4,moderate,Cardiologist
+"high blood pressure, chest tightness",16,moderate,Cardiologist
+"chest tightness, high blood pressure",26,moderate,Cardiologist
+"chest pain, irregular heartbeat, swelling in legs, dizziness on exertion",19,mild,Cardiologist
+chest tightness,25,mild,Cardiologist
+"shortness of breath, chest tightness, palpitations",4,moderate,Cardiologist
+"occasional pain, high blood pressure, chest pain, shortness of breath, palpitations",23,mild,Cardiologist
+"dizziness on exertion, irregular heartbeat",6,moderate,Cardiologist
+palpitations,20,severe,Cardiologist
+"shortness of breath, chest pain, swelling in legs",17,severe,Cardiologist
+"swelling in legs, shortness of breath, dizziness on exertion",7,mild,Cardiologist
+"shortness of breath, dizziness on exertion",2,moderate,Cardiologist
+"palpitations, shortness of breath, dizziness on exertion",4,moderate,Cardiologist
+"high blood pressure, sleep problems, palpitations",29,mild,Cardiologist
+"chest tightness, palpitations, shortness of breath, swelling in legs",4,mild,Cardiologist
+"chest tightness, dizziness on exertion, shortness of breath, chest pain",5,mild,Cardiologist
+"palpitations, chest tightness, dizziness on exertion, shortness of breath",9,mild,Cardiologist
+"chest pain, swelling in legs",5,mild,Cardiologist
+"shortness of breath, dizziness on exertion, palpitations, chest tightness",26,moderate,Cardiologist
+"shortness of breath, chest pain",28,severe,Cardiologist
+"chest pain, shortness of breath, dizziness on exertion, palpitations",14,moderate,Cardiologist
+"shortness of breath, chest pain",16,moderate,Cardiologist
+high blood pressure,16,moderate,Cardiologist
+dizziness on exertion,3,moderate,Cardiologist
+high blood pressure,5,mild,Cardiologist
+"chest tightness, chest pain",6,moderate,Cardiologist
+dizziness on exertion,5,severe,Cardiologist
+"high blood pressure, shortness of breath, dizziness on exertion, palpitations",13,severe,Cardiologist
+"palpitations, chest pain, shortness of breath",26,moderate,Cardiologist
+"irregular heartbeat, swelling in legs, chest pain",13,mild,Cardiologist
+swelling in legs,21,moderate,Cardiologist
+"feeling unwell, shortness of breath",18,mild,Cardiologist
+"shortness of breath, high blood pressure, chest tightness, swelling in legs",9,mild,Cardiologist
+"high blood pressure, shortness of breath, swelling in legs",23,moderate,Cardiologist
+"irregular heartbeat, dizziness on exertion, palpitations",7,severe,Cardiologist
+"chest pain, shortness of breath, dizziness on exertion, chest tightness",9,mild,Cardiologist
+"chest tightness, dizziness on exertion",10,mild,Cardiologist
+"palpitations, dizziness on exertion",10,mild,Cardiologist
+shortness of breath,17,moderate,Cardiologist
+"swelling in legs, high blood pressure, dizziness on exertion, palpitations",19,mild,Cardiologist
+"palpitations, dizziness on exertion, high blood pressure",25,moderate,Cardiologist
+"palpitations, swelling in legs",20,severe,Cardiologist
+"chest tightness, palpitations, swelling in legs",6,mild,Cardiologist
+swelling in legs,15,mild,Cardiologist
+"shortness of breath, irregular heartbeat",12,mild,Cardiologist
+"dizziness on exertion, palpitations, irregular heartbeat, chest pain",15,severe,Cardiologist
+"chest pain, swelling in legs",21,moderate,Cardiologist
+"dizziness on exertion, irregular heartbeat, high blood pressure, chest tightness",24,moderate,Cardiologist
+palpitations,4,mild,Cardiologist
+"chest pain, shortness of breath, palpitations, dizziness on exertion",26,severe,Cardiologist
+"high blood pressure, shortness of breath, chest pain",17,mild,Cardiologist
+"dizziness on exertion, swelling in legs, irregular heartbeat, high blood pressure",23,severe,Cardiologist
+"high blood pressure, chest pain, palpitations",15,severe,Cardiologist
+shortness of breath,15,moderate,Cardiologist
+"palpitations, chest tightness, dizziness on exertion, shortness of breath",5,mild,Cardiologist
+"lack of energy, chest pain, swelling in legs, shortness of breath, irregular heartbeat",23,moderate,Cardiologist
+"shortness of breath, chest tightness",18,moderate,Cardiologist
+"shortness of breath, dizziness on exertion, irregular heartbeat",26,mild,Cardiologist
+"irregular heartbeat, swelling in legs, high blood pressure",14,mild,Cardiologist
+"chest pain, dizziness on exertion",3,moderate,Cardiologist
+"dizziness on exertion, irregular heartbeat, shortness of breath",23,moderate,Cardiologist
+"high blood pressure, palpitations, chest pain",11,moderate,Cardiologist
+"swelling in legs, feeling unwell, chest tightness",2,mild,Cardiologist
+shortness of breath,6,moderate,Cardiologist
+"swelling in legs, high blood pressure",9,moderate,Cardiologist
+"irregular heartbeat, high blood pressure, chest tightness",5,moderate,Cardiologist
+"shortness of breath, palpitations, dizziness on exertion",7,mild,Cardiologist
+"high blood pressure, shortness of breath",14,moderate,Cardiologist
+chest tightness,30,mild,Cardiologist
+"lack of energy, swelling in legs, irregular heartbeat, palpitations",1,moderate,Cardiologist
+"loss of appetite, shortness of breath",23,mild,Cardiologist
+"shortness of breath, chest tightness",23,moderate,Cardiologist
+"chest tightness, lack of energy",2,mild,Cardiologist
+chest pain,30,mild,Cardiologist
+irregular heartbeat,25,mild,Cardiologist
+shortness of breath,7,mild,Cardiologist
+"chest pain, chest tightness, dizziness on exertion",12,mild,Cardiologist
+"chest pain, chest tightness",17,mild,Cardiologist
+"chest tightness, irregular heartbeat",24,mild,Cardiologist
+"palpitations, dizziness on exertion",15,moderate,Cardiologist
+palpitations,13,mild,Cardiologist
+"high blood pressure, chest pain",4,moderate,Cardiologist
+"dizziness on exertion, high blood pressure",18,moderate,Cardiologist
+swelling in legs,13,mild,Cardiologist
+"irregular heartbeat, dizziness on exertion, chest tightness",28,mild,Cardiologist
+"chest pain, swelling in legs, chest tightness, shortness of breath",4,mild,Cardiologist
+"dizziness on exertion, chest tightness, chest pain, swelling in legs",20,moderate,Cardiologist
+"chest tightness, dizziness on exertion, swelling in legs, shortness of breath",12,moderate,Cardiologist
+"palpitations, irregular heartbeat, chest tightness, dizziness on exertion",16,moderate,Cardiologist
+"dizziness on exertion, chest pain",16,moderate,Cardiologist
+"irregular heartbeat, high blood pressure",10,moderate,Cardiologist
+chest tightness,17,moderate,Cardiologist
+"shortness of breath, palpitations, dizziness on exertion, swelling in legs",26,severe,Cardiologist
+chest pain,29,severe,Cardiologist
+"shortness of breath, palpitations, swelling in legs, dizziness on exertion",29,moderate,Cardiologist
+"shortness of breath, chest tightness, palpitations, high blood pressure",22,moderate,Cardiologist
+"dizziness on exertion, irregular heartbeat, chest tightness, feeling unwell, high blood pressure",25,severe,Cardiologist
+"dizziness on exertion, chest pain, feeling unwell, irregular heartbeat",25,severe,Cardiologist
+"high blood pressure, shortness of breath, chest pain",12,mild,Cardiologist
+"chest tightness, shortness of breath",30,moderate,Cardiologist
+"feeling unwell, dizziness on exertion, palpitations, chest tightness",19,moderate,Cardiologist
+"irregular heartbeat, shortness of breath, chest pain, swelling in legs",11,moderate,Cardiologist
+"dizziness on exertion, swelling in legs, chest tightness, high blood pressure",12,severe,Cardiologist
+"swelling in legs, dizziness on exertion",27,severe,Cardiologist
+"sleep problems, irregular heartbeat, palpitations",20,moderate,Cardiologist
+chest tightness,9,mild,Cardiologist
+"high blood pressure, chest tightness, chest pain, palpitations",14,moderate,Cardiologist
+"shortness of breath, dizziness on exertion, high blood pressure",22,moderate,Cardiologist
+"swelling in legs, chest pain",19,moderate,Cardiologist
+"swelling in legs, irregular heartbeat, dizziness on exertion, high blood pressure",17,mild,Cardiologist
+"high blood pressure, palpitations, chest tightness, dizziness on exertion",21,mild,Cardiologist
+"palpitations, irregular heartbeat, chest tightness, high blood pressure",4,mild,Cardiologist
+shortness of breath,10,moderate,Cardiologist
+"chest pain, chest tightness, high blood pressure, swelling in legs",26,moderate,Cardiologist
+"swelling in legs, chest pain",2,severe,Cardiologist
+swelling in legs,28,mild,Cardiologist
+"chest pain, high blood pressure, swelling in legs, dizziness on exertion",19,moderate,Cardiologist
+irregular heartbeat,3,mild,Cardiologist
+swelling in legs,19,moderate,Cardiologist
+"occasional pain, chest tightness, high blood pressure",15,mild,Cardiologist
+dizziness on exertion,23,severe,Cardiologist
+"swelling in legs, high blood pressure, shortness of breath",12,moderate,Cardiologist
+"chest pain, irregular heartbeat, swelling in legs",27,moderate,Cardiologist
+shortness of breath,13,mild,Cardiologist
+"dizziness on exertion, chest tightness, irregular heartbeat",30,severe,Cardiologist
+"chest tightness, chest pain, irregular heartbeat",21,mild,Cardiologist
+"chest pain, dizziness on exertion, palpitations, shortness of breath",29,severe,Cardiologist
+palpitations,17,mild,Cardiologist
+"swelling in legs, chest pain, dizziness on exertion, shortness of breath",26,moderate,Cardiologist
+high blood pressure,10,mild,Cardiologist
+chest tightness,17,moderate,Cardiologist
+"high blood pressure, dizziness on exertion",16,severe,Cardiologist
+"irregular heartbeat, chest tightness",26,mild,Cardiologist
+high blood pressure,13,severe,Cardiologist
+"dizziness on exertion, chest pain",30,mild,Cardiologist
+"palpitations, sleep problems, shortness of breath, swelling in legs, chest tightness",12,mild,Cardiologist
+chest pain,14,moderate,Cardiologist
+"dizziness on exertion, swelling in legs, chest pain, chest tightness",13,mild,Cardiologist
+"high blood pressure, shortness of breath",14,mild,Cardiologist
+"palpitations, chest pain",20,moderate,Cardiologist
+"swelling in legs, irregular heartbeat",3,mild,Cardiologist
+"dizziness on exertion, swelling in legs",23,mild,Cardiologist
+"high blood pressure, irregular heartbeat, feeling unwell, dizziness on exertion, chest pain",1,mild,Cardiologist
+"swelling in legs, sleep problems, palpitations, shortness of breath, irregular heartbeat",17,moderate,Cardiologist
+"dizziness on exertion, chest tightness, chest pain",5,mild,Cardiologist
+"chest pain, shortness of breath, chest tightness",30,mild,Cardiologist
+"palpitations, dizziness on exertion, irregular heartbeat",24,severe,Cardiologist
+"chest pain, dizziness on exertion",8,mild,Cardiologist
+"swelling in legs, chest tightness, irregular heartbeat, shortness of breath",12,severe,Cardiologist
+"mild discomfort, chest tightness, dizziness on exertion, chest pain, shortness of breath",24,moderate,Cardiologist
+"irregular heartbeat, shortness of breath, chest pain",14,severe,Cardiologist
+"feeling unwell, swelling in legs, dizziness on exertion",22,severe,Cardiologist
+high blood pressure,30,severe,Cardiologist
+"palpitations, chest pain, high blood pressure",15,moderate,Cardiologist
+"chest pain, dizziness on exertion, palpitations",24,severe,Cardiologist
+"shortness of breath, loss of appetite, high blood pressure",26,mild,Cardiologist
+"feeling unwell, high blood pressure",8,severe,Cardiologist
+"dizziness on exertion, chest tightness, chest pain, swelling in legs",4,mild,Cardiologist
+"dizziness on exertion, chest tightness, swelling in legs, irregular heartbeat",16,mild,Cardiologist
+"irregular heartbeat, dizziness on exertion, palpitations, swelling in legs",14,moderate,Cardiologist
+chest pain,15,moderate,Cardiologist
+"irregular heartbeat, dizziness on exertion",10,moderate,Cardiologist
+dizziness on exertion,5,moderate,Cardiologist
+"irregular heartbeat, dizziness on exertion, shortness of breath",30,mild,Cardiologist
+high blood pressure,15,moderate,Cardiologist
+"irregular heartbeat, palpitations, sleep problems, swelling in legs",6,moderate,Cardiologist
+"chest pain, dizziness on exertion, shortness of breath, palpitations",20,moderate,Cardiologist
+"chest tightness, palpitations, sleep problems, high blood pressure",14,moderate,Cardiologist
+"high blood pressure, occasional pain",15,moderate,Cardiologist
+"high blood pressure, irregular heartbeat, dizziness on exertion, palpitations",5,mild,Cardiologist
+"high blood pressure, occasional pain, chest tightness",16,moderate,Cardiologist
+"dizziness on exertion, high blood pressure",3,mild,Cardiologist
+"high blood pressure, palpitations, shortness of breath, occasional pain, chest pain",28,mild,Cardiologist
+"shortness of breath, palpitations",2,mild,Cardiologist
+high blood pressure,28,moderate,Cardiologist
+"chest pain, shortness of breath, high blood pressure",8,moderate,Cardiologist
+high blood pressure,18,mild,Cardiologist
+"dizziness on exertion, irregular heartbeat, chest pain, shortness of breath",1,mild,Cardiologist
+"palpitations, dizziness on exertion",19,severe,Cardiologist
+"dizziness on exertion, palpitations, chest tightness",27,severe,Cardiologist
+"chest tightness, dizziness on exertion, high blood pressure",22,moderate,Cardiologist
+"chest tightness, shortness of breath",26,mild,Cardiologist
+"dizziness on exertion, irregular heartbeat, chest tightness, mild discomfort, high blood pressure",6,moderate,Cardiologist
+chest tightness,4,moderate,Cardiologist
+shortness of breath,11,moderate,Cardiologist
+irregular heartbeat,28,moderate,Cardiologist
+chest pain,15,moderate,Cardiologist
+chest tightness,20,moderate,Cardiologist
+chest pain,6,moderate,Cardiologist
+"swelling in legs, chest tightness",25,moderate,Cardiologist
+palpitations,11,moderate,Cardiologist
+shortness of breath,14,moderate,Cardiologist
+shortness of breath,16,mild,Cardiologist
+"chest tightness, palpitations",12,moderate,Cardiologist
+"palpitations, high blood pressure",26,mild,Cardiologist
+"irregular heartbeat, shortness of breath, high blood pressure, dizziness on exertion",5,moderate,Cardiologist
+chest tightness,13,severe,Cardiologist
+"chest pain, high blood pressure",22,severe,Cardiologist
+"chest pain, swelling in legs",14,mild,Cardiologist
+"palpitations, swelling in legs, chest pain",23,mild,Cardiologist
+"dizziness on exertion, swelling in legs",25,mild,Cardiologist
+"chest pain, chest tightness, irregular heartbeat",17,severe,Cardiologist
+"shortness of breath, chest pain, irregular heartbeat",25,moderate,Cardiologist
+chest pain,18,moderate,Cardiologist
+"swelling in legs, irregular heartbeat",24,mild,Cardiologist
+"swelling in legs, dizziness on exertion, irregular heartbeat",15,mild,Cardiologist
+dizziness on exertion,8,moderate,Cardiologist
+"palpitations, swelling in legs",23,mild,Cardiologist
+"palpitations, chest tightness",27,moderate,Cardiologist
+"dizziness on exertion, swelling in legs, shortness of breath, chest tightness",14,severe,Cardiologist
+"shortness of breath, dizziness on exertion, chest pain, palpitations",28,mild,Cardiologist
+"shortness of breath, swelling in legs, high blood pressure, dizziness on exertion",17,mild,Cardiologist
+"swelling in legs, irregular heartbeat, palpitations, occasional pain, high blood pressure",18,mild,Cardiologist
+"high blood pressure, feeling unwell",2,moderate,Cardiologist
+swelling in legs,12,mild,Cardiologist
+"chest tightness, high blood pressure, chest pain, swelling in legs",29,mild,Cardiologist
+"chest pain, feeling unwell, dizziness on exertion",14,moderate,Cardiologist
+"palpitations, dizziness on exertion, shortness of breath",25,mild,Cardiologist
+"dizziness, tremors, balance problems, tingling, sleep problems",29,mild,Neurologist
+balance problems,24,mild,Neurologist
+dizziness,19,moderate,Neurologist
+"migraine, sleep problems, balance problems, memory loss",25,moderate,Neurologist
+migraine,18,mild,Neurologist
+numbness,8,moderate,Neurologist
+"tingling, memory loss, migraine, seizures",14,mild,Neurologist
+memory loss,9,mild,Neurologist
+memory loss,5,mild,Neurologist
+dizziness,14,moderate,Neurologist
+blurred vision,6,mild,Neurologist
+numbness,11,mild,Neurologist
+"numbness, migraine, occasional pain, seizures",4,mild,Neurologist
+"memory loss, tremors, seizures, mild discomfort",30,severe,Neurologist
+"blurred vision, memory loss, migraine",10,moderate,Neurologist
+"vertigo, dizziness, migraine, memory loss",30,moderate,Neurologist
+headache,27,moderate,Neurologist
+"headache, balance problems",9,moderate,Neurologist
+"memory loss, numbness, vertigo, tingling, loss of appetite",13,moderate,Neurologist
+"numbness, memory loss",20,moderate,Neurologist
+"balance problems, tingling, numbness",9,mild,Neurologist
+"tremors, tingling, vertigo",30,moderate,Neurologist
+blurred vision,29,mild,Neurologist
+"seizures, memory loss",25,mild,Neurologist
+balance problems,18,mild,Neurologist
+"seizures, balance problems, migraine, tingling",27,moderate,Neurologist
+migraine,30,mild,Neurologist
+vertigo,25,mild,Neurologist
+"migraine, numbness, vertigo",16,severe,Neurologist
+numbness,23,moderate,Neurologist
+"headache, vertigo",4,severe,Neurologist
+"vertigo, occasional pain, balance problems, memory loss, dizziness",29,moderate,Neurologist
+"vertigo, headache, memory loss",1,severe,Neurologist
+tingling,14,mild,Neurologist
+"memory loss, headache, tremors, tingling",30,mild,Neurologist
+"headache, vertigo, seizures, tingling",23,mild,Neurologist
+vertigo,11,mild,Neurologist
+headache,26,mild,Neurologist
+"migraine, numbness, vertigo",27,mild,Neurologist
+"blurred vision, migraine",21,mild,Neurologist
+migraine,30,mild,Neurologist
+"headache, migraine, dizziness",10,moderate,Neurologist
+"headache, migraine, balance problems, memory loss",20,moderate,Neurologist
+"blurred vision, lack of energy, balance problems",29,moderate,Neurologist
+tingling,22,moderate,Neurologist
+"migraine, sleep problems, vertigo, tingling, memory loss",21,moderate,Neurologist
+"tremors, blurred vision, seizures",2,mild,Neurologist
+"memory loss, dizziness, tingling, numbness, feeling unwell",1,moderate,Neurologist
+"vertigo, headache",14,mild,Neurologist
+"balance problems, vertigo",7,moderate,Neurologist
+"balance problems, numbness, blurred vision, tingling",29,moderate,Neurologist
+tremors,1,moderate,Neurologist
+"tremors, blurred vision",24,moderate,Neurologist
+"balance problems, vertigo, seizures",1,mild,Neurologist
+"memory loss, feeling unwell",7,moderate,Neurologist
+"balance problems, vertigo, headache",29,mild,Neurologist
+"memory loss, tingling",1,mild,Neurologist
+"dizziness, headache, migraine",30,mild,Neurologist
+"tingling, vertigo, blurred vision, dizziness",4,mild,Neurologist
+"vertigo, balance problems",11,moderate,Neurologist
+"headache, blurred vision",26,mild,Neurologist
+"headache, numbness",7,moderate,Neurologist
+"balance problems, dizziness, blurred vision, migraine",6,mild,Neurologist
+"memory loss, tremors, blurred vision",21,severe,Neurologist
+vertigo,7,moderate,Neurologist
+"seizures, vertigo",19,mild,Neurologist
+"numbness, mild discomfort, memory loss, migraine",8,moderate,Neurologist
+"memory loss, tingling, blurred vision, seizures",26,moderate,Neurologist
+"dizziness, seizures, headache",12,severe,Neurologist
+"blurred vision, memory loss, balance problems",4,mild,Neurologist
+"headache, memory loss, vertigo",9,mild,Neurologist
+"vertigo, blurred vision, dizziness",1,moderate,Neurologist
+"seizures, tingling, blurred vision",16,moderate,Neurologist
+"vertigo, seizures",16,mild,Neurologist
+"tremors, tingling, migraine, blurred vision",7,mild,Neurologist
+"tingling, occasional pain",24,mild,Neurologist
+"tingling, seizures, vertigo",11,moderate,Neurologist
+dizziness,11,moderate,Neurologist
+"balance problems, seizures, migraine, vertigo",11,moderate,Neurologist
+"dizziness, sleep problems, migraine, balance problems, numbness",1,mild,Neurologist
+seizures,8,mild,Neurologist
+"sleep problems, tremors",6,mild,Neurologist
+"dizziness, seizures, migraine, blurred vision",13,severe,Neurologist
+"dizziness, vertigo",6,moderate,Neurologist
+"blurred vision, memory loss, vertigo",7,mild,Neurologist
+"migraine, tremors",17,mild,Neurologist
+"tremors, headache, balance problems, migraine",13,moderate,Neurologist
+"seizures, vertigo",15,mild,Neurologist
+"migraine, blurred vision",8,severe,Neurologist
+"memory loss, numbness",23,moderate,Neurologist
+"seizures, tremors",12,mild,Neurologist
+memory loss,11,mild,Neurologist
+"numbness, vertigo",1,mild,Neurologist
+"balance problems, vertigo, tingling, seizures",23,severe,Neurologist
+"tremors, blurred vision, balance problems",23,severe,Neurologist
+"numbness, tremors",27,mild,Neurologist
+dizziness,18,moderate,Neurologist
+"headache, migraine",15,mild,Neurologist
+"memory loss, headache",27,moderate,Neurologist
+seizures,15,mild,Neurologist
+headache,25,mild,Neurologist
+"vertigo, tingling",14,mild,Neurologist
+tingling,22,moderate,Neurologist
+"dizziness, migraine",14,moderate,Neurologist
+"tingling, memory loss, vertigo",14,mild,Neurologist
+"tingling, migraine",13,moderate,Neurologist
+seizures,8,mild,Neurologist
+"balance problems, tingling, blurred vision, occasional pain",4,moderate,Neurologist
+"numbness, migraine",22,severe,Neurologist
+"tingling, dizziness",28,moderate,Neurologist
+"tingling, sleep problems",13,moderate,Neurologist
+"blurred vision, memory loss",8,mild,Neurologist
+numbness,14,moderate,Neurologist
+"headache, lack of energy",7,mild,Neurologist
+"balance problems, headache",24,severe,Neurologist
+"tingling, numbness",17,moderate,Neurologist
+"vertigo, balance problems, numbness, headache",7,moderate,Neurologist
+"balance problems, vertigo",17,mild,Neurologist
+"tremors, migraine, occasional pain, headache, balance problems",3,mild,Neurologist
+"vertigo, loss of appetite, memory loss",6,moderate,Neurologist
+"seizures, dizziness",10,moderate,Neurologist
+"numbness, feeling unwell, tremors",6,moderate,Neurologist
+"seizures, blurred vision, memory loss, dizziness",14,severe,Neurologist
+"dizziness, memory loss, blurred vision",13,moderate,Neurologist
+"occasional pain, memory loss, numbness, seizures, tremors",1,mild,Neurologist
+"tremors, seizures, blurred vision",13,moderate,Neurologist
+seizures,30,mild,Neurologist
+"vertigo, seizures",17,moderate,Neurologist
+"blurred vision, seizures, headache",2,severe,Neurologist
+"dizziness, balance problems, headache",9,mild,Neurologist
+"headache, migraine",13,moderate,Neurologist
+memory loss,29,mild,Neurologist
+"balance problems, numbness, memory loss, seizures",4,moderate,Neurologist
+"dizziness, vertigo, numbness",1,severe,Neurologist
+"headache, migraine, seizures, blurred vision",6,mild,Neurologist
+"vertigo, dizziness",15,moderate,Neurologist
+"occasional pain, vertigo, dizziness",29,severe,Neurologist
+"migraine, mild discomfort, blurred vision, balance problems, dizziness",11,mild,Neurologist
+"balance problems, tremors",1,mild,Neurologist
+balance problems,2,mild,Neurologist
+seizures,25,mild,Neurologist
+"blurred vision, tremors, tingling, seizures",12,moderate,Neurologist
+"memory loss, tingling, headache, blurred vision",24,moderate,Neurologist
+"sleep problems, headache, blurred vision",12,moderate,Neurologist
+"headache, seizures, memory loss, vertigo",28,mild,Neurologist
+"vertigo, balance problems, tremors",12,mild,Neurologist
+"numbness, balance problems, seizures, migraine",5,moderate,Neurologist
+numbness,18,severe,Neurologist
+"blurred vision, migraine, dizziness, tremors",6,moderate,Neurologist
+migraine,23,mild,Neurologist
+"seizures, numbness, vertigo",29,moderate,Neurologist
+"loss of appetite, memory loss, tremors",30,moderate,Neurologist
+balance problems,30,moderate,Neurologist
+"seizures, vertigo, memory loss, balance problems",4,mild,Neurologist
+"migraine, blurred vision",13,moderate,Neurologist
+"sleep problems, numbness",28,mild,Neurologist
+"dizziness, tingling, balance problems, vertigo, mild discomfort",27,severe,Neurologist
+"balance problems, feeling unwell, tremors",20,mild,Neurologist
+numbness,23,moderate,Neurologist
+"tremors, numbness",2,severe,Neurologist
+"vertigo, blurred vision, dizziness",28,moderate,Neurologist
+"numbness, headache, dizziness, seizures",13,mild,Neurologist
+"memory loss, vertigo, numbness",25,moderate,Neurologist
+numbness,6,moderate,Neurologist
+"vertigo, tremors, dizziness, numbness",12,moderate,Neurologist
+balance problems,28,mild,Neurologist
+"dizziness, headache, balance problems, migraine",4,severe,Neurologist
+"dizziness, blurred vision, seizures",2,mild,Neurologist
+"seizures, dizziness, numbness, tremors",9,moderate,Neurologist
+"migraine, memory loss, tingling, headache, lack of energy",9,moderate,Neurologist
+blurred vision,16,severe,Neurologist
+"dizziness, numbness, migraine, blurred vision",13,moderate,Neurologist
+"balance problems, migraine, blurred vision, memory loss",6,severe,Neurologist
+"headache, memory loss",4,mild,Neurologist
+"dizziness, feeling unwell, balance problems",4,moderate,Neurologist
+"dizziness, memory loss, seizures",8,mild,Neurologist
+"balance problems, memory loss, lack of energy, tremors",20,moderate,Neurologist
+"headache, migraine",5,mild,Neurologist
+"dizziness, blurred vision",9,mild,Neurologist
+"migraine, numbness, blurred vision, memory loss",3,severe,Neurologist
+"memory loss, dizziness, migraine, vertigo",23,mild,Neurologist
+"seizures, dizziness",13,mild,Neurologist
+"migraine, numbness, mild discomfort",3,mild,Neurologist
+tingling,25,mild,Neurologist
+"occasional pain, numbness, headache",26,severe,Neurologist
+"memory loss, numbness",4,moderate,Neurologist
+"migraine, numbness, memory loss",25,mild,Neurologist
+"balance problems, blurred vision, memory loss",19,mild,Neurologist
+balance problems,5,moderate,Neurologist
+"blurred vision, seizures",30,moderate,Neurologist
+"seizures, blurred vision, vertigo",12,moderate,Neurologist
+"memory loss, seizures, numbness",21,severe,Neurologist
+"tingling, migraine, seizures",3,mild,Neurologist
+migraine,18,severe,Neurologist
+seizures,30,moderate,Neurologist
+"migraine, tremors, blurred vision, memory loss",23,mild,Neurologist
+"memory loss, headache, vertigo",6,mild,Neurologist
+"memory loss, tingling",16,mild,Neurologist
+"vertigo, tingling, migraine",10,moderate,Neurologist
+"seizures, vertigo, headache",30,moderate,Neurologist
+"tingling, tremors, headache, balance problems",12,severe,Neurologist
+"lack of energy, seizures, tingling",3,moderate,Neurologist
+"migraine, seizures",5,moderate,Neurologist
+"vertigo, seizures, tremors",29,mild,Neurologist
+"migraine, blurred vision, tremors",1,mild,Neurologist
+"vertigo, migraine",13,mild,Neurologist
+"headache, dizziness, vertigo",4,mild,Neurologist
+"dizziness, tingling, balance problems, seizures",4,moderate,Neurologist
+"tingling, dizziness",2,moderate,Neurologist
+"seizures, headache, blurred vision",16,mild,Neurologist
+"dizziness, memory loss, blurred vision, vertigo",22,moderate,Neurologist
+"migraine, tremors",7,severe,Neurologist
+"mild discomfort, vertigo, migraine",30,mild,Neurologist
+blurred vision,28,mild,Neurologist
+"vertigo, numbness, memory loss, balance problems",21,mild,Neurologist
+numbness,12,moderate,Neurologist
+"headache, tingling",2,moderate,Neurologist
+"numbness, vertigo, tremors",14,mild,Neurologist
+"tingling, numbness, migraine, balance problems, mild discomfort",24,moderate,Neurologist
+"numbness, balance problems, vertigo",5,moderate,Neurologist
+headache,30,severe,Neurologist
+"tremors, vertigo",18,moderate,Neurologist
+"vertigo, memory loss, tremors",7,mild,Neurologist
+"tingling, memory loss, blurred vision",30,mild,Neurologist
+"memory loss, seizures, headache, blurred vision",10,mild,Neurologist
+vertigo,13,moderate,Neurologist
+dizziness,17,mild,Neurologist
+"vertigo, seizures, numbness, blurred vision",19,moderate,Neurologist
+"memory loss, balance problems, blurred vision, numbness",18,mild,Neurologist
+"memory loss, headache",21,mild,Neurologist
+"numbness, headache, dizziness",18,mild,Neurologist
+"balance problems, blurred vision, tingling",24,mild,Neurologist
+"blurred vision, headache, tingling",6,mild,Neurologist
+memory loss,28,moderate,Neurologist
+seizures,9,severe,Neurologist
+"vertigo, tremors",19,moderate,Neurologist
+"vertigo, tremors, dizziness, seizures",6,moderate,Neurologist
+"blurred vision, vertigo",21,mild,Neurologist
+"balance problems, seizures, dizziness",5,mild,Neurologist
+"seizures, sleep problems, tremors",20,mild,Neurologist
+"memory loss, headache, mild discomfort, migraine, balance problems",26,severe,Neurologist
+memory loss,11,severe,Neurologist
+"vertigo, sleep problems",27,mild,Neurologist
+"dizziness, tremors, loss of appetite, vertigo",1,moderate,Neurologist
+memory loss,17,severe,Neurologist
+"vertigo, headache, dizziness, blurred vision",21,mild,Neurologist
+"tremors, dizziness, balance problems, migraine",12,mild,Neurologist
+"tingling, migraine, balance problems",6,mild,Neurologist
+"blurred vision, dizziness, seizures",20,moderate,Neurologist
+"tremors, migraine, numbness",26,mild,Neurologist
+"knee pain, fracture, lack of energy",27,mild,Orthopedic Specialist
+"muscle pain, joint pain, neck pain, knee pain",11,moderate,Orthopedic Specialist
+"sprain, knee pain, hip pain, fracture",18,moderate,Orthopedic Specialist
+"loss of appetite, neck pain, shoulder pain, hip pain, stiffness",8,mild,Orthopedic Specialist
+"fracture, back pain",30,mild,Orthopedic Specialist
+"fracture, knee pain, muscle pain",8,mild,Orthopedic Specialist
+"knee pain, back pain, loss of appetite",13,moderate,Orthopedic Specialist
+"back pain, fracture, joint pain, hip pain",1,mild,Orthopedic Specialist
+"sleep problems, joint pain, shoulder pain",25,mild,Orthopedic Specialist
+"neck pain, muscle pain",15,moderate,Orthopedic Specialist
+"mild discomfort, muscle pain",20,moderate,Orthopedic Specialist
+"back pain, sprain",18,moderate,Orthopedic Specialist
+"muscle pain, hip pain, neck pain",9,severe,Orthopedic Specialist
+"muscle pain, lack of energy, sprain, knee pain, shoulder pain",16,mild,Orthopedic Specialist
+"back pain, knee pain, sprain, hip pain",4,mild,Orthopedic Specialist
+"fracture, back pain, hip pain",3,mild,Orthopedic Specialist
+muscle pain,7,moderate,Orthopedic Specialist
+shoulder pain,19,moderate,Orthopedic Specialist
+"neck pain, fracture, hip pain, back pain",13,moderate,Orthopedic Specialist
+"knee pain, fracture, sprain",14,severe,Orthopedic Specialist
+neck pain,5,mild,Orthopedic Specialist
+"back pain, muscle pain, stiffness, joint pain",23,mild,Orthopedic Specialist
+"knee pain, hip pain",15,moderate,Orthopedic Specialist
+"fracture, sprain, muscle pain, loss of appetite",20,moderate,Orthopedic Specialist
+"mild discomfort, stiffness, hip pain",18,severe,Orthopedic Specialist
+"feeling unwell, stiffness",30,mild,Orthopedic Specialist
+muscle pain,12,mild,Orthopedic Specialist
+"stiffness, muscle pain",25,severe,Orthopedic Specialist
+"joint pain, feeling unwell, stiffness",28,moderate,Orthopedic Specialist
+"stiffness, fracture",12,mild,Orthopedic Specialist
+"fracture, loss of appetite, muscle pain, stiffness, neck pain",5,severe,Orthopedic Specialist
+"hip pain, knee pain, sprain",28,moderate,Orthopedic Specialist
+fracture,21,moderate,Orthopedic Specialist
+"joint pain, knee pain, lack of energy, hip pain, fracture",3,mild,Orthopedic Specialist
+"joint pain, shoulder pain, knee pain, stiffness",21,mild,Orthopedic Specialist
+hip pain,2,severe,Orthopedic Specialist
+"sprain, shoulder pain, stiffness, mild discomfort",21,mild,Orthopedic Specialist
+"joint pain, muscle pain",28,moderate,Orthopedic Specialist
+"joint pain, muscle pain, shoulder pain, neck pain",25,mild,Orthopedic Specialist
+"sprain, fracture",23,mild,Orthopedic Specialist
+"back pain, shoulder pain, hip pain, neck pain",1,mild,Orthopedic Specialist
+"fracture, knee pain, stiffness, back pain",15,severe,Orthopedic Specialist
+"loss of appetite, joint pain, stiffness",23,moderate,Orthopedic Specialist
+"sprain, hip pain",7,severe,Orthopedic Specialist
+fracture,1,mild,Orthopedic Specialist
+"neck pain, stiffness, joint pain",14,mild,Orthopedic Specialist
+"fracture, stiffness, neck pain, joint pain",18,mild,Orthopedic Specialist
+"muscle pain, joint pain, sprain",21,mild,Orthopedic Specialist
+"fracture, stiffness, hip pain, joint pain",28,mild,Orthopedic Specialist
+"neck pain, stiffness",28,moderate,Orthopedic Specialist
+fracture,30,moderate,Orthopedic Specialist
+"back pain, muscle pain, fracture, shoulder pain",22,mild,Orthopedic Specialist
+"joint pain, back pain, hip pain, neck pain",19,severe,Orthopedic Specialist
+"neck pain, sprain",27,mild,Orthopedic Specialist
+"hip pain, knee pain, shoulder pain, sprain",4,moderate,Orthopedic Specialist
+"neck pain, joint pain",27,moderate,Orthopedic Specialist
+"knee pain, fracture, neck pain",14,mild,Orthopedic Specialist
+"neck pain, back pain",19,mild,Orthopedic Specialist
+"fracture, stiffness",10,mild,Orthopedic Specialist
+"sprain, muscle pain",3,severe,Orthopedic Specialist
+hip pain,4,moderate,Orthopedic Specialist
+"feeling unwell, joint pain",3,mild,Orthopedic Specialist
+"joint pain, sprain, shoulder pain",3,moderate,Orthopedic Specialist
+shoulder pain,13,severe,Orthopedic Specialist
+"muscle pain, hip pain, back pain, knee pain",12,moderate,Orthopedic Specialist
+knee pain,9,severe,Orthopedic Specialist
+"back pain, hip pain",7,severe,Orthopedic Specialist
+"occasional pain, shoulder pain",3,moderate,Orthopedic Specialist
+"hip pain, muscle pain",12,moderate,Orthopedic Specialist
+"sprain, stiffness, hip pain",9,mild,Orthopedic Specialist
+"muscle pain, joint pain, sprain",14,severe,Orthopedic Specialist
+"hip pain, lack of energy, fracture, muscle pain, neck pain",12,severe,Orthopedic Specialist
+stiffness,2,severe,Orthopedic Specialist
+"hip pain, sprain, muscle pain",13,mild,Orthopedic Specialist
+"fracture, sprain",8,mild,Orthopedic Specialist
+"feeling unwell, knee pain, hip pain, fracture",7,moderate,Orthopedic Specialist
+"neck pain, shoulder pain, joint pain",17,mild,Orthopedic Specialist
+"hip pain, sprain, joint pain",27,mild,Orthopedic Specialist
+"back pain, stiffness",14,mild,Orthopedic Specialist
+"fracture, joint pain, knee pain, sprain",30,moderate,Orthopedic Specialist
+"back pain, sprain",11,moderate,Orthopedic Specialist
+"stiffness, lack of energy",9,mild,Orthopedic Specialist
+"fracture, joint pain, sprain",10,moderate,Orthopedic Specialist
+"joint pain, fracture, muscle pain, occasional pain, stiffness",11,severe,Orthopedic Specialist
+"knee pain, shoulder pain, stiffness, joint pain",30,moderate,Orthopedic Specialist
+muscle pain,2,mild,Orthopedic Specialist
+"joint pain, fracture, muscle pain",23,mild,Orthopedic Specialist
+"feeling unwell, stiffness, hip pain",21,mild,Orthopedic Specialist
+neck pain,19,moderate,Orthopedic Specialist
+"fracture, feeling unwell, joint pain, stiffness, muscle pain",22,moderate,Orthopedic Specialist
+"hip pain, joint pain",7,mild,Orthopedic Specialist
+"sprain, stiffness",11,mild,Orthopedic Specialist
+"stiffness, knee pain, muscle pain",8,severe,Orthopedic Specialist
+"sprain, shoulder pain, neck pain, stiffness",6,moderate,Orthopedic Specialist
+knee pain,4,moderate,Orthopedic Specialist
+"stiffness, back pain",16,moderate,Orthopedic Specialist
+"fracture, joint pain, neck pain, lack of energy, muscle pain",17,mild,Orthopedic Specialist
+"joint pain, fracture, muscle pain, back pain",7,mild,Orthopedic Specialist
+"mild discomfort, sprain, neck pain, stiffness",4,mild,Orthopedic Specialist
+hip pain,3,moderate,Orthopedic Specialist
+"neck pain, sprain, shoulder pain",16,mild,Orthopedic Specialist
+"fracture, muscle pain",24,mild,Orthopedic Specialist
+"stiffness, neck pain",6,mild,Orthopedic Specialist
+knee pain,29,moderate,Orthopedic Specialist
+stiffness,1,mild,Orthopedic Specialist
+"back pain, joint pain, knee pain",16,severe,Orthopedic Specialist
+"back pain, muscle pain, joint pain, neck pain",25,mild,Orthopedic Specialist
+joint pain,24,mild,Orthopedic Specialist
+"hip pain, fracture, neck pain, muscle pain",27,mild,Orthopedic Specialist
+"stiffness, neck pain, joint pain",5,severe,Orthopedic Specialist
+"fracture, knee pain",19,moderate,Orthopedic Specialist
+"shoulder pain, fracture, joint pain, stiffness",9,severe,Orthopedic Specialist
+"neck pain, fracture, knee pain, muscle pain",9,mild,Orthopedic Specialist
+hip pain,11,moderate,Orthopedic Specialist
+sprain,19,severe,Orthopedic Specialist
+"joint pain, muscle pain, back pain",15,moderate,Orthopedic Specialist
+"knee pain, hip pain, neck pain",26,mild,Orthopedic Specialist
+"sprain, muscle pain, shoulder pain, back pain",1,mild,Orthopedic Specialist
+back pain,12,severe,Orthopedic Specialist
+"loss of appetite, muscle pain, joint pain",19,severe,Orthopedic Specialist
+"stiffness, back pain, shoulder pain",14,mild,Orthopedic Specialist
+muscle pain,20,mild,Orthopedic Specialist
+"neck pain, fracture, sleep problems, shoulder pain, knee pain",10,moderate,Orthopedic Specialist
+"knee pain, sprain, neck pain, stiffness",17,mild,Orthopedic Specialist
+"neck pain, stiffness, fracture",14,moderate,Orthopedic Specialist
+"sprain, occasional pain",26,mild,Orthopedic Specialist
+"muscle pain, knee pain, lack of energy, neck pain",15,moderate,Orthopedic Specialist
+"hip pain, knee pain, joint pain, back pain",27,mild,Orthopedic Specialist
+"back pain, hip pain, joint pain, fracture",17,mild,Orthopedic Specialist
+"hip pain, stiffness, shoulder pain, knee pain",4,mild,Orthopedic Specialist
+"joint pain, hip pain",7,mild,Orthopedic Specialist
+neck pain,2,severe,Orthopedic Specialist
+"sprain, stiffness, knee pain",27,moderate,Orthopedic Specialist
+"neck pain, sprain, hip pain, joint pain",6,moderate,Orthopedic Specialist
+"hip pain, stiffness",19,moderate,Orthopedic Specialist
+"joint pain, sprain, hip pain",1,mild,Orthopedic Specialist
+hip pain,19,mild,Orthopedic Specialist
+"knee pain, back pain, fracture, shoulder pain",6,mild,Orthopedic Specialist
+"neck pain, fracture",6,moderate,Orthopedic Specialist
+"stiffness, fracture, hip pain",26,moderate,Orthopedic Specialist
+"stiffness, sprain, joint pain",19,moderate,Orthopedic Specialist
+"neck pain, knee pain, fracture",2,mild,Orthopedic Specialist
+"shoulder pain, joint pain",30,moderate,Orthopedic Specialist
+"joint pain, hip pain, shoulder pain",25,severe,Orthopedic Specialist
+back pain,4,mild,Orthopedic Specialist
+stiffness,20,moderate,Orthopedic Specialist
+knee pain,23,mild,Orthopedic Specialist
+"hip pain, neck pain",16,mild,Orthopedic Specialist
+"hip pain, shoulder pain, knee pain",3,moderate,Orthopedic Specialist
+"occasional pain, shoulder pain",12,moderate,Orthopedic Specialist
+fracture,24,severe,Orthopedic Specialist
+"stiffness, muscle pain, shoulder pain, hip pain",14,moderate,Orthopedic Specialist
+"hip pain, sleep problems",4,mild,Orthopedic Specialist
+"neck pain, back pain",27,severe,Orthopedic Specialist
+"joint pain, fracture, sprain",3,moderate,Orthopedic Specialist
+"hip pain, neck pain",18,moderate,Orthopedic Specialist
+hip pain,30,severe,Orthopedic Specialist
+back pain,9,mild,Orthopedic Specialist
+knee pain,27,moderate,Orthopedic Specialist
+shoulder pain,26,severe,Orthopedic Specialist
+fracture,14,moderate,Orthopedic Specialist
+neck pain,5,mild,Orthopedic Specialist
+"sleep problems, joint pain",21,mild,Orthopedic Specialist
+"shoulder pain, muscle pain, back pain, stiffness, occasional pain",18,moderate,Orthopedic Specialist
+"hip pain, fracture, sprain, knee pain",4,severe,Orthopedic Specialist
+"shoulder pain, hip pain, fracture",8,mild,Orthopedic Specialist
+shoulder pain,25,severe,Orthopedic Specialist
+back pain,8,moderate,Orthopedic Specialist
+"back pain, occasional pain",2,mild,Orthopedic Specialist
+"muscle pain, knee pain",22,mild,Orthopedic Specialist
+joint pain,18,mild,Orthopedic Specialist
+"shoulder pain, stiffness, muscle pain",28,moderate,Orthopedic Specialist
+"joint pain, fracture, neck pain, lack of energy",7,severe,Orthopedic Specialist
+"muscle pain, neck pain",24,moderate,Orthopedic Specialist
+"back pain, shoulder pain",4,mild,Orthopedic Specialist
+muscle pain,13,mild,Orthopedic Specialist
+back pain,20,mild,Orthopedic Specialist
+sprain,2,mild,Orthopedic Specialist
+"fracture, sprain, knee pain, back pain",30,moderate,Orthopedic Specialist
+"hip pain, shoulder pain, back pain",28,mild,Orthopedic Specialist
+joint pain,24,severe,Orthopedic Specialist
+"neck pain, stiffness, sprain",6,severe,Orthopedic Specialist
+"knee pain, neck pain, shoulder pain, back pain",25,moderate,Orthopedic Specialist
+"hip pain, back pain, sprain",22,mild,Orthopedic Specialist
+joint pain,22,mild,Orthopedic Specialist
+"neck pain, stiffness, knee pain, mild discomfort",16,moderate,Orthopedic Specialist
+"back pain, sprain",9,severe,Orthopedic Specialist
+"joint pain, knee pain, stiffness",28,moderate,Orthopedic Specialist
+"hip pain, knee pain",8,mild,Orthopedic Specialist
+knee pain,28,mild,Orthopedic Specialist
+"loss of appetite, back pain, neck pain, shoulder pain",22,moderate,Orthopedic Specialist
+"shoulder pain, back pain, neck pain",4,moderate,Orthopedic Specialist
+"shoulder pain, fracture",3,moderate,Orthopedic Specialist
+"knee pain, fracture, back pain",14,severe,Orthopedic Specialist
+"back pain, muscle pain, stiffness",30,mild,Orthopedic Specialist
+joint pain,26,mild,Orthopedic Specialist
+"back pain, sprain, shoulder pain",25,severe,Orthopedic Specialist
+joint pain,8,moderate,Orthopedic Specialist
+"neck pain, back pain, joint pain, muscle pain",7,moderate,Orthopedic Specialist
+"hip pain, shoulder pain, fracture",15,mild,Orthopedic Specialist
+shoulder pain,29,mild,Orthopedic Specialist
+fracture,3,severe,Orthopedic Specialist
+"sprain, hip pain, stiffness, shoulder pain",25,severe,Orthopedic Specialist
+"hip pain, muscle pain",11,mild,Orthopedic Specialist
+"knee pain, muscle pain, sprain, neck pain",1,mild,Orthopedic Specialist
+"neck pain, mild discomfort, stiffness, muscle pain, fracture",3,mild,Orthopedic Specialist
+"sprain, shoulder pain, knee pain, fracture",4,mild,Orthopedic Specialist
+"hip pain, back pain, joint pain, feeling unwell",24,moderate,Orthopedic Specialist
+"knee pain, stiffness, neck pain",5,severe,Orthopedic Specialist
+"stiffness, sprain, fracture",25,mild,Orthopedic Specialist
+"stiffness, fracture, back pain",10,mild,Orthopedic Specialist
+"hip pain, knee pain, back pain",14,moderate,Orthopedic Specialist
+"joint pain, muscle pain, fracture",16,mild,Orthopedic Specialist
+"hip pain, muscle pain",30,mild,Orthopedic Specialist
+"joint pain, knee pain, shoulder pain",1,moderate,Orthopedic Specialist
+neck pain,7,mild,Orthopedic Specialist
+fracture,19,mild,Orthopedic Specialist
+"hip pain, stiffness, knee pain, neck pain",16,mild,Orthopedic Specialist
+"joint pain, muscle pain",24,moderate,Orthopedic Specialist
+fracture,11,mild,Orthopedic Specialist
+fracture,2,mild,Orthopedic Specialist
+"neck pain, shoulder pain, back pain",8,mild,Orthopedic Specialist
+"shoulder pain, neck pain, muscle pain, hip pain",10,mild,Orthopedic Specialist
+neck pain,24,mild,Orthopedic Specialist
+"joint pain, stiffness, shoulder pain, fracture",20,mild,Orthopedic Specialist
+"stiffness, fracture",29,mild,Orthopedic Specialist
+"muscle pain, stiffness",20,mild,Orthopedic Specialist
+"muscle pain, back pain, joint pain, shoulder pain",11,mild,Orthopedic Specialist
+"joint pain, knee pain, neck pain, stiffness",23,mild,Orthopedic Specialist
+"shoulder pain, stiffness, back pain, sprain",18,moderate,Orthopedic Specialist
+"fracture, neck pain, sprain",9,severe,Orthopedic Specialist
+"fracture, shoulder pain, stiffness",15,mild,Orthopedic Specialist
+"shoulder pain, neck pain",20,moderate,Orthopedic Specialist
+"loss of appetite, neck pain, hip pain",3,moderate,Orthopedic Specialist
+"neck pain, fracture, joint pain",12,moderate,Orthopedic Specialist
+"sprain, neck pain",10,moderate,Orthopedic Specialist
+"sprain, shoulder pain, fracture",2,moderate,Orthopedic Specialist
+neck pain,16,mild,Orthopedic Specialist
+"back pain, muscle pain, shoulder pain",2,mild,Orthopedic Specialist
+sprain,5,moderate,Orthopedic Specialist
+"joint pain, hip pain, neck pain",1,mild,Orthopedic Specialist
+"joint pain, sprain",26,mild,Orthopedic Specialist
+muscle pain,7,mild,Orthopedic Specialist
+"sprain, muscle pain, hip pain, back pain",16,mild,Orthopedic Specialist
+"sprain, back pain",12,moderate,Orthopedic Specialist
+stiffness,1,mild,Orthopedic Specialist
+"fracture, stiffness",21,mild,Orthopedic Specialist
+"hip pain, joint pain",28,severe,Orthopedic Specialist
+"joint pain, knee pain",17,moderate,Orthopedic Specialist
+"back pain, stiffness",24,mild,Orthopedic Specialist
+"ear pain, sinus pain",28,mild,ENT Specialist
+"hoarseness, ear discharge",21,mild,ENT Specialist
+"hearing loss, ear pain, hoarseness, ear discharge",25,mild,ENT Specialist
+sore throat,28,severe,ENT Specialist
+tonsillitis,21,moderate,ENT Specialist
+"sore throat, hoarseness, mild discomfort, tonsillitis, nasal congestion",17,mild,ENT Specialist
+"sore throat, blocked nose, hoarseness",26,moderate,ENT Specialist
+"ear discharge, hoarseness, runny nose",6,moderate,ENT Specialist
+"tonsillitis, sinus pain, hearing loss, ear pain",23,mild,ENT Specialist
+hoarseness,4,mild,ENT Specialist
+"hearing loss, blocked nose, hoarseness, sore throat",30,mild,ENT Specialist
+"tonsillitis, sinus pain, runny nose",18,moderate,ENT Specialist
+"occasional pain, hearing loss, sore throat",9,moderate,ENT Specialist
+"hoarseness, tonsillitis",26,moderate,ENT Specialist
+"tonsillitis, ear pain, nasal congestion, sore throat",5,mild,ENT Specialist
+"mild discomfort, sinus pain",17,moderate,ENT Specialist
+"ear discharge, blocked nose, runny nose, sinus pain",13,moderate,ENT Specialist
+"sinus pain, hoarseness, blocked nose, sleep problems, runny nose",23,mild,ENT Specialist
+"sinus pain, ear discharge, blocked nose, hoarseness",21,mild,ENT Specialist
+sinus pain,25,moderate,ENT Specialist
+"blocked nose, hoarseness, ear discharge, nasal congestion",12,moderate,ENT Specialist
+blocked nose,4,severe,ENT Specialist
+"runny nose, hoarseness, ear pain, feeling unwell",23,moderate,ENT Specialist
+"ear pain, blocked nose, ear discharge",16,mild,ENT Specialist
+ear pain,20,severe,ENT Specialist
+"mild discomfort, blocked nose, sore throat",21,moderate,ENT Specialist
+"hoarseness, runny nose, hearing loss",11,moderate,ENT Specialist
+"sore throat, ear pain, sinus pain",27,moderate,ENT Specialist
+hearing loss,25,moderate,ENT Specialist
+"hearing loss, sleep problems, ear discharge, sore throat",6,moderate,ENT Specialist
+runny nose,12,mild,ENT Specialist
+"ear discharge, mild discomfort, ear pain, blocked nose, hearing loss",19,moderate,ENT Specialist
+sore throat,7,moderate,ENT Specialist
+"tonsillitis, hearing loss, runny nose, nasal congestion",10,mild,ENT Specialist
+"blocked nose, sore throat, runny nose",27,mild,ENT Specialist
+"sore throat, runny nose",9,mild,ENT Specialist
+"blocked nose, sinus pain, hoarseness",27,moderate,ENT Specialist
+"tonsillitis, ear pain",23,mild,ENT Specialist
+"occasional pain, sinus pain, nasal congestion, runny nose",9,mild,ENT Specialist
+hoarseness,6,moderate,ENT Specialist
+"hoarseness, runny nose, sinus pain, blocked nose",21,mild,ENT Specialist
+sore throat,11,mild,ENT Specialist
+sore throat,10,mild,ENT Specialist
+"ear pain, ear discharge",19,moderate,ENT Specialist
+"tonsillitis, sore throat, ear discharge, nasal congestion",10,mild,ENT Specialist
+"hoarseness, hearing loss",19,mild,ENT Specialist
+sore throat,30,mild,ENT Specialist
+"sore throat, feeling unwell, blocked nose",10,moderate,ENT Specialist
+"sinus pain, ear discharge",1,moderate,ENT Specialist
+"runny nose, sore throat",8,severe,ENT Specialist
+"sinus pain, nasal congestion, hearing loss, sore throat",6,mild,ENT Specialist
+"tonsillitis, hoarseness, nasal congestion, ear discharge",25,severe,ENT Specialist
+"sore throat, sinus pain, nasal congestion, blocked nose",20,mild,ENT Specialist
+sinus pain,24,severe,ENT Specialist
+nasal congestion,6,moderate,ENT Specialist
+"ear pain, sinus pain, blocked nose",21,mild,ENT Specialist
+"sore throat, nasal congestion, ear pain, blocked nose",14,mild,ENT Specialist
+"ear pain, tonsillitis, ear discharge",6,mild,ENT Specialist
+ear discharge,12,moderate,ENT Specialist
+tonsillitis,1,mild,ENT Specialist
+"blocked nose, hoarseness",1,moderate,ENT Specialist
+"nasal congestion, ear pain, runny nose, tonsillitis",17,mild,ENT Specialist
+"sinus pain, hoarseness, blocked nose, ear pain",28,moderate,ENT Specialist
+"ear pain, sinus pain",7,moderate,ENT Specialist
+"lack of energy, ear pain, tonsillitis, ear discharge, sore throat",9,mild,ENT Specialist
+"ear pain, runny nose, hoarseness",1,mild,ENT Specialist
+"ear pain, hearing loss, sinus pain",8,mild,ENT Specialist
+sore throat,21,moderate,ENT Specialist
+"sinus pain, ear discharge, nasal congestion",2,mild,ENT Specialist
+"sore throat, ear pain, hearing loss",11,severe,ENT Specialist
+"tonsillitis, blocked nose, ear pain",24,moderate,ENT Specialist
+tonsillitis,26,mild,ENT Specialist
+"nasal congestion, hoarseness, runny nose",19,moderate,ENT Specialist
+"blocked nose, sore throat, runny nose, ear discharge",9,mild,ENT Specialist
+"ear pain, tonsillitis",9,moderate,ENT Specialist
+"hoarseness, feeling unwell, hearing loss, nasal congestion",24,moderate,ENT Specialist
+"runny nose, sinus pain, tonsillitis, blocked nose",11,mild,ENT Specialist
+"sore throat, hearing loss, hoarseness, ear discharge",9,mild,ENT Specialist
+ear discharge,12,mild,ENT Specialist
+"sinus pain, runny nose, blocked nose",5,moderate,ENT Specialist
+"blocked nose, sinus pain",25,mild,ENT Specialist
+"ear discharge, hoarseness, nasal congestion",13,moderate,ENT Specialist
+hearing loss,7,severe,ENT Specialist
+"tonsillitis, sore throat, blocked nose",14,severe,ENT Specialist
+"sinus pain, blocked nose, hearing loss",17,moderate,ENT Specialist
+"tonsillitis, ear discharge, nasal congestion, hoarseness",13,mild,ENT Specialist
+"ear discharge, sore throat, hearing loss",14,mild,ENT Specialist
+blocked nose,20,moderate,ENT Specialist
+blocked nose,14,severe,ENT Specialist
+"sore throat, blocked nose, nasal congestion",12,mild,ENT Specialist
+"nasal congestion, hoarseness, blocked nose, tonsillitis",6,moderate,ENT Specialist
+"sore throat, sinus pain",7,moderate,ENT Specialist
+"ear discharge, nasal congestion, blocked nose, tonsillitis",26,moderate,ENT Specialist
+"nasal congestion, ear discharge, sore throat",24,mild,ENT Specialist
+"ear discharge, hoarseness, ear pain, tonsillitis",23,moderate,ENT Specialist
+ear discharge,24,mild,ENT Specialist
+"tonsillitis, ear pain, sinus pain, hoarseness",4,mild,ENT Specialist
+"blocked nose, hearing loss, sore throat",5,severe,ENT Specialist
+"sore throat, hearing loss, runny nose, nasal congestion",25,mild,ENT Specialist
+"sinus pain, ear discharge, runny nose",19,mild,ENT Specialist
+"feeling unwell, sore throat",8,severe,ENT Specialist
+"runny nose, sore throat, blocked nose",23,mild,ENT Specialist
+"sore throat, hoarseness, blocked nose",21,mild,ENT Specialist
+"blocked nose, mild discomfort, runny nose",24,moderate,ENT Specialist
+"ear discharge, sore throat, blocked nose, sinus pain",13,severe,ENT Specialist
+"hoarseness, ear discharge, sore throat, hearing loss",11,mild,ENT Specialist
+"sore throat, nasal congestion",21,mild,ENT Specialist
+"nasal congestion, sinus pain, ear pain, ear discharge",11,moderate,ENT Specialist
+"hearing loss, blocked nose, hoarseness",19,moderate,ENT Specialist
+"sore throat, runny nose",8,moderate,ENT Specialist
+"ear discharge, sore throat, runny nose, ear pain",29,severe,ENT Specialist
+"ear pain, nasal congestion, hoarseness",15,mild,ENT Specialist
+sinus pain,3,mild,ENT Specialist
+"occasional pain, ear discharge",18,moderate,ENT Specialist
+"ear pain, runny nose, tonsillitis, ear discharge",19,moderate,ENT Specialist
+"ear pain, tonsillitis, hoarseness, runny nose",17,mild,ENT Specialist
+"runny nose, hoarseness, nasal congestion",21,mild,ENT Specialist
+"ear discharge, ear pain",16,mild,ENT Specialist
+tonsillitis,4,severe,ENT Specialist
+"sore throat, hearing loss, sinus pain, hoarseness",17,mild,ENT Specialist
+"runny nose, hoarseness, hearing loss, nasal congestion",25,mild,ENT Specialist
+"sore throat, blocked nose",21,moderate,ENT Specialist
+"hoarseness, runny nose, nasal congestion, blocked nose",10,mild,ENT Specialist
+"sinus pain, runny nose, ear discharge",1,moderate,ENT Specialist
+"sinus pain, ear pain, tonsillitis, ear discharge",27,moderate,ENT Specialist
+"blocked nose, runny nose",11,mild,ENT Specialist
+"nasal congestion, sinus pain, hoarseness, tonsillitis",3,mild,ENT Specialist
+"ear discharge, ear pain, blocked nose",8,mild,ENT Specialist
+"ear pain, sinus pain, hearing loss, blocked nose",4,moderate,ENT Specialist
+sinus pain,24,mild,ENT Specialist
+"runny nose, sore throat",15,mild,ENT Specialist
+"blocked nose, runny nose, hoarseness",28,moderate,ENT Specialist
+"nasal congestion, sinus pain, ear discharge",15,mild,ENT Specialist
+"blocked nose, runny nose",5,mild,ENT Specialist
+"hoarseness, blocked nose, sleep problems, ear discharge, tonsillitis",2,severe,ENT Specialist
+"ear discharge, hoarseness, runny nose",24,mild,ENT Specialist
+hoarseness,18,mild,ENT Specialist
+blocked nose,20,moderate,ENT Specialist
+"hearing loss, tonsillitis",15,severe,ENT Specialist
+"sinus pain, hearing loss",15,moderate,ENT Specialist
+"tonsillitis, runny nose, ear pain, blocked nose",8,mild,ENT Specialist
+"runny nose, nasal congestion",18,moderate,ENT Specialist
+"sinus pain, blocked nose",7,moderate,ENT Specialist
+"sore throat, runny nose, sleep problems",25,mild,ENT Specialist
+"sinus pain, hearing loss, hoarseness",7,mild,ENT Specialist
+"hoarseness, runny nose, tonsillitis, nasal congestion",27,severe,ENT Specialist
+ear discharge,28,moderate,ENT Specialist
+"ear discharge, ear pain, hoarseness, nasal congestion",3,severe,ENT Specialist
+sore throat,4,severe,ENT Specialist
+"nasal congestion, tonsillitis, sinus pain",16,mild,ENT Specialist
+"ear discharge, lack of energy",13,severe,ENT Specialist
+sinus pain,10,moderate,ENT Specialist
+"hearing loss, runny nose, nasal congestion, sinus pain",9,moderate,ENT Specialist
+"sore throat, nasal congestion, ear pain",17,mild,ENT Specialist
+"ear pain, tonsillitis, blocked nose, nasal congestion",27,mild,ENT Specialist
+"hoarseness, sore throat",12,severe,ENT Specialist
+"sore throat, occasional pain",13,moderate,ENT Specialist
+"ear pain, blocked nose, sinus pain",29,moderate,ENT Specialist
+"ear pain, tonsillitis",6,mild,ENT Specialist
+"tonsillitis, hearing loss, nasal congestion",15,severe,ENT Specialist
+"nasal congestion, ear pain, sore throat, runny nose",22,moderate,ENT Specialist
+ear discharge,27,severe,ENT Specialist
+"nasal congestion, sore throat",8,moderate,ENT Specialist
+tonsillitis,20,mild,ENT Specialist
+"runny nose, sore throat",11,moderate,ENT Specialist
+"blocked nose, tonsillitis, hoarseness, runny nose",22,mild,ENT Specialist
+tonsillitis,26,mild,ENT Specialist
+"sore throat, ear pain",6,mild,ENT Specialist
+blocked nose,28,mild,ENT Specialist
+"blocked nose, nasal congestion, ear discharge, runny nose",21,moderate,ENT Specialist
+"sinus pain, runny nose, sore throat",22,mild,ENT Specialist
+"hearing loss, hoarseness, runny nose",18,mild,ENT Specialist
+"loss of appetite, ear discharge, hearing loss",28,mild,ENT Specialist
+"hearing loss, tonsillitis, blocked nose, hoarseness",5,moderate,ENT Specialist
+"ear pain, nasal congestion",17,moderate,ENT Specialist
+"blocked nose, hoarseness",18,mild,ENT Specialist
+"sore throat, sinus pain, occasional pain",27,severe,ENT Specialist
+"hoarseness, tonsillitis",2,severe,ENT Specialist
+"runny nose, nasal congestion, hoarseness, tonsillitis",1,mild,ENT Specialist
+"hearing loss, ear pain, nasal congestion",16,moderate,ENT Specialist
+"tonsillitis, sore throat",19,mild,ENT Specialist
+"nasal congestion, lack of energy, runny nose, hearing loss",7,mild,ENT Specialist
+"ear pain, sinus pain, hearing loss",25,moderate,ENT Specialist
+"ear discharge, runny nose, nasal congestion, tonsillitis, loss of appetite",29,severe,ENT Specialist
+"tonsillitis, runny nose, ear pain",21,moderate,ENT Specialist
+"runny nose, ear discharge",3,severe,ENT Specialist
+"ear discharge, nasal congestion, tonsillitis",28,moderate,ENT Specialist
+"runny nose, sinus pain, hoarseness",3,mild,ENT Specialist
+"runny nose, ear discharge, nasal congestion, blocked nose",18,moderate,ENT Specialist
+"hoarseness, ear pain, tonsillitis, blocked nose",4,severe,ENT Specialist
+"tonsillitis, sinus pain",12,moderate,ENT Specialist
+"hoarseness, ear discharge, ear pain, nasal congestion",7,moderate,ENT Specialist
+"lack of energy, sinus pain",24,moderate,ENT Specialist
+"hoarseness, blocked nose, sinus pain",15,moderate,ENT Specialist
+"ear discharge, runny nose, sore throat",24,mild,ENT Specialist
+"ear discharge, sore throat, hearing loss",11,moderate,ENT Specialist
+hearing loss,11,moderate,ENT Specialist
+"tonsillitis, nasal congestion",12,mild,ENT Specialist
+"sinus pain, sore throat, ear discharge, hoarseness, occasional pain",25,moderate,ENT Specialist
+"hearing loss, tonsillitis",23,moderate,ENT Specialist
+"sinus pain, runny nose, blocked nose, sore throat",28,severe,ENT Specialist
+"sinus pain, blocked nose, hearing loss",8,moderate,ENT Specialist
+"ear discharge, nasal congestion, ear pain",29,mild,ENT Specialist
+"ear pain, sore throat",28,moderate,ENT Specialist
+"tonsillitis, hoarseness, nasal congestion, ear discharge",24,mild,ENT Specialist
+"sinus pain, tonsillitis, runny nose",18,mild,ENT Specialist
+"nasal congestion, sinus pain",4,severe,ENT Specialist
+"hoarseness, tonsillitis, hearing loss, sinus pain",23,moderate,ENT Specialist
+"runny nose, ear discharge",15,moderate,ENT Specialist
+"ear discharge, hearing loss, tonsillitis, blocked nose, lack of energy",28,moderate,ENT Specialist
+"sinus pain, loss of appetite",19,mild,ENT Specialist
+blocked nose,23,moderate,ENT Specialist
+"tonsillitis, nasal congestion",18,moderate,ENT Specialist
+"nasal congestion, sleep problems, sinus pain, tonsillitis",23,moderate,ENT Specialist
+hearing loss,17,mild,ENT Specialist
+"blocked nose, nasal congestion",27,mild,ENT Specialist
+"hearing loss, blocked nose, sinus pain, ear pain",23,moderate,ENT Specialist
+"sore throat, hearing loss, runny nose",29,mild,ENT Specialist
+sore throat,7,mild,ENT Specialist
+sinus pain,4,moderate,ENT Specialist
+"sleep problems, blocked nose",22,mild,ENT Specialist
+"ear pain, feeling unwell, hoarseness",1,moderate,ENT Specialist
+"nasal congestion, hearing loss, sore throat",18,mild,ENT Specialist
+"sinus pain, hearing loss, sore throat",17,mild,ENT Specialist
+"tonsillitis, blocked nose, ear pain, hearing loss",22,mild,ENT Specialist
+"ear discharge, hearing loss",20,severe,ENT Specialist
+"ear discharge, ear pain, tonsillitis, hoarseness",12,mild,ENT Specialist
+"tonsillitis, sore throat, ear pain, nasal congestion, lack of energy",22,moderate,ENT Specialist
+"hoarseness, occasional pain, nasal congestion, sore throat, runny nose",13,mild,ENT Specialist
+"ear discharge, sleep problems",20,mild,ENT Specialist
+"ear pain, runny nose, hearing loss, hoarseness",21,mild,ENT Specialist
+"hoarseness, feeling unwell",7,mild,ENT Specialist
+tonsillitis,17,moderate,ENT Specialist
+"nasal congestion, hearing loss, ear pain",23,mild,ENT Specialist
+"nasal congestion, ear discharge",2,severe,ENT Specialist
+"hearing loss, runny nose, occasional pain",6,severe,ENT Specialist
+"tonsillitis, sinus pain, occasional pain",20,moderate,ENT Specialist
+"sinus pain, blocked nose, runny nose, nasal congestion",14,moderate,ENT Specialist
+"ear discharge, nasal congestion, runny nose, sore throat",5,moderate,ENT Specialist
+"blocked nose, lack of energy, hearing loss",18,mild,ENT Specialist
+"tonsillitis, runny nose, hoarseness",4,moderate,ENT Specialist
+"hearing loss, ear discharge, nasal congestion, mild discomfort, hoarseness",8,mild,ENT Specialist
+"ear discharge, sore throat, hearing loss, hoarseness",15,moderate,ENT Specialist
+hoarseness,7,moderate,ENT Specialist
+"sore throat, ear pain, blocked nose",12,moderate,ENT Specialist
+tonsillitis,10,moderate,ENT Specialist
+"sore throat, nasal congestion",1,severe,ENT Specialist
+nasal congestion,10,moderate,ENT Specialist
+"loss of appetite, sinus pain, hoarseness",17,moderate,ENT Specialist
+"blocked nose, sinus pain, mild discomfort",1,mild,ENT Specialist
+heartburn,4,severe,Gastroenterologist
+blood in stool,1,moderate,Gastroenterologist
+"heartburn, blood in stool, constipation, bloating",22,moderate,Gastroenterologist
+"stomach cramps, indigestion, bloating",18,severe,Gastroenterologist
+"constipation, vomiting",13,severe,Gastroenterologist
+"bloating, abdominal pain",5,mild,Gastroenterologist
+"nausea, diarrhea, stomach cramps, heartburn",14,severe,Gastroenterologist
+"indigestion, blood in stool, diarrhea, heartburn",5,moderate,Gastroenterologist
+"blood in stool, diarrhea",28,moderate,Gastroenterologist
+"heartburn, indigestion, stomach cramps",13,mild,Gastroenterologist
+stomach cramps,10,severe,Gastroenterologist
+"abdominal pain, vomiting, stomach cramps, diarrhea",30,moderate,Gastroenterologist
+"indigestion, abdominal pain",19,moderate,Gastroenterologist
+"vomiting, heartburn, blood in stool",14,mild,Gastroenterologist
+"indigestion, vomiting",22,mild,Gastroenterologist
+"nausea, mild discomfort",28,mild,Gastroenterologist
+"blood in stool, vomiting, diarrhea",20,severe,Gastroenterologist
+"blood in stool, vomiting, indigestion, bloating",14,mild,Gastroenterologist
+"bloating, indigestion, vomiting, stomach cramps",30,mild,Gastroenterologist
+vomiting,16,mild,Gastroenterologist
+"bloating, abdominal pain",15,severe,Gastroenterologist
+"bloating, stomach cramps, abdominal pain, blood in stool",20,mild,Gastroenterologist
+"bloating, diarrhea, nausea, vomiting",1,moderate,Gastroenterologist
+"nausea, constipation, bloating, vomiting",29,mild,Gastroenterologist
+"constipation, blood in stool",11,mild,Gastroenterologist
+"bloating, blood in stool, abdominal pain, nausea",10,mild,Gastroenterologist
+"heartburn, abdominal pain, blood in stool, bloating",26,moderate,Gastroenterologist
+"heartburn, vomiting, indigestion, bloating",9,mild,Gastroenterologist
+"bloating, blood in stool, abdominal pain, nausea",6,mild,Gastroenterologist
+"diarrhea, blood in stool",1,moderate,Gastroenterologist
+"blood in stool, vomiting, nausea",26,moderate,Gastroenterologist
+abdominal pain,7,severe,Gastroenterologist
+"mild discomfort, vomiting",14,moderate,Gastroenterologist
+"diarrhea, abdominal pain",11,moderate,Gastroenterologist
+"indigestion, diarrhea",20,moderate,Gastroenterologist
+"abdominal pain, indigestion, nausea, constipation",9,mild,Gastroenterologist
+"nausea, blood in stool",25,severe,Gastroenterologist
+"heartburn, constipation",7,mild,Gastroenterologist
+"diarrhea, stomach cramps, abdominal pain",10,moderate,Gastroenterologist
+"feeling unwell, abdominal pain",20,moderate,Gastroenterologist
+"nausea, indigestion, bloating, abdominal pain",23,moderate,Gastroenterologist
+blood in stool,27,mild,Gastroenterologist
+"indigestion, blood in stool, bloating",18,severe,Gastroenterologist
+"diarrhea, feeling unwell, vomiting",29,moderate,Gastroenterologist
+"stomach cramps, blood in stool, lack of energy, indigestion, nausea",13,severe,Gastroenterologist
+"bloating, loss of appetite, heartburn",19,severe,Gastroenterologist
+"abdominal pain, nausea",9,mild,Gastroenterologist
+indigestion,10,moderate,Gastroenterologist
+"diarrhea, indigestion, blood in stool",14,severe,Gastroenterologist
+"abdominal pain, indigestion",3,severe,Gastroenterologist
+"vomiting, constipation, blood in stool, nausea",16,mild,Gastroenterologist
+"constipation, vomiting, bloating",20,mild,Gastroenterologist
+"vomiting, bloating, blood in stool",1,mild,Gastroenterologist
+"diarrhea, blood in stool, indigestion, bloating",26,mild,Gastroenterologist
+"diarrhea, blood in stool, bloating",23,moderate,Gastroenterologist
+"indigestion, diarrhea",11,moderate,Gastroenterologist
+heartburn,20,mild,Gastroenterologist
+"nausea, indigestion, diarrhea, constipation",12,moderate,Gastroenterologist
+indigestion,21,mild,Gastroenterologist
+"blood in stool, vomiting, indigestion",11,moderate,Gastroenterologist
+"nausea, diarrhea",24,severe,Gastroenterologist
+"stomach cramps, heartburn, diarrhea",9,mild,Gastroenterologist
+"abdominal pain, heartburn, lack of energy, blood in stool",18,mild,Gastroenterologist
+"constipation, bloating, nausea, diarrhea",19,mild,Gastroenterologist
+"nausea, feeling unwell",12,mild,Gastroenterologist
+"heartburn, stomach cramps, bloating, abdominal pain",21,mild,Gastroenterologist
+"loss of appetite, stomach cramps",16,mild,Gastroenterologist
+vomiting,17,mild,Gastroenterologist
+"nausea, bloating",3,mild,Gastroenterologist
+indigestion,2,moderate,Gastroenterologist
+"nausea, heartburn, vomiting, stomach cramps",8,mild,Gastroenterologist
+abdominal pain,23,mild,Gastroenterologist
+abdominal pain,8,severe,Gastroenterologist
+"stomach cramps, bloating",1,moderate,Gastroenterologist
+"abdominal pain, heartburn, indigestion",19,mild,Gastroenterologist
+"loss of appetite, indigestion, blood in stool",17,severe,Gastroenterologist
+"diarrhea, heartburn",30,moderate,Gastroenterologist
+"stomach cramps, bloating, constipation",25,moderate,Gastroenterologist
+"diarrhea, bloating, constipation",15,mild,Gastroenterologist
+"vomiting, abdominal pain, nausea, diarrhea",7,moderate,Gastroenterologist
+"constipation, diarrhea, bloating",19,severe,Gastroenterologist
+"stomach cramps, abdominal pain, diarrhea",28,mild,Gastroenterologist
+"heartburn, indigestion, diarrhea, bloating",18,moderate,Gastroenterologist
+"blood in stool, nausea",20,mild,Gastroenterologist
+constipation,10,mild,Gastroenterologist
+"abdominal pain, nausea",14,moderate,Gastroenterologist
+"heartburn, nausea, constipation",29,mild,Gastroenterologist
+"indigestion, constipation",4,severe,Gastroenterologist
+indigestion,4,mild,Gastroenterologist
+"stomach cramps, indigestion",23,moderate,Gastroenterologist
+vomiting,13,moderate,Gastroenterologist
+abdominal pain,27,moderate,Gastroenterologist
+"abdominal pain, blood in stool",23,mild,Gastroenterologist
+"abdominal pain, bloating, diarrhea, constipation",26,mild,Gastroenterologist
+blood in stool,14,moderate,Gastroenterologist
+"abdominal pain, diarrhea, constipation, feeling unwell, vomiting",12,moderate,Gastroenterologist
+"stomach cramps, blood in stool, vomiting",14,mild,Gastroenterologist
+"bloating, indigestion, blood in stool, heartburn",12,severe,Gastroenterologist
+blood in stool,5,mild,Gastroenterologist
+"vomiting, indigestion, blood in stool",20,mild,Gastroenterologist
+"vomiting, blood in stool",27,moderate,Gastroenterologist
+heartburn,17,moderate,Gastroenterologist
+"sleep problems, blood in stool",24,mild,Gastroenterologist
+"indigestion, bloating, nausea",17,moderate,Gastroenterologist
+"heartburn, bloating, stomach cramps, diarrhea",5,moderate,Gastroenterologist
+"abdominal pain, stomach cramps",5,severe,Gastroenterologist
+"heartburn, diarrhea, constipation",27,mild,Gastroenterologist
+abdominal pain,7,mild,Gastroenterologist
+nausea,4,mild,Gastroenterologist
+"constipation, heartburn, abdominal pain",10,mild,Gastroenterologist
+"stomach cramps, abdominal pain, blood in stool, indigestion",23,moderate,Gastroenterologist
+"stomach cramps, nausea, bloating, heartburn",1,mild,Gastroenterologist
+"occasional pain, constipation, indigestion, stomach cramps, nausea",8,moderate,Gastroenterologist
+"constipation, bloating, abdominal pain, indigestion",4,mild,Gastroenterologist
+"blood in stool, abdominal pain",3,moderate,Gastroenterologist
+"abdominal pain, heartburn, constipation, vomiting",10,severe,Gastroenterologist
+constipation,14,mild,Gastroenterologist
+"diarrhea, nausea",1,mild,Gastroenterologist
+"abdominal pain, heartburn",11,severe,Gastroenterologist
+"abdominal pain, diarrhea, nausea, indigestion",15,moderate,Gastroenterologist
+"bloating, abdominal pain, stomach cramps, indigestion",9,mild,Gastroenterologist
+"nausea, vomiting, blood in stool, stomach cramps",17,severe,Gastroenterologist
+"abdominal pain, nausea",22,mild,Gastroenterologist
+"stomach cramps, loss of appetite, indigestion, constipation",4,moderate,Gastroenterologist
+"diarrhea, vomiting",1,mild,Gastroenterologist
+nausea,9,moderate,Gastroenterologist
+constipation,5,mild,Gastroenterologist
+"indigestion, diarrhea",16,moderate,Gastroenterologist
+vomiting,21,moderate,Gastroenterologist
+vomiting,28,moderate,Gastroenterologist
+indigestion,3,moderate,Gastroenterologist
+"heartburn, bloating",14,mild,Gastroenterologist
+"abdominal pain, blood in stool, bloating, heartburn",20,moderate,Gastroenterologist
+"vomiting, indigestion",21,severe,Gastroenterologist
+"stomach cramps, diarrhea",14,moderate,Gastroenterologist
+"bloating, nausea, blood in stool, stomach cramps",12,mild,Gastroenterologist
+"indigestion, bloating, constipation",30,mild,Gastroenterologist
+"stomach cramps, heartburn, blood in stool, indigestion",3,moderate,Gastroenterologist
+"stomach cramps, nausea, blood in stool",28,mild,Gastroenterologist
+"blood in stool, bloating",12,severe,Gastroenterologist
+"bloating, stomach cramps",9,moderate,Gastroenterologist
+"blood in stool, vomiting",7,moderate,Gastroenterologist
+"bloating, stomach cramps, blood in stool",4,moderate,Gastroenterologist
+"diarrhea, blood in stool, bloating",12,mild,Gastroenterologist
+"bloating, nausea, indigestion, constipation",13,moderate,Gastroenterologist
+"abdominal pain, diarrhea, nausea, heartburn",17,moderate,Gastroenterologist
+"constipation, abdominal pain",20,mild,Gastroenterologist
+"bloating, indigestion, heartburn, nausea",28,mild,Gastroenterologist
+stomach cramps,5,moderate,Gastroenterologist
+"indigestion, diarrhea, abdominal pain, sleep problems, stomach cramps",8,mild,Gastroenterologist
+"stomach cramps, bloating, diarrhea",25,mild,Gastroenterologist
+"nausea, diarrhea, stomach cramps, abdominal pain, loss of appetite",4,mild,Gastroenterologist
+"indigestion, constipation, diarrhea, blood in stool",4,mild,Gastroenterologist
+"blood in stool, indigestion, heartburn",14,moderate,Gastroenterologist
+"abdominal pain, heartburn, vomiting, stomach cramps",14,moderate,Gastroenterologist
+"bloating, indigestion, abdominal pain",20,mild,Gastroenterologist
+"nausea, heartburn",7,mild,Gastroenterologist
+"diarrhea, constipation, heartburn",20,severe,Gastroenterologist
+blood in stool,23,mild,Gastroenterologist
+heartburn,12,mild,Gastroenterologist
+"abdominal pain, indigestion, heartburn, blood in stool",12,severe,Gastroenterologist
+"vomiting, indigestion, stomach cramps",28,mild,Gastroenterologist
+"stomach cramps, diarrhea, bloating, abdominal pain",9,mild,Gastroenterologist
+"vomiting, lack of energy, indigestion, constipation",14,mild,Gastroenterologist
+diarrhea,20,mild,Gastroenterologist
+"constipation, stomach cramps",29,mild,Gastroenterologist
+diarrhea,3,mild,Gastroenterologist
+constipation,6,moderate,Gastroenterologist
+"nausea, vomiting, stomach cramps, bloating",11,severe,Gastroenterologist
+"abdominal pain, blood in stool, stomach cramps",16,mild,Gastroenterologist
+"diarrhea, bloating",15,mild,Gastroenterologist
+"diarrhea, nausea",3,severe,Gastroenterologist
+"abdominal pain, constipation",22,moderate,Gastroenterologist
+"stomach cramps, bloating, indigestion, heartburn",6,moderate,Gastroenterologist
+"stomach cramps, vomiting, abdominal pain, diarrhea",20,severe,Gastroenterologist
+"abdominal pain, bloating, heartburn, constipation",14,moderate,Gastroenterologist
+"indigestion, vomiting",13,mild,Gastroenterologist
+diarrhea,9,moderate,Gastroenterologist
+"blood in stool, indigestion, diarrhea, mild discomfort, bloating",10,mild,Gastroenterologist
+"indigestion, heartburn, feeling unwell, stomach cramps",2,severe,Gastroenterologist
+"blood in stool, stomach cramps, nausea, bloating",5,moderate,Gastroenterologist
+"diarrhea, abdominal pain, blood in stool",15,mild,Gastroenterologist
+"vomiting, constipation, blood in stool, bloating, sleep problems",14,moderate,Gastroenterologist
+stomach cramps,19,moderate,Gastroenterologist
+"heartburn, bloating",24,moderate,Gastroenterologist
+"lack of energy, vomiting, blood in stool, diarrhea",2,mild,Gastroenterologist
+vomiting,19,mild,Gastroenterologist
+"stomach cramps, heartburn",1,severe,Gastroenterologist
+"constipation, abdominal pain",8,moderate,Gastroenterologist
+"indigestion, lack of energy, nausea",28,moderate,Gastroenterologist
+"bloating, blood in stool, stomach cramps",22,moderate,Gastroenterologist
+"blood in stool, stomach cramps, diarrhea",9,mild,Gastroenterologist
+"indigestion, abdominal pain, heartburn",4,moderate,Gastroenterologist
+"blood in stool, diarrhea",30,mild,Gastroenterologist
+"stomach cramps, heartburn, blood in stool",8,mild,Gastroenterologist
+"abdominal pain, bloating, nausea, diarrhea",16,severe,Gastroenterologist
+"bloating, constipation, nausea",19,mild,Gastroenterologist
+"stomach cramps, constipation, diarrhea, blood in stool",19,mild,Gastroenterologist
+"loss of appetite, nausea",5,moderate,Gastroenterologist
+"abdominal pain, vomiting, indigestion, nausea",27,mild,Gastroenterologist
+"blood in stool, abdominal pain, nausea",4,mild,Gastroenterologist
+abdominal pain,27,severe,Gastroenterologist
+"sleep problems, heartburn, indigestion",27,moderate,Gastroenterologist
+"nausea, indigestion",6,moderate,Gastroenterologist
+indigestion,23,mild,Gastroenterologist
+"bloating, heartburn, vomiting, indigestion",14,moderate,Gastroenterologist
+"constipation, bloating",5,moderate,Gastroenterologist
+"mild discomfort, nausea",4,severe,Gastroenterologist
+"vomiting, nausea",23,mild,Gastroenterologist
+"indigestion, heartburn",30,moderate,Gastroenterologist
+"bloating, vomiting, diarrhea, abdominal pain",27,severe,Gastroenterologist
+"heartburn, indigestion, vomiting",15,mild,Gastroenterologist
+"occasional pain, heartburn, bloating, vomiting",16,severe,Gastroenterologist
+"vomiting, abdominal pain, blood in stool",9,severe,Gastroenterologist
+"heartburn, abdominal pain",23,mild,Gastroenterologist
+"abdominal pain, bloating, nausea",7,mild,Gastroenterologist
+"heartburn, stomach cramps, diarrhea",15,severe,Gastroenterologist
+"abdominal pain, indigestion, stomach cramps",19,moderate,Gastroenterologist
+indigestion,14,severe,Gastroenterologist
+"bloating, diarrhea",29,moderate,Gastroenterologist
+diarrhea,19,mild,Gastroenterologist
+"diarrhea, abdominal pain, lack of energy, stomach cramps",14,mild,Gastroenterologist
+constipation,29,moderate,Gastroenterologist
+"constipation, heartburn, stomach cramps, abdominal pain",18,moderate,Gastroenterologist
+"heartburn, nausea, diarrhea",18,moderate,Gastroenterologist
+"loss of appetite, heartburn",16,mild,Gastroenterologist
+"constipation, vomiting",14,mild,Gastroenterologist
+"abdominal pain, diarrhea, vomiting, bloating",3,severe,Gastroenterologist
+abdominal pain,3,moderate,Gastroenterologist
+"vomiting, nausea, indigestion",17,mild,Gastroenterologist
+"blood in stool, nausea, bloating",18,severe,Gastroenterologist
+blood in stool,26,moderate,Gastroenterologist
+"occasional pain, vomiting",16,severe,Gastroenterologist
+"heartburn, abdominal pain, bloating",26,moderate,Gastroenterologist
+"vomiting, constipation, blood in stool, diarrhea",27,moderate,Gastroenterologist
+"vomiting, heartburn, stomach cramps, indigestion",15,mild,Gastroenterologist
+"stomach cramps, bloating, abdominal pain",28,moderate,Gastroenterologist
+"stomach cramps, nausea",19,mild,Gastroenterologist
+"abdominal pain, blood in stool, bloating, stomach cramps",8,mild,Gastroenterologist
+"constipation, stomach cramps, nausea, abdominal pain",27,mild,Gastroenterologist
+"bloating, constipation",17,mild,Gastroenterologist
+"abdominal pain, constipation, feeling unwell, blood in stool, heartburn",28,mild,Gastroenterologist
+"bloating, feeling unwell",11,severe,Gastroenterologist
+"diarrhea, blood in stool",8,mild,Gastroenterologist
+"stomach cramps, blood in stool, nausea",30,moderate,Gastroenterologist
+"abdominal pain, nausea, heartburn",22,mild,Gastroenterologist
+"sleep problems, vomiting",4,severe,Gastroenterologist
+indigestion,13,moderate,Gastroenterologist
+"occasional pain, vomiting, diarrhea, stomach cramps",21,moderate,Gastroenterologist
+"stomach cramps, diarrhea, bloating, vomiting",22,moderate,Gastroenterologist

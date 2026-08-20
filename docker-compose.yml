@@ -1,0 +1,76 @@
+name: smart-healthcare-assistant
+
+services:
+  mongo:
+    image: mongo:7
+    profiles: ["local-mongo"]
+    restart: unless-stopped
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  ai-service:
+    build: ./ai-service
+    restart: unless-stopped
+    environment:
+      PORT: 8000
+      MODEL_PATH: models/
+      DATA_PATH: data/
+      ALLOWED_ORIGINS: ${CORS_ORIGIN:-http://localhost:8080}
+      LOG_LEVEL: info
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      ai-service:
+        condition: service_healthy
+    environment:
+      PORT: 5000
+      NODE_ENV: production
+      MONGO_URI: ${MONGO_URI:-mongodb://mongo:27017/smart_healthcare}
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1h}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:8080}
+      AI_SERVICE_URL: http://ai-service:8000
+      EMAIL_TRANSPORT: ${EMAIL_TRANSPORT:-console}
+      EMAIL_FROM: ${EMAIL_FROM:-Smart Healthcare Assistant <no-reply@example.com>}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_SECURE: ${SMTP_SECURE:-false}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      RUN_REMINDER_SCHEDULER: ${RUN_REMINDER_SCHEDULER:-true}
+      REMINDER_LEAD_HOURS: ${REMINDER_LEAD_HOURS:-24}
+      REMINDER_CHECK_INTERVAL_MINUTES: ${REMINDER_CHECK_INTERVAL_MINUTES:-5}
+    ports:
+      - "5000:5000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ${VITE_API_URL:-/api}
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${WEB_PORT:-8080}:80"
+
+volumes:
+  mongo_data:

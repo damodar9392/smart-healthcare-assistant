@@ -1,0 +1,24 @@
+# Normalize line endings; use LF for source files
+* text=auto eol=lf
+
+# Specific types
+*.js   text
+*.jsx  text
+*.ts   text
+*.tsx  text
+*.py   text
+*.json text
+*.md   text
+*.yml  text
+*.yaml text
+*.css  text
+*.html text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pkl binary
+*.joblib binary

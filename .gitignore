@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Environment files (only .env.example is tracked)
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Model and data artifacts
+ai-service/models/*.pkl
+ai-service/models/*.joblib
+ai-service/data/raw/
+
+# Logs and OS junk
+*.log
+.DS_Store
+Thumbs.db
+
+# SSH private keys (the .pub is fine to commit)
+deploy/oracle_key
