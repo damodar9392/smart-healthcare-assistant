@@ -1,5 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -52,6 +54,8 @@ const App = () => (
       />
       <Route path="*" element={<ComingSoon title="Page Not Found" />} />
     </Routes>
+    <Footer />
+    <BackToTop />
   </>
 );
 

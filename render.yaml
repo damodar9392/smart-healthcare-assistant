@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: smartcare-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 1h
+      - key: CORS_ORIGIN
+        sync: false
+      - key: AI_SERVICE_URL
+        sync: false
+      - key: EMAIL_TRANSPORT
+        value: console
+      - key: RUN_REMINDER_SCHEDULER
+        value: "true"
+
+  - type: web
+    name: smartcare-ai-service
+    runtime: python
+    rootDir: ai-service
+    plan: free
+    buildCommand: pip install -r requirements.txt && python training/train.py
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.6
