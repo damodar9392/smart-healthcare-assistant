@@ -70,7 +70,10 @@ git push -u origin main
    - Key `VITE_API_URL`
    - Value `https://smartcare-backend.onrender.com/api`
 4. Deploy. You get e.g. `https://smartcare.netlify.app`.
-5. Back in Render -> smartcare-backend -> Environment -> set
+5. In Netlify -> Site configuration -> Environment variables add a second one:
+   - Key `VITE_SOCKET_URL`
+   - Value `https://smartcare-backend.onrender.com` (origin only, no `/api`)
+6. In Render -> smartcare-backend -> Environment -> set
    `CORS_ORIGIN=https://<your-site>.netlify.app` -> Save.
 
 ## 5. Final checks
