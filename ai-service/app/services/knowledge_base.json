@@ -1,0 +1,226 @@
+[
+  {
+    "id": "fever",
+    "title": "Fever: home care and when to worry",
+    "keywords": ["fever", "temperature", "high fever", "chills", "body ache", "feverish"],
+    "category": "symptom-care",
+    "content": "For a mild fever, rest, drink plenty of fluids and avoid heavy clothing. Paracetamol may be used according to the label when a doctor is unavailable, but never give aspirin to a child. See a doctor if a fever lasts more than 3 days, is very high, or comes with a stiff neck, confusion, a rash, or trouble breathing.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "cough-cold",
+    "title": "Cough and cold relief",
+    "keywords": ["cough", "cold", "sore throat", "runny nose", "congestion", "flu", "throat"],
+    "category": "symptom-care",
+    "content": "Rest, drink warm fluids and use honey with lemon for a sore throat (not for infants). Saline nasal drops help a blocked nose. A cough usually clears in 2-3 weeks. See a doctor if you cough up blood, have high fever, chest pain, or breathlessness, or the cough lasts beyond 3 weeks.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "headache",
+    "title": "Headache and migraine basics",
+    "keywords": ["headache", "migraine", "head pain", "tension headache", "pressure in head"],
+    "category": "symptom-care",
+    "content": "Rest in a quiet, dark room, stay hydrated and avoid skipping meals. Regular sleep helps many headaches. Seek urgent care for the worst headache of your life, a headache with fever and a stiff neck, sudden weakness, vision changes, or one that follows a head injury.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "abdominal-pain",
+    "title": "Stomach / abdominal pain guidance",
+    "keywords": ["stomach pain", "abdominal pain", "belly pain", "cramps", "stomach ache", "tummy pain"],
+    "category": "symptom-care",
+    "content": "For mild stomach pain, rest, eat light meals and stay hydrated. Seek urgent care for severe or worsening pain, pain in the lower right abdomen, blood in stools or vomit, high fever, or vomiting that will not stop.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "chest-discomfort",
+    "title": "Chest discomfort: an important warning",
+    "keywords": ["chest pain", "chest tightness", "chest pressure", "heart pain", "palpitations"],
+    "category": "emergency-signs",
+    "content": "Chest pain or pressure, especially with sweating, nausea, shortness of breath, or pain spreading to the arm, neck or jaw, can be a heart emergency. Call your local emergency number or go to the nearest hospital immediately. Do not wait for online advice.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "breathing",
+    "title": "Breathing difficulty",
+    "keywords": ["shortness of breath", "breathing difficulty", "can't breathe", "wheeze", "breathlessness", "heaviness in chest"],
+    "category": "emergency-signs",
+    "content": "Difficulty breathing, wheezing, or a blue tinge to the lips is an emergency. Sit upright, stay calm, and seek urgent care immediately. Do not wait for an online consultation.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "diarrhea",
+    "title": "Diarrhoea and dehydration",
+    "keywords": ["diarrhea", "diarrhoea", "loose stools", "vomiting", "dehydration", "stomach bug"],
+    "category": "symptom-care",
+    "content": "Prevent dehydration by drinking an oral rehydration solution or frequent small sips of water. Eat bland, easy-to-digest food. See a doctor for bloody stools, high fever, severe pain, or signs of dehydration such as a dry mouth, little urine, or dizziness.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "constipation",
+    "title": "Constipation relief",
+    "keywords": ["constipation", "hard stools", "difficulty passing stools", "not going to toilet", "bloating"],
+    "category": "symptom-care",
+    "content": "Drink more water, eat fibre-rich foods (fruits, vegetables, whole grains) and stay active. Regular toilet habits help. See a doctor if it lasts more than 2-3 weeks, stool has blood, or it is painful and recurring.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "acid-reflux",
+    "title": "Acid reflux and heartburn",
+    "keywords": ["heartburn", "acid reflux", "acidity", "indigestion", "burning in chest", "regurgitation"],
+    "category": "symptom-care",
+    "content": "Eat smaller meals, avoid lying down right after eating, and limit spicy, fried or acidic foods. See a doctor if symptoms happen often, cause trouble swallowing, weight loss, or wake you at night regularly.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "rash",
+    "title": "Skin rash and itching",
+    "keywords": ["rash", "itching", "itchy skin", "hives", "red skin", "eczema", "acne"],
+    "category": "symptom-care",
+    "content": "For most rashes, keep the skin clean, dry and moisturised. Cool compresses ease itching; avoid scratching. Seek urgent care for a rash that appears suddenly with fever, a purple rash that does not fade when pressed, swelling of the lips or face, or trouble breathing.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "joint-back",
+    "title": "Joint, muscle and back pain",
+    "keywords": ["joint pain", "back pain", "knee pain", "muscle pain", "sprain", "strain", "neck pain", "ankle pain"],
+    "category": "symptom-care",
+    "content": "For mild sprains and strains, rest, apply ice for the first 48 hours, then gentle heat, and keep the area moving within comfort. See a doctor for pain that follows a serious injury, lasts beyond 2 weeks, comes with numbness or weakness, or stops you from standing or walking.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "wound",
+    "title": "Cuts, burns and minor injury",
+    "keywords": ["cut", "wound", "burn", "bleeding", "injury", "bruise", "first aid"],
+    "category": "first-aid",
+    "content": "Rinse a clean cut under running water, apply pressure with a clean cloth to stop bleeding, then cover with a sterile dressing. Cool a minor burn under cold running water for 10-20 minutes. Seek urgent care for deep, gaping or heavily bleeding wounds, burns larger than your palm, burns to the face or hands, or signs of infection (heat, pus, red streaks).",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "hypertension",
+    "title": "High blood pressure basics",
+    "keywords": ["blood pressure", "hypertension", "high bp", "high blood pressure", "bp"],
+    "category": "chronic-care",
+    "content": "If you have high blood pressure, reduce salt, keep physically active, maintain a healthy weight, limit alcohol and take medicines exactly as prescribed. Do not stop medication on your own. Seek urgent care for a very high reading with headache, chest pain, blurred vision or shortness of breath.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "diabetes",
+    "title": "Diabetes self-care",
+    "keywords": ["diabetes", "blood sugar", "sugar", "glucose", "high sugar", "hypoglycemia"],
+    "category": "chronic-care",
+    "content": "Keep regular meals, monitor your sugar as advised by your doctor, and take medication on time. For a low-sugar episode, take fast-acting sugar (glucose, juice) immediately. Seek urgent care for very high sugar with vomiting, breathlessness, or drowsiness.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "anxiety",
+    "title": "Anxiety, stress and sleep",
+    "keywords": ["anxiety", "stress", "anxious", "panic", "worry", "insomnia", "sleep problem", "mood", "depress"],
+    "category": "mental-wellbeing",
+    "content": "Try regular breathing exercises, a fixed sleep schedule, limited caffeine, and daily movement. Talk to a doctor or counsellor if anxiety, low mood or poor sleep affects your daily life for more than two weeks. If you ever have thoughts of harming yourself, tell someone and seek help immediately.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "urinary",
+    "title": "Urinary symptoms and UTI",
+    "keywords": ["urine", "urination", "uti", "burning urination", "frequent urination", "kidney", "bladder", "blood in urine"],
+    "category": "symptom-care",
+    "content": "Drink plenty of water and keep the bladder area clean for mild irritation. See a doctor for burning or painful urination, blood in urine, fever with back pain, or urinary symptoms that do not improve in a day or two.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "eyes",
+    "title": "Eye discomfort and vision",
+    "keywords": ["eye pain", "red eye", "blurred vision", "vision", "eye discharge", "itchy eyes"],
+    "category": "symptom-care",
+    "content": "Rest your eyes and blink often if they feel strained. For mild redness or foreign body, rinse with clean water. Seek urgent care for sudden vision loss, severe eye pain, trauma, or a sudden change in vision.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "ent",
+    "title": "Ear, nose and throat care",
+    "keywords": ["ear pain", "hearing loss", "ear discharge", "sinus", "nasal congestion", "tonsil", "swollen throat"],
+    "category": "symptom-care",
+    "content": "For mild cold-related ear or sinus pressure, rest, hydrate and use a warm compress. See a doctor for severe ear pain, ear discharge, sudden hearing loss, a persistent sore throat with high fever, or difficulty swallowing.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "children",
+    "title": "Fever and illness in children",
+    "keywords": ["child fever", "baby fever", "infant fever", "toddler sick", "child temperature"],
+    "category": "paediatric",
+    "content": "A child with a fever should rest and drink fluids. Never give aspirin to a child. Seek immediate care for a baby under 3 months with any fever, a fever with a rash, lethargy, poor feeding, a stiff neck, or a seizure.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "pregnancy",
+    "title": "Advice during pregnancy",
+    "keywords": ["pregnancy", "pregnant", "prenatal", "antenatal", "contractions", "baby movement"],
+    "category": "maternal",
+    "content": "Attend all antenatal check-ups and follow your doctor's advice on nutrition and supplements. Seek urgent care for vaginal bleeding, severe abdominal pain, severe headache or visual changes, reduced baby movements, or leaking of fluid.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "medication-safety",
+    "title": "Medication safety rules",
+    "keywords": ["medicine", "medication", "dosage", "tablet", "pill", "overdose", "prescription", "painkiller", "dose"],
+    "category": "medication",
+    "content": "Take medicines exactly as prescribed and never change or stop doses on your own. Do not share prescriptions. Ask your doctor or pharmacist about interactions before combining medicines, and check that a medicine is safe during pregnancy or breastfeeding. If you suspect an overdose, seek emergency care immediately.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "dental",
+    "title": "Tooth and gum pain",
+    "keywords": ["tooth pain", "toothache", "gum pain", "swollen gum", "dental", "mouth ulcer"],
+    "category": "symptom-care",
+    "content": "Rinse with warm salt water, avoid very hot or very sweet foods, and see a dentist for a toothache that persists beyond a day or two. Seek urgent care for facial swelling, swelling that affects breathing, or severe pain.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "dehydration",
+    "title": "Preventing dehydration",
+    "keywords": ["dehydrated", "dehydration", "not drinking water", "dry mouth", "heat", "sun exposure"],
+    "category": "wellness",
+    "content": "Drink water regularly throughout the day, more in heat or with activity. Watch for a dry mouth, dark urine, dizziness or fatigue as early signs of dehydration. Seek urgent care for confusion, fainting, or an inability to keep fluids down.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "nutrition",
+    "title": "Balanced nutrition basics",
+    "keywords": ["diet", "nutrition", "healthy eating", "food", "veggies", "protein", "weight loss", "weight gain"],
+    "category": "wellness",
+    "content": "A balanced plate has vegetables, fruit, whole grains, protein and healthy fats, with water as the main drink. Skip fad diets. For unexplained or rapid weight loss or gain, see a doctor.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "elder",
+    "title": "Common concerns for older adults",
+    "keywords": ["elderly", "elder", "old age", "fall", "dizziness elderly", "memory problem"],
+    "category": "wellness",
+    "content": "Prevent falls at home by clearing clutter, good lighting, and using support where needed. Report any new dizziness, confusion, or memory changes to a doctor. Seek urgent care after any fall with a head bump, new confusion, or inability to move a limb.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "allergies",
+    "title": "Allergy reactions",
+    "keywords": ["allergy", "allergic", "hay fever", "food allergy", "pollen", "hives"],
+    "category": "symptom-care",
+    "content": "Avoid known triggers, keep a record of what causes reactions, and follow your doctor's allergy plan. Anaphylaxis (swelling of lips or throat, trouble breathing, dizziness) is an emergency — call emergency services immediately.",
+    "source": "Approved first-aid guidance"
+  },
+  {
+    "id": "appointments",
+    "title": "Before your doctor visit",
+    "keywords": ["appointment", "doctor visit", "consultation", "what to ask doctor", "prepare for doctor"],
+    "category": "platform",
+    "content": "Bring a list of your symptoms (when they started, how they change), all medicines you take, and any questions. On the SmartCare platform you can book a verified doctor, join a video consult, see your prescription and symptom timeline, and pay your consultation fee online.",
+    "source": "SmartCare platform guide"
+  },
+  {
+    "id": "when-to-see-doctor",
+    "title": "General rule for seeing a doctor",
+    "keywords": ["when to see doctor", "should i see a doctor", "do i need a doctor", "how urgent", "consult a doctor"],
+    "category": "general",
+    "content": "See a doctor for symptoms that are severe, getting worse, lasting more than 2-3 weeks, or affecting your daily life. Seek emergency care immediately for chest pain, breathing difficulty, severe bleeding, unconsciousness, or signs of a stroke.",
+    "source": "Approved first-aid guidance"
+  }
+]

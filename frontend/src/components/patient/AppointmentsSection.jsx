@@ -5,7 +5,7 @@ import ErrorMessage from '../ErrorMessage';
 import EmptyState from '../EmptyState';
 import AppointmentCard from '../AppointmentCard';
 import { patientService } from '../../services/patientService';
-import { todayISO } from '../../utils/format';
+import { todayISO, localDateISO } from '../../utils/format';
 
 const AppointmentsSection = () => {
   const [appointments, setAppointments] = useState([]);
@@ -33,7 +33,7 @@ const AppointmentsSection = () => {
   const upcoming = appointments.filter(
     (a) =>
       ['scheduled', 'rescheduled'].includes(a.status) &&
-      new Date(a.date).toISOString().slice(0, 10) >= today
+      localDateISO(a.date) >= today
   );
   const past = appointments.filter((a) => !upcoming.includes(a));
 

@@ -14,11 +14,12 @@ const reminderAlreadySent = (appointmentId) =>
 
 const collectDueAppointments = async (leadHours) => {
   const now = new Date();
+  const startOfToday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
   const windowEnd = new Date(now.getTime() + leadHours * 3600000);
 
   const appointments = await Appointment.find({
     status: { $in: ['scheduled', 'rescheduled'] },
-    date: { $gte: now, $lte: windowEnd },
+    date: { $gte: startOfToday, $lte: windowEnd },
   })
     .populate('patient', 'name email')
     .populate('doctor', 'name')

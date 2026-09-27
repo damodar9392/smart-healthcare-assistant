@@ -5,8 +5,14 @@ const User = require('../models/User');
 const ApiError = require('../utils/ApiError');
 const asyncHandler = require('../utils/asyncHandler');
 const validate = require('../middleware/validate');
+const {
+  isLoginLocked,
+  getLoginLock,
+  recordLoginFailure,
+  clearLoginFailure,
+} = require('../middleware/rateLimit');
 
-const BCRYPT_ROUNDS = 10;
+const BCRYPT_ROUNDS = 12;
 
 const signToken = (user) =>
   jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
@@ -66,17 +72,29 @@ const register = asyncHandler(async (req, res) => {
 
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
+  const identifier = String(email || '').toLowerCase().trim();
+
+  if (isLoginLocked(identifier)) {
+    const lock = getLoginLock(identifier);
+    res.setHeader('Retry-After', lock.retryAfter);
+    const seconds = Math.ceil(lock.retryAfter);
+    const friendly = seconds < 60 ? `${seconds} second(s)` : `${Math.ceil(seconds / 60)} minute(s)`;
+    throw new ApiError(429, `Too many failed attempts. Try again in ${friendly}.`);
+  }
 
   const user = await User.findOne({ email }).select('+passwordHash');
   if (!user) {
+    recordLoginFailure(identifier);
     throw new ApiError(401, 'Invalid email or password');
   }
 
   const isMatch = await bcrypt.compare(password, user.passwordHash);
   if (!isMatch) {
+    recordLoginFailure(identifier);
     throw new ApiError(401, 'Invalid email or password');
   }
 
+  clearLoginFailure(identifier);
   const token = signToken(user);
   res.json({ success: true, token, user: sanitizeUser(user) });
 });

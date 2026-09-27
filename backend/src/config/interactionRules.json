@@ -1,0 +1,195 @@
+{
+  "aliases": {
+    "paracetamol": ["acetaminophen", "crocin", "tylenol", "panadol", "calpol", "dolo", "paracip"],
+    "ibuprofen": ["brufen", "advil", "motrin", "ibugesic"],
+    "aspirin": ["acetylsalicylic acid", "disprin"],
+    "diclofenac": ["voltaren", "voveran", "diclomol"],
+    "clopidogrel": ["plavix", "clopilet"],
+    "warfarin": ["coumadin", "jantoven", "thrombo"],
+    "digoxin": ["lanoxin", "digox"],
+    "amiodarone": ["cordarone", "tachydaron"],
+    "clarithromycin": ["klacid", "claribid", "clarith"],
+    "ciprofloxacin": ["cipro", "ciplox"],
+    "metronidazole": ["flagyl", "arilin", "metrogyl"],
+    "metformin": ["glucophage", "gymet", "glycomet"],
+    "simvastatin": ["zocor", "simlip"],
+    "atorvastatin": ["lipitor", "atorva", "atorlip"],
+    "lisinopril": ["prinivil", "zestril", "zylapril"],
+    "amlodipine": ["norvasc", "amlopres", "amdepin"],
+    "ramipril": ["altace", "cardace", "ertanol"],
+    "spironolactone": ["aldactone", "spiro"],
+    "potassium": ["potassium chloride", "kcl", "potklor", "sando k"],
+    "furosemide": ["lasix", "frusemide"],
+    "sertraline": ["zoloft", "serlift"],
+    "fluoxetine": ["prozac", "fludac", "fluxet"],
+    "sildenafil": ["viagra", "sildigra", "kamagra", "revatio"],
+    "nitroglycerin": ["glyceryl trinitrate", "nitrolingual", "nitroglycerine", "angised"],
+    "methotrexate": ["mtx", "trexall"],
+    "lithium": ["lithium carbonate", "lithobid"],
+    "levothyroxine": ["thyroxine", "eltroxin", "thyronorm"]
+  },
+  "interactions": [
+    {
+      "medications": ["nitroglycerin", "sildenafil"],
+      "severity": "urgent",
+      "category": "Nitrates + PDE5 inhibitors",
+      "advice": "Combining these can cause a severe, life-threatening drop in blood pressure. Do not use sildenafil within 24-48 hours of any nitrate. Seek emergency care if you faint, have chest pain or severe dizziness."
+    },
+    {
+      "medications": ["ibuprofen", "warfarin"],
+      "severity": "urgent",
+      "category": "NSAID + anticoagulant",
+      "advice": "Together these significantly raise the risk of serious stomach or intestinal bleeding. Ask your doctor before combining; a safer pain reliever is usually recommended."
+    },
+    {
+      "medications": ["aspirin", "warfarin"],
+      "severity": "urgent",
+      "category": "Antiplatelet + anticoagulant",
+      "advice": "Combining aspirin with warfarin increases the risk of major bleeding. Only use this combination when a doctor has explicitly prescribed it, and get regular blood tests."
+    },
+    {
+      "medications": ["diclofenac", "warfarin"],
+      "severity": "urgent",
+      "category": "NSAID + anticoagulant",
+      "advice": "This combination strongly increases bleeding risk, especially in the stomach. Use paracetamol instead if possible and confirm with your doctor."
+    },
+    {
+      "medications": ["clopidogrel", "aspirin"],
+      "severity": "urgent",
+      "category": "Dual antiplatelet therapy",
+      "advice": "This combination is sometimes prescribed after a stent or heart attack, but it raises bleeding risk significantly. Never add aspirin to clopidogrel on your own."
+    },
+    {
+      "medications": ["clopidogrel", "ibuprofen"],
+      "severity": "high",
+      "category": "Antiplatelet + NSAID",
+      "advice": "Ibuprofen can reduce clopidogrel's effect on platelets while adding stomach bleeding risk. Ask your doctor before combining them."
+    },
+    {
+      "medications": ["digoxin", "clarithromycin"],
+      "severity": "urgent",
+      "category": "Digoxin + macrolide antibiotic",
+      "advice": "Clarithromycin raises digoxin levels in the blood and can cause digoxin toxicity (nausea, visual changes, irregular heartbeat). Monitor closely with your doctor."
+    },
+    {
+      "medications": ["digoxin", "amiodarone"],
+      "severity": "urgent",
+      "category": "Digoxin + amiodarone",
+      "advice": "Amiodarone roughly doubles digoxin levels, risking toxicity. Your doctor usually reduces the digoxin dose and checks levels."
+    },
+    {
+      "medications": ["ciprofloxacin", "warfarin"],
+      "severity": "urgent",
+      "category": "Fluoroquinolone + anticoagulant",
+      "advice": "Ciprofloxacin can increase the blood-thinning effect of warfarin and risks serious bleeding. More frequent INR checks are needed."
+    },
+    {
+      "medications": ["metronidazole", "warfarin"],
+      "severity": "high",
+      "category": "Antibiotic + anticoagulant",
+      "advice": "Metronidazole increases warfarin's effect and can raise bleeding risk. Monitor INR closely during this combination."
+    },
+    {
+      "medications": ["simvastatin", "clarithromycin"],
+      "severity": "urgent",
+      "category": "Statin + macrolide antibiotic",
+      "advice": "Clarithromycin blocks the breakdown of simvastatin, greatly raising the risk of muscle damage (rhabdomyolysis). This combination should be avoided."
+    },
+    {
+      "medications": ["atorvastatin", "clarithromycin"],
+      "severity": "high",
+      "category": "Statin + macrolide antibiotic",
+      "advice": "Clarithromycin can raise atorvastatin levels and increase muscle injury risk. Your doctor may pause the statin during the short antibiotic course."
+    },
+    {
+      "medications": ["amlodipine", "simvastatin"],
+      "severity": "medium",
+      "category": "Calcium channel blocker + statin",
+      "advice": "Amlodipine increases simvastatin exposure and muscle side-effect risk. The simvastatin dose should usually be limited to 20 mg while taking amlodipine."
+    },
+    {
+      "medications": ["spironolactone", "lisinopril"],
+      "severity": "urgent",
+      "category": "Potassium-sparing diuretic + ACE inhibitor",
+      "advice": "This combination can push blood potassium dangerously high, which may cause irregular heart rhythm. Blood potassium must be checked regularly."
+    },
+    {
+      "medications": ["potassium", "lisinopril"],
+      "severity": "high",
+      "category": "Potassium supplements + ACE inhibitor",
+      "advice": "Taking potassium supplements with an ACE inhibitor can cause dangerous hyperkalemia. Do not take potassium unless a doctor prescribes it."
+    },
+    {
+      "medications": ["ibuprofen", "lisinopril"],
+      "severity": "high",
+      "category": "NSAID + ACE inhibitor",
+      "advice": "Ibuprofen weakens lisinopril's blood-pressure-lowering effect and can harm the kidneys, especially in the elderly or with dehydration."
+    },
+    {
+      "medications": ["ibuprofen", "aspirin"],
+      "severity": "high",
+      "category": "NSAID + aspirin",
+      "advice": "Taking ibuprofen close to a low-dose aspirin dose can block aspirin's protective effect on the heart. Separate them by several hours and ask your doctor."
+    },
+    {
+      "medications": ["diclofenac", "aspirin"],
+      "severity": "medium",
+      "category": "NSAID + aspirin",
+      "advice": "Combining two NSAIDs increases stomach irritation and bleeding risk without adding much benefit. Use only one when possible."
+    },
+    {
+      "medications": ["ibuprofen", "methotrexate"],
+      "severity": "urgent",
+      "category": "NSAID + methotrexate",
+      "advice": "NSAIDs reduce the elimination of methotrexate, risking severe bone-marrow and kidney toxicity. Avoid this combination."
+    },
+    {
+      "medications": ["sertraline", "ibuprofen"],
+      "severity": "medium",
+      "category": "SSRI + NSAID",
+      "advice": "SSRIs (like sertraline) together with NSAIDs increase the risk of stomach bleeding. Paracetamol is usually a safer choice."
+    },
+    {
+      "medications": ["fluoxetine", "ibuprofen"],
+      "severity": "medium",
+      "category": "SSRI + NSAID",
+      "advice": "SSRIs (like fluoxetine) together with NSAIDs increase the risk of stomach bleeding. Paracetamol is usually a safer choice."
+    },
+    {
+      "medications": ["sertraline", "warfarin"],
+      "severity": "high",
+      "category": "SSRI + anticoagulant",
+      "advice": "Sertraline can increase warfarin's effect and bleeding risk. Watch for unusual bleeding and monitor INR closely."
+    },
+    {
+      "medications": ["fluoxetine", "warfarin"],
+      "severity": "high",
+      "category": "SSRI + anticoagulant",
+      "advice": "Fluoxetine can increase warfarin's effect and bleeding risk. Watch for unusual bleeding and monitor INR closely."
+    },
+    {
+      "medications": ["paracetamol", "warfarin"],
+      "severity": "medium",
+      "category": "Paracetamol + anticoagulant",
+      "advice": "Regular, high-dose paracetamol can increase warfarin's effect. Use the lowest dose needed and keep use occasional unless your doctor agrees."
+    },
+    {
+      "medications": ["furosemide", "digoxin"],
+      "severity": "medium",
+      "category": "Loop diuretic + digoxin",
+      "advice": "If furosemide lowers potassium, digoxin toxicity becomes more likely. Keep potassium in the normal range and check levels with your doctor."
+    },
+    {
+      "medications": ["ibuprofen", "lithium"],
+      "severity": "high",
+      "category": "NSAID + lithium",
+      "advice": "NSAIDs can raise lithium levels in the blood and risk lithium toxicity. Lithium levels must be checked if an NSAID is used."
+    },
+    {
+      "medications": ["amoxicillin", "methotrexate"],
+      "severity": "medium",
+      "category": "Penicillin + methotrexate",
+      "advice": "Amoxicillin can slow removal of methotrexate and increase side effects. Use this combination only under medical supervision."
+    }
+  ]
+}

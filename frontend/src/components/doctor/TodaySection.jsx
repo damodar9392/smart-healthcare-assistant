@@ -3,14 +3,14 @@ import ErrorMessage from '../ErrorMessage';
 import EmptyState from '../EmptyState';
 import AppointmentItem from '../AppointmentItem';
 import useAppointments from '../../hooks/useAppointments';
-import { todayISO } from '../../utils/format';
+import { todayISO, localDateISO } from '../../utils/format';
 
 const TodaySection = () => {
   const { appointments, loading, error, message, updateStatus, reload } = useAppointments();
   const today = todayISO();
 
   const todays = appointments
-    .filter((a) => new Date(a.date).toISOString().slice(0, 10) === today)
+    .filter((a) => localDateISO(a.date) === today)
     .sort((a, b) => a.startTime.localeCompare(b.startTime));
 
   return (

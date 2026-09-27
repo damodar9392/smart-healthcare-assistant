@@ -20,8 +20,14 @@ services:
         sync: false
       - key: AI_SERVICE_URL
         sync: false
+      - key: ENCRYPTION_KEY
+        generateValue: true
       - key: EMAIL_TRANSPORT
         value: console
+      - key: PAYMENT_MODE
+        value: mock
+      - key: VIDEO_ENABLED
+        value: "true"
       - key: RUN_REMINDER_SCHEDULER
         value: "true"
 
@@ -30,7 +36,7 @@ services:
     runtime: python
     rootDir: ai-service
     plan: free
-    buildCommand: pip install -r requirements.txt && python training/train.py
+    buildCommand: pip install -r requirements.txt && python -m training.train
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /health
     envVars:

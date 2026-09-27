@@ -4,7 +4,9 @@ STOPWORDS = {
     "the", "a", "an", "and", "or", "with", "for", "my", "i", "me", "is", "are",
     "was", "in", "on", "of", "to", "at", "have", "has", "had", "feeling",
     "feel", "having", "since", "very", "been", "being", "it", "that", "this",
-    "am", "not", "but", "so", "too",
+    "am", "not", "but", "so", "too", "what", "should", "do", "about",
+    "few", "morning", "keep", "getting", "dealing", "started", "bothering",
+    "suffering", "from", "how",
 }
 
 

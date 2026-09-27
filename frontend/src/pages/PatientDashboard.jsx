@@ -5,6 +5,11 @@ import AppointmentsSection from '../components/patient/AppointmentsSection';
 import SearchesSection from '../components/patient/SearchesSection';
 import SavedDoctorsSection from '../components/patient/SavedDoctorsSection';
 import NotificationsSection from '../components/patient/NotificationsSection';
+import EnquiriesSection from '../components/patient/EnquiriesSection';
+import RecordsSection from '../components/patient/RecordsSection';
+import InvoicesSection from '../components/patient/InvoicesSection';
+import MedicationCheckerSection from '../components/patient/MedicationCheckerSection';
+import HealthProfileSection from '../components/patient/HealthProfileSection';
 import { useAuth } from '../hooks/useAuth';
 
 const PatientDashboard = () => {
@@ -35,9 +40,14 @@ const PatientDashboard = () => {
         </section>
 
         {section === 'appointments' && <AppointmentsSection />}
+        {section === 'records' && <RecordsSection />}
+        {section === 'invoices' && <InvoicesSection />}
+        {section === 'medication-checker' && <MedicationCheckerSection />}
+        {section === 'health-profile' && <HealthProfileSection />}
         {section === 'searches' && <SearchesSection />}
         {section === 'saved-doctors' && <SavedDoctorsSection />}
         {section === 'notifications' && <NotificationsSection />}
+        {section === 'enquiries' && <EnquiriesSection />}
       </main>
     </div>
   );

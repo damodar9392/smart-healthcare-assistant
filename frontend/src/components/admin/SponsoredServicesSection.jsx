@@ -140,7 +140,24 @@ const SponsoredServicesSection = () => {
     setError('');
     setMessage('');
     try {
-      await adminService.updateSponsoredService(service._id, { isActive: !service.isActive });
+      const payload = {
+        name: service.name,
+        description: service.description || '',
+        category: service.category,
+        price: service.price || 0,
+        location: {
+          type: 'Point',
+          coordinates:
+            service.location?.coordinates?.length === 2
+              ? service.location.coordinates
+              : [0, 0],
+        },
+        contact: service.contact || {},
+        sponsor: service.sponsor || '',
+        isSponsored: service.isSponsored || false,
+        isActive: !service.isActive,
+      };
+      await adminService.updateSponsoredService(service._id, payload);
       setMessage(service.isActive ? 'Service hidden from public listings.' : 'Service published.');
       load();
     } catch (err) {
@@ -360,7 +377,7 @@ const SponsoredServicesSection = () => {
                   </div>
                   <div className="service-tags">
                     {service.isSponsored && (
-                      <span className="tag tag-sponsored">Sponsored</span>
+                      <span className="service-tag service-tag-sponsored">Sponsored</span>
                     )}
                     <span className={`badge ${service.isActive ? 'badge-confirmed' : 'badge-cancelled'}`}>
                       {service.isActive ? 'Active' : 'Hidden'}

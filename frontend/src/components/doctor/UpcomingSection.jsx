@@ -3,18 +3,18 @@ import ErrorMessage from '../ErrorMessage';
 import EmptyState from '../EmptyState';
 import AppointmentItem from '../AppointmentItem';
 import useAppointments from '../../hooks/useAppointments';
-import { todayISO } from '../../utils/format';
+import { todayISO, localDateISO } from '../../utils/format';
 
 const UpcomingSection = () => {
   const { appointments, loading, error, message, updateStatus, reload } = useAppointments();
   const today = todayISO();
 
   const upcoming = appointments
-    .filter(
-      (a) =>
-        ['scheduled', 'rescheduled'].includes(a.status) &&
-        new Date(a.date).toISOString().slice(0, 10) > today
-    )
+.filter(
+        (a) =>
+          ['scheduled', 'rescheduled'].includes(a.status) &&
+          localDateISO(a.date) > today
+      )
     .sort((a, b) => a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime));
 
   return (

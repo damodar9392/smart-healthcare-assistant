@@ -7,7 +7,9 @@ const {
   notifyAppointmentCancelled,
   notifyAppointmentRescheduled,
 } = require('../services/appointmentNotificationService');
+const { initiateForAppointment, refundForAppointment } = require('../services/paymentService');
 const { notifyUser } = require('../services/notificationService');
+const { createVideoRoom, canJoin, openIn } = require('../services/videoService');
 const bookingRules = require('../config/bookingRules');
 const ApiError = require('../utils/ApiError');
 const asyncHandler = require('../utils/asyncHandler');
@@ -142,6 +144,7 @@ const book = asyncHandler(async (req, res) => {
       endTime,
       reason,
       status: 'scheduled',
+      consultationFee: profile.consultationFee || 0,
     });
   } catch (err) {
     if (isDuplicateKeyError(err)) {
@@ -149,6 +152,10 @@ const book = asyncHandler(async (req, res) => {
     }
     throw err;
   }
+
+  const payment = await initiateForAppointment(appointment);
+  appointment.paymentStatus = payment.status;
+  await appointment.save();
 
   const patient = await User.findById(req.user._id).select('name');
   const doctorUser = await User.findById(profile.user).select('name');
@@ -219,6 +226,7 @@ const cancel = asyncHandler(async (req, res) => {
   await appointment.save();
 
   await notifyAppointmentCancelled(appointment, req.user._id);
+  await refundForAppointment(appointment);
 
   res.json({ success: true, data: appointment });
 });
@@ -319,6 +327,41 @@ const updateStatus = asyncHandler(async (req, res) => {
   res.json({ success: true, data: appointment });
 });
 
+const getVideoRoom = asyncHandler(async (req, res) => {
+  const appointment = await Appointment.findById(req.params.id);
+  if (!appointment) {
+    throw new ApiError(404, 'Appointment not found');
+  }
+  const isParticipant =
+    String(appointment.patient) === String(req.user._id) ||
+    String(appointment.doctor) === String(req.user._id);
+  if (!isParticipant && req.user.role !== 'admin') {
+    throw new ApiError(403, 'Not allowed to join this video room');
+  }
+  if (!['scheduled', 'rescheduled'].includes(appointment.status)) {
+    throw new ApiError(400, 'Video consultations are only available for active appointments');
+  }
+
+  if (!appointment.videoRoomId) {
+    Object.assign(appointment, createVideoRoom(appointment));
+    await appointment.save();
+  }
+
+  res.json({
+    success: true,
+    data: {
+      appointmentId: appointment._id,
+      videoRoomId: appointment.videoRoomId,
+      videoRoomUrl: appointment.videoRoomUrl,
+      videoExpiresAt: appointment.videoExpiresAt,
+      canJoin: canJoin(appointment),
+      openInMs: openIn(appointment),
+      startTime: appointment.startTime,
+      date: appointment.date,
+    },
+  });
+});
+
 const adminList = asyncHandler(async (req, res) => {
   const page = Math.max(parseInt(req.query.page, 10) || 1, 1);
   const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 20, 1), 100);
@@ -365,6 +408,7 @@ module.exports = {
   reschedule,
   updateStatus,
   adminList,
+  getVideoRoom,
   bookValidation,
   rescheduleValidation,
   statusValidation,

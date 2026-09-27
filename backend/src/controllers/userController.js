@@ -52,6 +52,9 @@ const updateRole = asyncHandler(async (req, res) => {
   if (user._id.equals(req.user._id)) {
     throw new ApiError(400, 'You cannot change your own role');
   }
+  if (user.role === 'admin') {
+    throw new ApiError(403, 'Admin roles cannot be modified by another admin');
+  }
   user.role = req.body.role;
   await user.save();
   res.json({ success: true, data: user });
@@ -64,6 +67,9 @@ const remove = asyncHandler(async (req, res) => {
   }
   if (user._id.equals(req.user._id)) {
     throw new ApiError(400, 'You cannot delete your own account');
+  }
+  if (user.role === 'admin') {
+    throw new ApiError(403, 'Admin accounts cannot be deleted by another admin');
   }
   await user.deleteOne();
   res.json({ success: true, message: 'User deleted' });

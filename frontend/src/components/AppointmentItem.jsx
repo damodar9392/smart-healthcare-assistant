@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { formatDate } from '../utils/format';
 
 const STATUS_LABELS = {
@@ -51,6 +52,9 @@ const AppointmentItem = ({ appointment, onUpdated }) => {
       <div className="card-actions">
         {isActive && (
           <>
+            <Link to={`/video/${appointment._id}`} className="btn btn-sm btn-primary">
+              Video call
+            </Link>
             <button
               type="button"
               className="btn btn-sm btn-primary"

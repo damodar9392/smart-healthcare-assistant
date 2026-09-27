@@ -95,6 +95,9 @@ const Register = () => {
               value={form.password}
               onChange={handleChange}
               minLength={8}
+              maxLength={100}
+              pattern="(?=.*[A-Za-z])(?=.*\d).{8,}"
+              title="Password must be at least 8 characters and contain at least one letter and one number"
               required
             />
             <small className="muted">

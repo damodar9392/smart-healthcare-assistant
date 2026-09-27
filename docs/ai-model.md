@@ -17,10 +17,13 @@ ai-service/
 │   │   └── engine.py         # lazy artifact loading + predict/urgency logic
 │   └── routers/
 │       ├── predict.py        # POST /predict  (new contract)
-│       └── analysis.py       # POST /analyze  (legacy contract for the Node backend)
+│       ├── analysis.py       # POST /analyze  (legacy contract for the Node backend)
+│       ├── assistant.py      # POST /assistant (multilingual chat)
+│       └── metrics.py        # GET /model/metrics
 ├── training/
 │   ├── generate_dataset.py   # synthetic dataset generator (seeded, reproducible)
-│   └── train.py              # TF-IDF + 3 models + metrics + joblib persistence
+│   └── train.py              # TF-IDF + 3 models + holdout & CV metrics + joblib persistence
+├── tests/                    # pytest: preprocess, engine urgency/predict, API endpoints
 ├── data/dataset.csv          # 2000 labeled rows (8 x 250)
 ├── models/                   # joblib artifacts (gitignored)
 │   ├── vectorizer.joblib     # fitted TF-IDF
@@ -89,11 +92,18 @@ counts weighted by inverse document frequency, fitted on the training split only
 
 Run: `python -m training.train` (results in `models/comparison.json`).
 
-| Model               | Accuracy | Precision | Recall | F1 (weighted) |
-| ------------------- | -------- | --------- | ------ | ------------- |
-| logistic_regression | 1.0000   | 1.0000    | 1.0000 | **1.0000**    |
-| random_forest       | 1.0000   | 1.0000    | 1.0000 | 1.0000        |
-| naive_bayes         | 0.9925   | 0.9929    | 0.9925 | 0.9925        |
+Each candidate is evaluated two ways:
+
+- **Holdout** — fixed stratified 80/20 split, vectorizer fitted on the train part only.
+- **Cross-validation** — `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` with a
+  fresh `Pipeline(TfidfVectorizer + classifier)` per fold, so the vectorizer is refit inside
+  every fold (no leakage). Mean ± std across folds is stored under each model's `"cv"` key.
+
+| Model               | Holdout F1 | CV F1 (5-fold)   |
+| ------------------- | ---------- | ---------------- |
+| logistic_regression | 1.0000     | 0.9985 ± 0.0012  |
+| random_forest       | 1.0000     | 0.9980 ± 0.0019  |
+| naive_bayes         | 0.9925     | 0.9955 ± 0.0010  |
 
 Selection rule: highest weighted F1 with a preference for the simpler model on ties.
 **Logistic Regression was selected** — it matches Random Forest here, trains instantly,
@@ -139,6 +149,9 @@ joblib.dump(meta, "models/meta.joblib")
 - `confidence` is the model's top-class probability, rounded to 3 decimals.
 - If artifacts are missing → `503 { "detail": "Model is not available..." }`.
 - `GET /health` reports `{ status, model }` (loaded model name).
+- `GET /model/metrics` reports the trained model's evaluation data:
+  `{ model_name, trained_at, holdout_metrics, cross_validation, dataset, vectorizer, comparison }`
+  (sourced from `meta.joblib`; `503` when the model is untrained).
 
 POST /analyze keeps the legacy contract (camelCase, `urgencyLevel`, `confidenceScore`,
 `summary`) used by the Node backend, mapped from the same engine.
@@ -181,13 +194,15 @@ cd ai-service
 python -m venv .venv && .venv\Scripts\activate   # Windows
 pip install -r requirements.txt
 python -m training.generate_dataset              # (re)build data/dataset.csv
-python -m training.train                         # train + save artifacts
+python -m training.train                         # train + save artifacts (holdout + 5-fold CV)
+python -m pytest tests                           # model + API tests
 uvicorn main:app --reload --port 8000
 ```
+
+Tests live in `tests/` (`test_preprocess.py`, `test_engine.py`, `test_api.py`) and use the
+FastAPI `TestClient`; API tests skip cleanly when `models/` artifacts are absent.
 
 ## Next phase ideas
 
 - Replace synthetic data with doctor-labeled real records; retrain and compare.
-- Add cross-validation (`StratifiedKFold`) instead of a single split.
 - Persist urgency as a second model or calibrated thresholds.
-- Add model tests (pytest) and a `/model/metrics` endpoint.

@@ -158,6 +158,11 @@ const doctorProfileSchema = new mongoose.Schema(
       max: [5, 'Rating cannot exceed 5'],
       default: 0,
     },
+    ratingCount: {
+      type: Number,
+      min: [0, 'Rating count cannot be negative'],
+      default: 0,
+    },
   },
   { timestamps: true }
 );

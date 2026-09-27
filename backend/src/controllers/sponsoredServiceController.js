@@ -119,13 +119,33 @@ const getById = asyncHandler(async (req, res) => {
   res.json({ success: true, data: service });
 });
 
+const SERVICE_FIELDS = [
+  'name',
+  'category',
+  'description',
+  'price',
+  'location',
+  'contact',
+  'isActive',
+  'isSponsored',
+  'sponsor',
+];
+
 const create = asyncHandler(async (req, res) => {
-  const service = await SponsoredService.create(req.body);
+  const payload = {};
+  for (const field of SERVICE_FIELDS) {
+    if (field in req.body) payload[field] = req.body[field];
+  }
+  const service = await SponsoredService.create(payload);
   res.status(201).json({ success: true, data: service });
 });
 
 const update = asyncHandler(async (req, res) => {
-  const service = await SponsoredService.findByIdAndUpdate(req.params.id, req.body, {
+  const payload = {};
+  for (const field of SERVICE_FIELDS) {
+    if (field in req.body) payload[field] = req.body[field];
+  }
+  const service = await SponsoredService.findByIdAndUpdate(req.params.id, payload, {
     new: true,
     runValidators: true,
   });

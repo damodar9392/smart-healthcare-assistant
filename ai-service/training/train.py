@@ -10,13 +10,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import joblib
+import numpy as np
 import pandas as pd
+from sklearn.base import clone
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder
 
 from app.ml.preprocess import clean_text
@@ -25,6 +28,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = ROOT / "data" / "dataset.csv"
 MODELS_DIR = ROOT / "models"
 
+VECTORIZER_PARAMS = {"ngram_range": (1, 2), "min_df": 2, "max_features": 3000}
+CV_FOLDS = 5
+CV_RANDOM_STATE = 42
+
 MODELS = {
     "logistic_regression": LogisticRegression(max_iter=1000, C=1.0, class_weight="balanced", random_state=42),
     "naive_bayes": MultinomialNB(alpha=0.5),
@@ -32,7 +39,7 @@ MODELS = {
 }
 
 
-def evaluate(model, X_test_vec, y_test, label_encoder):
+def evaluate(model, X_test_vec, y_test):
     predictions = model.predict(X_test_vec)
     return {
         "accuracy": accuracy_score(y_test, predictions),
@@ -40,6 +47,32 @@ def evaluate(model, X_test_vec, y_test, label_encoder):
         "recall": recall_score(y_test, predictions, average="weighted", zero_division=0),
         "f1": f1_score(y_test, predictions, average="weighted", zero_division=0),
     }, predictions
+
+
+def make_pipeline(estimator):
+    return Pipeline([
+        ("tfidf", TfidfVectorizer(**VECTORIZER_PARAMS)),
+        ("clf", estimator),
+    ])
+
+
+def cross_validate_model(estimator, X, y):
+    """StratifiedKFold CV with a per-fold pipeline so the vectorizer is
+    refit inside every fold (no leakage from validation folds)."""
+    skf = StratifiedKFold(n_splits=CV_FOLDS, shuffle=True, random_state=CV_RANDOM_STATE)
+    fold_scores = {"accuracy": [], "precision": [], "recall": [], "f1": []}
+    for train_idx, test_idx in skf.split(X, y):
+        pipe = make_pipeline(clone(estimator))
+        pipe.fit(X.iloc[train_idx], y[train_idx])
+        predictions = pipe.predict(X.iloc[test_idx])
+        fold_scores["accuracy"].append(accuracy_score(y[test_idx], predictions))
+        fold_scores["precision"].append(precision_score(y[test_idx], predictions, average="weighted", zero_division=0))
+        fold_scores["recall"].append(recall_score(y[test_idx], predictions, average="weighted", zero_division=0))
+        fold_scores["f1"].append(f1_score(y[test_idx], predictions, average="weighted", zero_division=0))
+    return {
+        metric: {"mean": round(float(np.mean(values)), 4), "std": round(float(np.std(values)), 4)}
+        for metric, values in fold_scores.items()
+    }
 
 
 def main():
@@ -56,7 +89,7 @@ def main():
         data["clean"], y, test_size=0.2, random_state=42, stratify=y
     )
 
-    vectorizer = TfidfVectorizer(ngram_range=(1, 2), min_df=2, max_features=3000)
+    vectorizer = TfidfVectorizer(**VECTORIZER_PARAMS)
     X_train_vec = vectorizer.fit_transform(X_train)
     X_test_vec = vectorizer.transform(X_test)
 
@@ -64,12 +97,17 @@ def main():
     best = None
     for name, model in MODELS.items():
         model.fit(X_train_vec, y_train)
-        metrics, predictions = evaluate(model, X_test_vec, y_test, label_encoder)
-        comparison.append({"model": name, **metrics})
+        metrics, predictions = evaluate(model, X_test_vec, y_test)
+        cv_summary = cross_validate_model(model, data["clean"], y)
+        comparison.append({"model": name, **metrics, "cv": {"folds": CV_FOLDS, **cv_summary}})
         print(f"\n=== {name} ===")
         print(
-            f"Accuracy: {metrics['accuracy']:.4f} | Precision: {metrics['precision']:.4f} | "
+            f"Holdout  Accuracy: {metrics['accuracy']:.4f} | Precision: {metrics['precision']:.4f} | "
             f"Recall: {metrics['recall']:.4f} | F1: {metrics['f1']:.4f}"
+        )
+        print(
+            f"CV({CV_FOLDS}) F1: {cv_summary['f1']['mean']:.4f} +/- {cv_summary['f1']['std']:.4f} | "
+            f"Accuracy: {cv_summary['accuracy']['mean']:.4f} +/- {cv_summary['accuracy']['std']:.4f}"
         )
         print(classification_report(y_test, predictions, target_names=label_encoder.classes_, zero_division=0))
         if best is None or metrics["f1"] > best["metrics"]["f1"]:
@@ -91,7 +129,12 @@ def main():
             "rows": len(data),
             "specialties": sorted(label_encoder.classes_.tolist()),
         },
-        "vectorizer": {"ngram_range": [1, 2], "min_df": 2, "max_features": 3000},
+        "vectorizer": {
+            "ngram_range": list(VECTORIZER_PARAMS["ngram_range"]),
+            "min_df": VECTORIZER_PARAMS["min_df"],
+            "max_features": VECTORIZER_PARAMS["max_features"],
+        },
+        "cv": {"folds": CV_FOLDS, "shuffle": True, "random_state": CV_RANDOM_STATE},
         "trained_at": datetime.now(timezone.utc).isoformat(),
     }
     joblib.dump(meta, MODELS_DIR / "meta.joblib")

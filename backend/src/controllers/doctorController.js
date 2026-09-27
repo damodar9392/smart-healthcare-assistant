@@ -127,10 +127,10 @@ const list = asyncHandler(async (req, res) => {
   if (city) {
     filter['hospital.city'] = new RegExp(escapeRegex(city), 'i');
   }
-  if (minRating) {
+  if (minRating !== undefined && minRating !== '') {
     filter.rating = { $gte: parseFloat(minRating) };
   }
-  if (maxFee) {
+  if (maxFee !== undefined && maxFee !== '') {
     filter.consultationFee = { $lte: parseFloat(maxFee) };
   }
   if (lat !== undefined && lng !== undefined) {
@@ -168,6 +168,11 @@ const canViewFullProfile = (req, profile) => {
 const getById = asyncHandler(async (req, res) => {
   const profile = await DoctorProfile.findById(req.params.id).populate('user', 'name email');
   if (!profile) {
+    throw new ApiError(404, 'Doctor profile not found');
+  }
+  const isOwner = profile.user && req.user && String(profile.user._id) === String(req.user._id);
+  const isAdmin = req.user && req.user.role === 'admin';
+  if (!isAdmin && !isOwner && profile.verificationStatus !== 'verified') {
     throw new ApiError(404, 'Doctor profile not found');
   }
   if (!canViewFullProfile(req, profile)) {
@@ -366,14 +371,24 @@ const getMyAvailability = asyncHandler(async (req, res) => {
 });
 
 const addSlot = asyncHandler(async (req, res) => {
-  const slot = await DoctorAvailability.create({ ...req.body, doctor: req.user._id });
+  const slot = await DoctorAvailability.create({
+    dayOfWeek: req.body.dayOfWeek,
+    startTime: req.body.startTime,
+    endTime: req.body.endTime,
+    isAvailable: req.body.isAvailable !== undefined ? req.body.isAvailable : true,
+    doctor: req.user._id,
+  });
   res.status(201).json({ success: true, data: slot });
 });
 
 const updateSlot = asyncHandler(async (req, res) => {
+  const updates = {};
+  for (const field of ['dayOfWeek', 'startTime', 'endTime', 'isAvailable']) {
+    if (field in req.body) updates[field] = req.body[field];
+  }
   const slot = await DoctorAvailability.findOneAndUpdate(
     { _id: req.params.slotId, doctor: req.user._id },
-    req.body,
+    { $set: updates },
     { new: true, runValidators: true }
   );
   if (!slot) {

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../services/api';
 import { useAuth } from '../hooks/useAuth';
@@ -40,6 +40,11 @@ const SymptomForm = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
+
+  const allSymptoms = useMemo(
+    () => [...form.symptoms, ...form.additionalSymptoms],
+    [form.symptoms, form.additionalSymptoms]
+  );
 
   const canSubmit =
     form.symptoms.length > 0 && form.durationInDays > 0 && acceptedDisclaimer && !loading;
@@ -186,7 +191,11 @@ const SymptomForm = () => {
             </div>
             <div>
               <span className="result-label">Confidence score</span>
-              <strong>{Math.round(result.confidenceScore * 100)}%</strong>
+              <strong>
+                {result.confidenceScore != null
+                  ? `${Math.round(result.confidenceScore * 100)}%`
+                  : '\u2014'}
+              </strong>
             </div>
           </div>
           <p className="muted">{result.summary}</p>
@@ -196,8 +205,10 @@ const SymptomForm = () => {
           <UrgencyWarning result={result} />
           {result.showTemporaryGuidance !== false && (
             <VerifiedGuidance
-              symptoms={form.symptoms}
+              symptoms={allSymptoms}
               specialty={result.recommendedSpecialty}
+              severity={form.severity}
+              durationInDays={Number(form.durationInDays)}
             />
           )}
           <p className="disclaimer">{result.disclaimer}</p>

@@ -53,6 +53,37 @@ const appointmentSchema = new mongoose.Schema(
       trim: true,
       maxlength: [1000, 'Reason cannot exceed 1000 characters'],
     },
+    consultationFee: {
+      type: Number,
+      min: [0, 'Consultation fee cannot be negative'],
+      default: 0,
+    },
+    paymentStatus: {
+      type: String,
+      enum: {
+        values: ['unpaid', 'pending', 'paid', 'refunded'],
+        message: '{VALUE} is not a valid payment status',
+      },
+      default: 'unpaid',
+    },
+    videoRoomId: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    videoRoomUrl: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    videoCreatedAt: {
+      type: Date,
+      default: null,
+    },
+    videoExpiresAt: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true }
 );

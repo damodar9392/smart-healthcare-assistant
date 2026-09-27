@@ -25,9 +25,7 @@ const getWindows = async (doctorUserId, date) => {
     .lean();
 };
 
-const generateSlots = async (doctorUserId, date) => {
-  const windows = await getWindows(doctorUserId, date);
-
+const expandWindows = (windows) => {
   const allSlots = [];
   windows.forEach((window) => {
     let start = window.startTime;
@@ -36,6 +34,12 @@ const generateSlots = async (doctorUserId, date) => {
       start = addMinutes(start, slotMinutes);
     }
   });
+  return allSlots;
+};
+
+const generateSlots = async (doctorUserId, date) => {
+  const windows = await getWindows(doctorUserId, date);
+  const allSlots = expandWindows(windows);
 
   const blocked = await Appointment.find({
     doctor: doctorUserId,
@@ -45,6 +49,78 @@ const generateSlots = async (doctorUserId, date) => {
 
   const blockedTimes = new Set(blocked.map((a) => a.startTime));
   return allSlots.filter((slot) => !blockedTimes.has(slot.startTime));
+};
+
+const toDateKey = (date) => date.toISOString().slice(0, 10);
+
+const startOfUtcDay = (value) => {
+  const date = new Date(value);
+  return new Date(
+    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
+  );
+};
+
+const addDays = (date, days) => {
+  const next = new Date(date.getTime());
+  next.setUTCDate(next.getUTCDate() + days);
+  return next;
+};
+
+const bookingKey = (dateKey, startTime) => `${dateKey}|${startTime}`;
+
+const buildAvailabilityIndex = (windows, appointments) => {
+  const byDoctor = new Map();
+
+  windows.forEach((window) => {
+    const key = String(window.doctor);
+    if (!byDoctor.has(key)) {
+      byDoctor.set(key, { windows: [], booked: new Set(), hasWindows: false });
+    }
+    const entry = byDoctor.get(key);
+    entry.windows.push({
+      dayOfWeek: window.dayOfWeek,
+      startTime: window.startTime,
+      endTime: window.endTime,
+    });
+    entry.hasWindows = true;
+  });
+
+  appointments.forEach((appointment) => {
+    const key = String(appointment.doctor);
+    if (!byDoctor.has(key)) {
+      byDoctor.set(key, { windows: [], booked: new Set(), hasWindows: false });
+    }
+    byDoctor.get(key).booked.add(
+      bookingKey(toDateKey(new Date(appointment.date)), appointment.startTime)
+    );
+  });
+
+  return byDoctor;
+};
+
+const findNextFreeSlot = ({ windows, booked, fromDate, horizonDays }) => {
+  if (!windows || windows.length === 0) {
+    return null;
+  }
+
+  const start = startOfUtcDay(fromDate);
+  for (let offset = 0; offset < horizonDays; offset += 1) {
+    const day = addDays(start, offset);
+    const dateKey = toDateKey(day);
+    const dayOfWeek = day.getUTCDay();
+    const dayWindows = windows.filter((window) => window.dayOfWeek === dayOfWeek);
+    if (dayWindows.length === 0) {
+      continue;
+    }
+    const free = expandWindows(dayWindows).find(
+      (slot) => !booked.has(bookingKey(dateKey, slot.startTime))
+    );
+    if (free) {
+      return { date: dateKey, startTime: free.startTime, daysAhead: offset };
+    }
+  }
+
+  return null;
 };
 
 const assertSlotAvailable = async (doctorUserId, date, startTime, endTime) => {
@@ -70,4 +146,12 @@ const assertSlotAvailable = async (doctorUserId, date, startTime, endTime) => {
   }
 };
 
-module.exports = { generateSlots, assertSlotAvailable, addMinutes, toMinutes };
+module.exports = {
+  generateSlots,
+  assertSlotAvailable,
+  buildAvailabilityIndex,
+  findNextFreeSlot,
+  addMinutes,
+  toMinutes,
+  BLOCKING_STATUSES,
+};

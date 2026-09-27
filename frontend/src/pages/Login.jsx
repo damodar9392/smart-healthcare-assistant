@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate, Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import ErrorMessage from '../components/ErrorMessage';
@@ -12,8 +12,17 @@ const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
 
   const successMessage = location.state?.success;
+
+  const lockoutActive = cooldown > 0;
+
+  useEffect(() => {
+    if (!lockoutActive) return;
+    const timer = setInterval(() => setCooldown((s) => s - 1), 1000);
+    return () => clearInterval(timer);
+  }, [lockoutActive]);
 
   if (user) {
     return <Navigate to={ROLE_HOME[user.role]} replace />;
@@ -29,7 +38,18 @@ const Login = () => {
       const loggedIn = await login(form);
       navigate(ROLE_HOME[loggedIn.role], { replace: true });
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Please try again.');
+      const status = err.response?.status;
+      const message = err.response?.data?.message || 'Login failed. Please try again.';
+      setError(message);
+      if (status === 429) {
+        const dataRetry = err.response?.data?.retryAfter;
+        const headerRetry = err.response?.headers?.['retry-after'];
+        const seconds =
+          dataRetry != null ? Number(dataRetry) : headerRetry != null ? Number(headerRetry) : NaN;
+        const retryAfter =
+          Number.isFinite(seconds) && seconds > 0 ? Math.ceil(seconds) : 30;
+        setCooldown(retryAfter);
+      }
     } finally {
       setSubmitting(false);
     }
@@ -65,8 +85,12 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary btn-block" disabled={submitting}>
-            {submitting ? 'Logging in...' : 'Login'}
+          <button type="submit" className="btn btn-primary btn-block" disabled={submitting || cooldown > 0}>
+            {cooldown > 0
+              ? `Retry in ${cooldown}s`
+              : submitting
+                ? 'Logging in...'
+                : 'Login'}
           </button>
         </form>
         <p className="muted auth-switch">

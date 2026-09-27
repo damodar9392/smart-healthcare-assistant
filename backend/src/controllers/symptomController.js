@@ -53,13 +53,29 @@ const getById = asyncHandler(async (req, res) => {
   res.json({ success: true, data: symptom });
 });
 
+const SYMPTOM_FIELDS = [
+  'name',
+  'category',
+  'severityLevel',
+  'description',
+  'recommendedSpecialty',
+];
+
 const create = asyncHandler(async (req, res) => {
-  const symptom = await Symptom.create(req.body);
+  const payload = {};
+  for (const field of SYMPTOM_FIELDS) {
+    if (field in req.body) payload[field] = req.body[field];
+  }
+  const symptom = await Symptom.create(payload);
   res.status(201).json({ success: true, data: symptom });
 });
 
 const update = asyncHandler(async (req, res) => {
-  const symptom = await Symptom.findByIdAndUpdate(req.params.id, req.body, {
+  const payload = {};
+  for (const field of SYMPTOM_FIELDS) {
+    if (field in req.body) payload[field] = req.body[field];
+  }
+  const symptom = await Symptom.findByIdAndUpdate(req.params.id, payload, {
     new: true,
     runValidators: true,
   });

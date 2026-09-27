@@ -60,7 +60,7 @@ const UrgencyWarning = ({ result }) => {
                 <span className="service-tags">
                   <strong>{service.name}</strong>
                   {service.isSponsored && (
-                    <span className="tag tag-sponsored">
+                    <span className="service-tag service-tag-sponsored">
                       Sponsored{service.sponsor ? ` · ${service.sponsor}` : ''}
                     </span>
                   )}

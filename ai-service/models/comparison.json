@@ -1,23 +1,80 @@
 [
   {
+    "model": "naive_bayes",
+    "accuracy": 0.9977777777777778,
+    "precision": 0.9978494623655914,
+    "recall": 0.9977777777777778,
+    "f1": 0.9977866556458649,
+    "cv": {
+      "folds": 5,
+      "accuracy": {
+        "mean": 0.9947,
+        "std": 0.0008
+      },
+      "precision": {
+        "mean": 0.9948,
+        "std": 0.0008
+      },
+      "recall": {
+        "mean": 0.9947,
+        "std": 0.0008
+      },
+      "f1": {
+        "mean": 0.9947,
+        "std": 0.0008
+      }
+    }
+  },
+  {
     "model": "logistic_regression",
-    "accuracy": 1.0,
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1": 1.0
+    "accuracy": 0.9966666666666667,
+    "precision": 0.9967565661907279,
+    "recall": 0.9966666666666667,
+    "f1": 0.9966754673689012,
+    "cv": {
+      "folds": 5,
+      "accuracy": {
+        "mean": 0.9976,
+        "std": 0.0015
+      },
+      "precision": {
+        "mean": 0.9976,
+        "std": 0.0014
+      },
+      "recall": {
+        "mean": 0.9976,
+        "std": 0.0015
+      },
+      "f1": {
+        "mean": 0.9976,
+        "std": 0.0015
+      }
+    }
   },
   {
     "model": "random_forest",
-    "accuracy": 1.0,
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1": 1.0
-  },
-  {
-    "model": "naive_bayes",
-    "accuracy": 0.9925,
-    "precision": 0.9929245283018868,
-    "recall": 0.9925,
-    "f1": 0.9924932439195275
+    "accuracy": 0.9955555555555555,
+    "precision": 0.9956989247311828,
+    "recall": 0.9955555555555555,
+    "f1": 0.9955733112917299,
+    "cv": {
+      "folds": 5,
+      "accuracy": {
+        "mean": 0.9971,
+        "std": 0.0018
+      },
+      "precision": {
+        "mean": 0.9972,
+        "std": 0.0017
+      },
+      "recall": {
+        "mean": 0.9971,
+        "std": 0.0018
+      },
+      "f1": {
+        "mean": 0.9971,
+        "std": 0.0018
+      }
+    }
   }
 ]

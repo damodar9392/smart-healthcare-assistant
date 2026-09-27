@@ -23,6 +23,10 @@ const ServicesPage = () => {
   const [locError, setLocError] = useState('');
   const [maxDistance, setMaxDistance] = useState(25000);
   const [manualMode, setManualMode] = useState(false);
+  const [manualCoords, setManualCoords] = useState({ lat: '', lng: '' });
+  const [searchQuery, setSearchQuery] = useState('');
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -30,7 +34,7 @@ const ServicesPage = () => {
     try {
       const params = {};
       if (category) params.category = category;
-      if (location) {
+      if (location && Number.isFinite(Number(location.lat)) && Number.isFinite(Number(location.lng))) {
         params.lat = location.lat;
         params.lng = location.lng;
         params.maxDistance = maxDistance;
@@ -47,6 +51,30 @@ const ServicesPage = () => {
   useEffect(() => {
     load();
   }, [load]);
+
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setSuggestions([]);
+      return;
+    }
+    const q = searchQuery.toLowerCase();
+    const matches = services.filter(
+      (s) =>
+        s.name.toLowerCase().includes(q) ||
+        (s.description && s.description.toLowerCase().includes(q)) ||
+        (CATEGORY_LABELS[s.category] || '').toLowerCase().includes(q)
+    );
+    setSuggestions(matches.slice(0, 6));
+  }, [searchQuery, services]);
+
+  const filteredServices = searchQuery.trim()
+    ? services.filter(
+        (s) =>
+          s.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          (s.description && s.description.toLowerCase().includes(searchQuery.toLowerCase())) ||
+          (CATEGORY_LABELS[s.category] || '').toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : services;
 
   const locateMe = () => {
     setLocError('');
@@ -73,6 +101,19 @@ const ServicesPage = () => {
     );
   };
 
+  const handleApply = (e) => {
+    e.preventDefault();
+    if (manualMode) {
+      if (!Number.isFinite(Number(manualCoords.lat)) || !Number.isFinite(Number(manualCoords.lng))) {
+        setLocError('Enter valid latitude and longitude before applying.');
+        return;
+      }
+      setLocError('');
+      setLocation({ lat: manualCoords.lat, lng: manualCoords.lng });
+    }
+    load();
+  };
+
   return (
     <div className="page-container">
       <h1>Optional Healthcare Services</h1>
@@ -84,17 +125,47 @@ const ServicesPage = () => {
         These listings are <strong>optional</strong> and{' '}
         <strong>never influence</strong> the AI specialist recommendation, urgency
         classification or doctor-verified guidance you receive elsewhere on this platform.
-        Listings marked <span className="tag tag-sponsored">Sponsored</span> are paid
+        Listings marked <span className="service-tag service-tag-sponsored">Sponsored</span> are paid
         placements.
       </p>
 
       <div className="card services-search">
+        <div className="search-autocomplete">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search services by name, description, or category..."
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+              setShowSuggestions(true);
+            }}
+            onFocus={() => setShowSuggestions(true)}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+          />
+          {showSuggestions && suggestions.length > 0 && (
+            <ul className="suggestions-dropdown">
+              {suggestions.map((s) => (
+                <li
+                  key={s._id}
+                  className="suggestion-item"
+                  onMouseDown={() => {
+                    setSearchQuery(s.name);
+                    setShowSuggestions(false);
+                  }}
+                >
+                  <span className="suggestion-name">{s.name}</span>
+                  <span className="suggestion-category">
+                    {CATEGORY_LABELS[s.category] || s.category}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         <form
           className="filter-bar"
-          onSubmit={(e) => {
-            e.preventDefault();
-            load();
-          }}
+          onSubmit={handleApply}
         >
           <div className="form-group">
             <label htmlFor="svc-category-filter">Category</label>
@@ -143,8 +214,9 @@ const ServicesPage = () => {
                 step="any"
                 min={-90}
                 max={90}
+                value={manualCoords.lat}
                 placeholder="e.g. 24.86"
-                onChange={(e) => setLocation({ ...(location || {}), lat: e.target.value })}
+                onChange={(e) => setManualCoords((c) => ({ ...c, lat: e.target.value }))}
               />
             </div>
             <div className="form-group">
@@ -155,8 +227,9 @@ const ServicesPage = () => {
                 step="any"
                 min={-180}
                 max={180}
+                value={manualCoords.lng}
                 placeholder="e.g. 67.01"
-                onChange={(e) => setLocation({ ...(location || {}), lng: e.target.value })}
+                onChange={(e) => setManualCoords((c) => ({ ...c, lng: e.target.value }))}
               />
             </div>
           </div>
@@ -167,18 +240,20 @@ const ServicesPage = () => {
         <Loading />
       ) : error ? (
         <ErrorMessage message={error} />
-      ) : services.length === 0 ? (
+      ) : filteredServices.length === 0 ? (
         <EmptyState
-          title="No services found"
+          title={searchQuery.trim() ? 'No matching services' : 'No services found'}
           hint={
-            location
-              ? 'Try a wider distance or a different category.'
-              : 'Enable location or pick a category to narrow results.'
+            searchQuery.trim()
+              ? `Nothing matches "${searchQuery}". Try a different term or category.`
+              : location
+                ? 'Try a wider distance or a different category.'
+                : 'Enable location or pick a category to narrow results.'
           }
         />
       ) : (
         <div className="service-grid">
-          {services.map((service) => (
+          {filteredServices.map((service) => (
             <ServiceCard key={service._id} service={service} />
           ))}
         </div>

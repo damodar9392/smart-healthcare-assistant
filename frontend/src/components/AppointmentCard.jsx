@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import { patientService } from '../services/patientService';
@@ -20,11 +20,13 @@ const AppointmentCard = ({ appointment, onChanged, showActions = true }) => {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
+  const slotsRequestRef = useRef(0);
 
   const isActive = ['scheduled', 'rescheduled'].includes(appointment.status);
   const doctorId = appointment.doctorProfileId;
 
   const loadSlots = async (value) => {
+    const requestId = ++slotsRequestRef.current;
     setDate(value);
     setSelected(null);
     setError('');
@@ -35,11 +37,15 @@ const AppointmentCard = ({ appointment, onChanged, showActions = true }) => {
     setLoading(true);
     try {
       const { data } = await patientService.getSlots(doctorId, value);
+      if (requestId !== slotsRequestRef.current) return;
       setSlots(data.data);
     } catch (err) {
+      if (requestId !== slotsRequestRef.current) return;
       setError(err.response?.data?.message || 'Failed to load slots.');
     } finally {
-      setLoading(false);
+      if (requestId === slotsRequestRef.current) {
+        setLoading(false);
+      }
     }
   };
 
@@ -104,6 +110,9 @@ const AppointmentCard = ({ appointment, onChanged, showActions = true }) => {
         <div className="card-actions">
           {isActive && (
             <>
+              <Link to={`/video/${appointment._id}`} className="btn btn-sm btn-primary">
+                Video call
+              </Link>
               <button
                 type="button"
                 className="btn btn-sm btn-outline"

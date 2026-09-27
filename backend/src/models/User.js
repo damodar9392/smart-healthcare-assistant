@@ -36,6 +36,24 @@ const userSchema = new mongoose.Schema(
       },
       default: 'patient',
     },
+    pushSubscriptions: {
+      type: [
+        {
+          endpoint: {
+            type: String,
+            required: true,
+            trim: true,
+          },
+          keys: {
+            p256dh: { type: String, trim: true },
+            auth: { type: String, trim: true },
+          },
+          userAgent: { type: String, default: null },
+          createdAt: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
+    },
   },
   { timestamps: true }
 );

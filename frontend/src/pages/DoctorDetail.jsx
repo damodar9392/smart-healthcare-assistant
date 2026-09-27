@@ -44,7 +44,9 @@ const DoctorDetail = () => {
       setReviewsLoading(true);
       setReviewsError('');
       try {
-        const { data } = await api.get(`/reviews/doctor/${id}`, {
+        const doctorUserId = profile?.user?._id;
+        if (!doctorUserId) return;
+        const { data } = await api.get(`/reviews/doctor/${doctorUserId}`, {
           params: { page, limit: 10 },
         });
         setReviews(append ? (prev) => [...prev, ...data.data] : data.data);
@@ -55,7 +57,7 @@ const DoctorDetail = () => {
         setReviewsLoading(false);
       }
     },
-    [id]
+    [profile?.user?._id]
   );
 
   useEffect(() => {
@@ -63,8 +65,10 @@ const DoctorDetail = () => {
   }, [loadProfile]);
 
   useEffect(() => {
-    loadReviews(1, false);
-  }, [loadReviews]);
+    if (profile?.user?._id) {
+      loadReviews(1, false);
+    }
+  }, [loadReviews, profile?.user?._id]);
 
   const handleReviewSubmitted = () => {
     loadReviews(1, false);
@@ -72,6 +76,7 @@ const DoctorDetail = () => {
   };
 
   const loadMore = () => {
+    if (reviewsLoading) return;
     if (pagination && pagination.page < pagination.pages) {
       loadReviews(pagination.page + 1, true);
     }
@@ -196,8 +201,13 @@ const DoctorDetail = () => {
               </div>
             ))}
             {pagination && pagination.page < pagination.pages && (
-              <button type="button" className="btn btn-outline" onClick={loadMore}>
-                Load more reviews
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={loadMore}
+                disabled={reviewsLoading}
+              >
+                {reviewsLoading ? 'Loading...' : 'Load more reviews'}
               </button>
             )}
           </div>

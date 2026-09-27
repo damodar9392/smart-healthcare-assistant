@@ -4,6 +4,7 @@ import { patientService } from '../services/patientService';
 const SaveButton = ({ doctorId, className = 'btn btn-sm btn-outline' }) => {
   const [saved, setSaved] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -28,7 +29,9 @@ const SaveButton = ({ doctorId, className = 'btn btn-sm btn-outline' }) => {
   }, [doctorId]);
 
   const toggle = async () => {
+    if (busy) return;
     setError('');
+    setBusy(true);
     try {
       if (saved) {
         await patientService.removeSavedDoctor(doctorId);
@@ -38,6 +41,8 @@ const SaveButton = ({ doctorId, className = 'btn btn-sm btn-outline' }) => {
       setSaved((prev) => !prev);
     } catch (err) {
       setError(err.response?.data?.message || 'Could not update saved doctors.');
+    } finally {
+      setBusy(false);
     }
   };
 
@@ -47,9 +52,9 @@ const SaveButton = ({ doctorId, className = 'btn btn-sm btn-outline' }) => {
         type="button"
         className={`${className}${saved ? ' saved' : ''}`}
         onClick={toggle}
-        disabled={loading}
+        disabled={loading || busy}
       >
-        {loading ? 'Loading…' : saved ? '★ Saved' : '☆ Save doctor'}
+        {loading ? 'Loading…' : busy ? 'Saving…' : saved ? '★ Saved' : '☆ Save doctor'}
       </button>
       {error && <span className="muted save-button-error">{error}</span>}
     </span>

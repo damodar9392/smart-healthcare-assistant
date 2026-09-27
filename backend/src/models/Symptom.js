@@ -56,6 +56,5 @@ const symptomSchema = new mongoose.Schema(
 );
 
 symptomSchema.index({ category: 1, severityLevel: 1 });
-symptomSchema.index({ name: 1 });
 
 module.exports = mongoose.model('Symptom', symptomSchema);

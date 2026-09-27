@@ -2,6 +2,7 @@ import api from './api';
 
 export const doctorService = {
   getAppointments: () => api.get('/appointments/me'),
+  getVideoRoom: (appointmentId) => api.get(`/appointments/${appointmentId}/video`),
   updateStatus: (id, status) => api.put(`/appointments/${id}/status`, { status }),
   cancelAppointment: (id) => api.put(`/appointments/${id}/cancel`),
   getAvailability: () => api.get('/doctors/me/availability'),
@@ -17,4 +18,9 @@ export const doctorService = {
   createProfile: (payload) => api.post('/doctors/me', payload),
   updateProfile: (payload) => api.put('/doctors/me', payload),
   submitVerification: (payload) => api.put('/doctors/me/verification', payload),
+
+  createPrescription: (payload) => api.post('/prescriptions', payload),
+  updatePrescription: (id, payload) => api.put(`/prescriptions/${id}`, payload),
+  getPrescriptionForAppointment: (appointmentId) =>
+    api.get(`/prescriptions/appointment/${appointmentId}`),
 };

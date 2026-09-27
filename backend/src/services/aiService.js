@@ -1,15 +1,25 @@
+const { throttledWarn } = require('../utils/logThrottle');
+const { resolveCanonical } = require('./doctorMatchingService');
+
 const KEYWORD_MAP = [
-  { keywords: ['chest pain', 'chest tightness', 'palpitations', 'heart'], specialty: 'Cardiology' },
-  { keywords: ['headache', 'migraine', 'dizziness', 'vertigo', 'numbness'], specialty: 'Neurology' },
-  { keywords: ['fever', 'cough', 'sore throat', 'breathing', 'shortness of breath'], specialty: 'Respiratory Medicine' },
-  { keywords: ['abdominal pain', 'stomach', 'nausea', 'vomiting', 'diarrhoea', 'diarrhea'], specialty: 'Gastroenterology' },
-  { keywords: ['back pain', 'joint pain', 'knee', 'muscle', 'neck pain'], specialty: 'Orthopedics' },
-  { keywords: ['rash', 'itching', 'itchy', 'skin', 'acne'], specialty: 'Dermatology' },
-  { keywords: ['eye pain', 'blurred vision', 'red eye', 'vision'], specialty: 'Ophthalmology' },
-  { keywords: ['ear pain', 'hearing', 'throat', 'nose', 'sinus'], specialty: 'ENT' },
-  { keywords: ['anxiety', 'depression', 'stress', 'sleep', 'mood'], specialty: 'Psychiatry' },
-  { keywords: ['fatigue', 'weakness', 'weight loss', 'tired'], specialty: 'General Medicine' },
+  { keywords: ['chest pain', 'chest tightness', 'palpitations', 'heart'], specialty: 'Cardiologist' },
+  { keywords: ['headache', 'migraine', 'dizziness', 'vertigo', 'numbness'], specialty: 'Neurologist' },
+  { keywords: ['fever', 'cough', 'sore throat', 'breathing', 'shortness of breath'], specialty: 'Pulmonologist' },
+  { keywords: ['abdominal pain', 'stomach', 'nausea', 'vomiting', 'diarrhoea', 'diarrhea'], specialty: 'Gastroenterologist' },
+  { keywords: ['back pain', 'joint pain', 'knee', 'muscle', 'neck pain'], specialty: 'Orthopedic Specialist' },
+  { keywords: ['rash', 'itching', 'itchy', 'skin', 'acne'], specialty: 'Dermatologist' },
+  { keywords: ['eye pain', 'blurred vision', 'red eye', 'vision'], specialty: 'Ophthalmologist' },
+  { keywords: ['ear pain', 'hearing', 'throat', 'nose', 'sinus'], specialty: 'ENT Specialist' },
+  { keywords: ['anxiety', 'depression', 'stress', 'sleep', 'mood'], specialty: 'Psychiatrist' },
+  { keywords: ['fatigue', 'weakness', 'weight loss', 'tired'], specialty: 'General Physician' },
+  { keywords: ['burning urination', 'urine', 'urinary', 'kidney stone'], specialty: 'Urologist' },
+  { keywords: ['child', 'baby', 'infant', 'toddler', 'growth'], specialty: 'Pediatrician' },
+  { keywords: ['period', 'menstrual', 'pregnancy', 'pregnant'], specialty: 'Gynecologist' },
+  { keywords: ['thyroid', 'diabetes', 'blood sugar', 'hormone'], specialty: 'Endocrinologist' },
+  { keywords: ['toothache', 'tooth pain', 'cavity', 'gum'], specialty: 'Dentist' },
 ];
+
+const FALLBACK_SPECIALTY = 'General Physician';
 
 const EMERGENCY_KEYWORDS = [
   'chest pain',
@@ -46,13 +56,28 @@ const mockAnalysis = ({ symptoms, severity, durationInDays }) => {
     0.97
   );
 
+  const recommendedSpecialty = specialtyEntry
+    ? resolveCanonical(specialtyEntry.specialty) || specialtyEntry.specialty
+    : FALLBACK_SPECIALTY;
+
   return {
-    recommendedSpecialty: specialtyEntry ? specialtyEntry.specialty : 'General Medicine',
+    recommendedSpecialty,
     urgencyLevel,
     confidenceScore: Math.round(confidenceScore * 100) / 100,
     summary: specialtyEntry
-      ? `Based on the reported symptoms, the probable condition category points to ${specialtyEntry.specialty}. This is a category estimate, not a diagnosis.`
-      : 'Based on the reported symptoms, a general medicine assessment is recommended. This is a category estimate, not a diagnosis.',
+      ? `Based on the reported symptoms, the probable condition category points to ${recommendedSpecialty}. This is a category estimate, not a diagnosis.`
+      : `Based on the reported symptoms, a ${recommendedSpecialty.toLowerCase()} assessment is recommended. This is a category estimate, not a diagnosis.`,
+  };
+};
+
+const buildResult = (body) => {
+  const recommendedSpecialty =
+    resolveCanonical(body.recommended_specialty) || FALLBACK_SPECIALTY;
+  return {
+    recommendedSpecialty,
+    urgencyLevel: URGENCY_MAP[body.urgency] || 'routine',
+    confidenceScore: body.confidence,
+    summary: `Based on the reported symptoms, the probable condition category points to ${recommendedSpecialty}. This is a category estimate, not a diagnosis.`,
   };
 };
 
@@ -76,16 +101,29 @@ const analyzeSymptoms = async (payload) => {
     if (!response.ok) {
       throw new Error(`AI service returned ${response.status}`);
     }
-    const body = await response.json();
-    return {
-      recommendedSpecialty: body.recommended_specialty,
-      urgencyLevel: URGENCY_MAP[body.urgency] || 'routine',
-      confidenceScore: body.confidence,
-      summary: `Based on the reported symptoms, the probable condition category points to ${body.recommended_specialty}. This is a category estimate, not a diagnosis.`,
-    };
-  } catch (err) {
-    console.warn(`[aiService] AI service unavailable (${err.message}), using mock analysis`);
-    return mockAnalysis(payload);
+    return buildResult(await response.json());
+  } catch (firstErr) {
+    try {
+      const controller = new AbortController();
+      const retryTimer = setTimeout(() => controller.abort(), 3000);
+      const retry = await fetch(`${aiServiceUrl}/predict`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(aiPayload),
+        signal: controller.signal,
+      });
+      clearTimeout(retryTimer);
+      if (!retry.ok) {
+        throw new Error(`AI service returned ${retry.status}`);
+      }
+      return buildResult(await retry.json());
+    } catch (err) {
+      throttledWarn(
+        'aiService.analyzeSymptoms',
+        `[aiService] AI service unavailable (${err.message}), using mock analysis (fallback logged at most once per minute)`
+      );
+      return mockAnalysis(payload);
+    }
   }
 };
 

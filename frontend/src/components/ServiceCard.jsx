@@ -3,9 +3,9 @@ import { CATEGORY_LABELS } from '../utils/categories';
 const ServiceCard = ({ service }) => (
   <div className="card service-card">
     <div className="service-tags">
-      <span className="tag tag-optional">Optional</span>
+      <span className="service-tag service-tag-optional">Optional</span>
       {service.isSponsored && (
-        <span className="tag tag-sponsored">
+        <span className="service-tag service-tag-sponsored">
           Sponsored{service.sponsor ? ` · ${service.sponsor}` : ''}
         </span>
       )}

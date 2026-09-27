@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "invariants": {
+    "sponsoredIndependence": "Sponsored services must never affect the doctor match score. services/doctorMatchingService.js must not read the SponsoredService collection, must not join it, and must not read any doctor-side promotion, sponsorship or advertising field. Sponsored services live in a separate collection, are served only by /api/sponsored-services, and are never rendered on the doctor discovery surface. Scoring inputs are limited to: verified status, specialization, coordinates, availability windows, booked appointments, experience and review aggregate.",
+    "verifiedOnly": "Only doctors with verificationStatus = 'verified' are scored or returned. Unverified and rejected doctors are excluded before scoring, so verification state is a filter rather than a scoring input.",
+    "noClinicalClaim": "The score ranks how well a doctor fits the requested specialty and practical constraints. It is not a clinical judgement about any individual doctor and must never be presented as one."
+  },
+  "weights": {
+    "specialization": 0.4,
+    "distance": 0.2,
+    "availability": 0.2,
+    "experience": 0.1,
+    "rating": 0.1
+  },
+  "normalization": {
+    "mode": "renormalize",
+    "notes": "Components that cannot be evaluated (for example distance with no coordinates supplied) are excluded from both the numerator and the denominator, so the returned score is always 0-100 and remains comparable between geo and city searches. The response reports which components were skipped and why."
+  },
+  "distance": {
+    "fullCreditBelowMeters": 1000,
+    "decay": "linear",
+    "notes": "Score is 1.0 at 0 m, 1.0 up to fullCreditBelowMeters, then decays linearly to 0 at maxDistanceMeters. Scores below 0 are clamped to 0."
+  },
+  "experience": {
+    "fullCreditYears": 20,
+    "notes": "Score is min(years / fullCreditYears, 1). Experience saturates at fullCreditYears so a 40 year practice does not permanently outrank a strong 20 year one."
+  },
+  "rating": {
+    "scale": 5,
+    "priorMean": 3.5,
+    "priorWeight": 5,
+    "notes": "Bayesian shrinkage. shrunk = (average * count + priorMean * priorWeight) / (count + priorWeight), then divided by scale. A doctor with a single 5-star review cannot outrank a doctor with hundreds of reviews, and a doctor with no reviews falls back to the prior mean rather than scoring zero."
+  },
+  "availability": {
+    "horizonDays": 7,
+    "tiers": {
+      "sameDay": 1,
+      "within48Hours": 0.75,
+      "withinHorizon": 0.4,
+      "noFreeSlot": 0.1,
+      "noWindows": 0
+    },
+    "notes": "Evaluated against the earliest bookable slot inside horizonDays, which must stay below bookingRules.maxAdvanceDays (14). Doctors with no recurring availability at all score 0; doctors who declare availability but have every slot booked score noFreeSlot."
+  },
+  "specialization": {
+    "exact": 1,
+    "related": 0.6,
+    "none": 0,
+    "notes": "Resolved through config/specialtyAliases.json. Exact means both sides canonicalise to the same label. Related means the labels share a significant token (for example 'Orthopedic' vs 'Orthopedic Surgeon') but are not identical."
+  },
+  "limits": {
+    "candidateCap": 200,
+    "notes": "Hard cap on candidates pulled from the database before in-memory scoring, to bound worst-case response time."
+  }
+}

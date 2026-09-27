@@ -16,7 +16,12 @@ module.exports = {
     enabled: false,
   },
   push: {
-    enabled: false,
+    enabled: Boolean(process.env.VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY),
+    vapid: {
+      subject: process.env.VAPID_SUBJECT || 'mailto:admin@example.com',
+      publicKey: process.env.VAPID_PUBLIC_KEY || '',
+      privateKey: process.env.VAPID_PRIVATE_KEY || '',
+    },
   },
   reminder: {
     leadHours: parseInt(process.env.REMINDER_LEAD_HOURS, 10) || 24,

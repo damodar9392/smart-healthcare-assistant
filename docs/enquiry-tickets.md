@@ -1,5 +1,9 @@
 # Feature: Patient Enquiry Tickets
 
+> **Status: IMPLEMENTED (2026-09-12).** All files in the plan below are live —
+> model, controller, routes, notification type, email template, and the full
+> frontend section (EnquiriesSection, service methods, sidebar item, badges).
+
 Complete implementation plan — every file in one document.
 
 Patients (logged in) raise support/medical enquiries tied to their account,

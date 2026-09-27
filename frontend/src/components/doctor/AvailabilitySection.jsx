@@ -95,7 +95,12 @@ const AvailabilitySection = () => {
     setMessage('');
     setBusyId(slot._id);
     try {
-      await doctorService.updateAvailability(slot._id, { isAvailable: !slot.isAvailable });
+      await doctorService.updateAvailability(slot._id, {
+        dayOfWeek: slot.dayOfWeek,
+        startTime: slot.startTime,
+        endTime: slot.endTime,
+        isAvailable: !slot.isAvailable,
+      });
       setMessage(`Slot marked ${slot.isAvailable ? 'unavailable' : 'available'}.`);
       load();
     } catch (err) {

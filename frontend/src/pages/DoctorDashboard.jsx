@@ -6,6 +6,7 @@ import AvailabilitySection from '../components/doctor/AvailabilitySection';
 import GuidanceFormSection from '../components/doctor/GuidanceFormSection';
 import GuidanceStatusSection from '../components/doctor/GuidanceStatusSection';
 import ProfileSection from '../components/doctor/ProfileSection';
+import PrescriptionsSection from '../components/doctor/PrescriptionsSection';
 
 const DoctorDashboard = () => {
   const [section, setSection] = useState('today');
@@ -16,6 +17,7 @@ const DoctorDashboard = () => {
       <main className="dashboard-content">
         {section === 'today' && <TodaySection />}
         {section === 'appointments' && <UpcomingSection />}
+        {section === 'prescriptions' && <PrescriptionsSection />}
         {section === 'availability' && <AvailabilitySection />}
         {section === 'guidance' && <GuidanceFormSection />}
         {section === 'guidance-status' && <GuidanceStatusSection />}

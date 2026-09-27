@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import ErrorMessage from '../components/ErrorMessage';
+import DoctorMatchCard from '../components/DoctorMatchCard';
 import api from '../services/api';
 
 const DISTANCE_OPTIONS = [
@@ -10,6 +11,8 @@ const DISTANCE_OPTIONS = [
   { label: 'Within 25 km', value: 25000 },
   { label: 'Within 50 km', value: 50000 },
 ];
+
+const matchError = (err) => err.response?.data?.message || 'Failed to load doctors.';
 
 const DoctorList = () => {
   const [searchParams] = useSearchParams();
@@ -21,6 +24,7 @@ const DoctorList = () => {
   const [maxDistance, setMaxDistance] = useState(10000);
   const [city, setCity] = useState('');
   const [doctors, setDoctors] = useState([]);
+  const [scored, setScored] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [searched, setSearched] = useState(false);
@@ -29,51 +33,82 @@ const DoctorList = () => {
     if (urlSpecialty) {
       setMode('manual');
       setLocationNotice(
-        `Showing verified ${urlSpecialty} doctors. You can refine the search below.`
+        `Showing verified ${urlSpecialty} doctors, ranked by match score. You can refine the search below.`
       );
-      fetchByCity('', urlSpecialty);
+      fetchBySpecialty(urlSpecialty);
+    } else {
+      setSpecialization('');
+      setLocationNotice('');
     }
-  }, [urlSpecialty]);
+  }, [urlSpecialty, fetchBySpecialty]);
 
-  const fetchNearby = async (lat, lng, spec, distance) => {
+  const runSearch = useCallback(async (buildParams, fallbackRequest) => {
     setLoading(true);
     setError('');
     setSearched(true);
     try {
-      const { data } = await api.get('/doctors/nearby', {
-        params: {
-          latitude: lat,
-          longitude: lng,
-          specialization: spec.trim() || undefined,
-          maxDistance: distance,
-        },
-      });
+      const { data } = await api.get('/doctors/match', { params: buildParams() });
       setDoctors(data.data);
+      setScored(true);
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to load nearby doctors.');
+      if (err.response?.status === 404) {
+        try {
+          const { data } = await fallbackRequest();
+          setDoctors(data.data);
+          setScored(false);
+        } catch (fallbackErr) {
+          setError(matchError(fallbackErr));
+        }
+      } else {
+        setError(matchError(err));
+      }
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const fetchByCity = async (cityName, spec) => {
-    setLoading(true);
-    setError('');
-    setSearched(true);
-    try {
-      const { data } = await api.get('/doctors', {
-        params: {
-          city: cityName.trim() || undefined,
-          specialization: spec.trim() || undefined,
-        },
-      });
-      setDoctors(data.data);
-    } catch (err) {
-      setError(err.response?.data?.message || 'Failed to load doctors.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const fetchNearby = (lat, lng, spec, distance) =>
+    runSearch(
+      () => ({
+        specialization: spec.trim() || undefined,
+        lat,
+        lng,
+        maxDistance: distance,
+      }),
+      () =>
+        api.get('/doctors/nearby', {
+          params: {
+            latitude: lat,
+            longitude: lng,
+            specialization: spec.trim() || undefined,
+            maxDistance: distance,
+          },
+        })
+    );
+
+  const fetchByCity = (cityName, spec) =>
+    runSearch(
+      () => ({
+        specialization: spec.trim() || undefined,
+        city: cityName.trim() || undefined,
+      }),
+      () =>
+        api.get('/doctors', {
+          params: {
+            city: cityName.trim() || undefined,
+            specialization: spec.trim() || undefined,
+          },
+        })
+    );
+
+  const fetchBySpecialty = useCallback(
+    (spec) =>
+      runSearch(
+        () => ({ specialization: spec.trim() || undefined }),
+        () => api.get('/doctors', { params: { specialization: spec.trim() || undefined } })
+      ),
+    [runSearch]
+  );
 
   const switchToManual = (notice) => {
     setMode('manual');
@@ -226,45 +261,19 @@ const DoctorList = () => {
       )}
 
       {!loading && doctors.length > 0 && (
-        <div className="card-list">
-          {doctors.map((doctor) => (
-            <div className="card doctor-card" key={doctor._id}>
-              <div className="doctor-card-head">
-                {doctor.profilePhoto && (
-                  <img
-                    className="doctor-photo"
-                    src={doctor.profilePhoto}
-                    alt={doctor.name}
-                  />
-                )}
-                <div>
-                  <h3>
-                    <Link to={`/doctors/${doctor._id}`}>{doctor.name}</Link>
-                  </h3>
-                  <p>
-                    {doctor.specialization} · {doctor.experience} yrs experience
-                  </p>
-                  <p className="muted">{doctor.qualification.join(', ')}</p>
-                  <p className="muted">
-                    {doctor.hospital?.name}
-                    {doctor.hospital?.city ? `, ${doctor.hospital.city}` : ''}
-                  </p>
-                </div>
-              </div>
-              <div className="doctor-card-meta">
-                <span>Consultation fee: Rs. {doctor.consultationFee}</span>
-                <span className={`badge ${doctor.rating >= 4 ? 'badge-approved' : 'badge-pending'}`}>
-                  ★ {doctor.rating?.toFixed(1) || '0.0'}
-                </span>
-                {doctor.distanceKm !== undefined && (
-                  <span className="badge badge-distance">
-                    {doctor.distanceKm} km away
-                  </span>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
+        <>
+          {scored && (
+            <p className="muted section-intro">
+              Ranked by match score: specialty fit, distance, availability, experience and
+              patient reviews.
+            </p>
+          )}
+          <div className="card-list">
+            {doctors.map((doctor) => (
+              <DoctorMatchCard key={doctor._id} doctor={doctor} />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );

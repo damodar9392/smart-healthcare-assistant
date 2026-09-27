@@ -1,16 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../services/api';
 import Loading from '../components/Loading';
 import ErrorMessage from '../components/ErrorMessage';
 import { useAuth } from '../hooks/useAuth';
-import { todayISO } from '../utils/format';
-
-const maxDateISO = () => {
-  const d = new Date();
-  d.setDate(d.getDate() + 14);
-  return d.toISOString().slice(0, 10);
-};
+import { todayISO, addDaysISO } from '../utils/format';
 
 const BookAppointment = () => {
   const { id } = useParams();
@@ -27,6 +21,7 @@ const BookAppointment = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [booked, setBooked] = useState(null);
+  const slotsRequestRef = useRef(0);
 
   const loadProfile = useCallback(async () => {
     setLoading(true);
@@ -46,6 +41,7 @@ const BookAppointment = () => {
   }, [loadProfile]);
 
   const loadSlots = async (selectedDate) => {
+    const requestId = ++slotsRequestRef.current;
     setSlotsLoading(true);
     setSlotsError('');
     setSelected(null);
@@ -53,11 +49,15 @@ const BookAppointment = () => {
       const { data } = await api.get(`/doctors/${id}/slots`, {
         params: { date: selectedDate },
       });
+      if (requestId !== slotsRequestRef.current) return;
       setSlots(data.data);
     } catch (err) {
+      if (requestId !== slotsRequestRef.current) return;
       setSlotsError(err.response?.data?.message || 'Failed to load available slots.');
     } finally {
-      setSlotsLoading(false);
+      if (requestId === slotsRequestRef.current) {
+        setSlotsLoading(false);
+      }
     }
   };
 
@@ -69,6 +69,7 @@ const BookAppointment = () => {
     if (value) {
       loadSlots(value);
     } else {
+      slotsRequestRef.current += 1;
       setSlots([]);
     }
   };
@@ -166,7 +167,7 @@ const BookAppointment = () => {
             id="book-date"
             type="date"
             min={todayISO()}
-            max={maxDateISO()}
+            max={addDaysISO(14)}
             value={date}
             onChange={handleDateChange}
             required

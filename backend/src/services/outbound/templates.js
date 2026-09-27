@@ -75,6 +75,21 @@ const TEMPLATES = {
       `Please arrive a few minutes early.`,
     ].join('\n'),
   },
+  enquiry_received: {
+    subject: (a) => `We received your enquiry: ${a.subject}`,
+    text: (a) => [
+      `Dear ${a.recipient},`,
+      ``,
+      `Thank you for contacting Smart Healthcare Assistant.`,
+      ``,
+      `Reference: ${a.reference}`,
+      `Category: ${a.category}`,
+      `Subject: ${a.subject}`,
+      ``,
+      `Our support team will review your enquiry and update you soon.`,
+      `You can track its status from your dashboard under Enquiries.`,
+    ].join('\n'),
+  },
 };
 
 const renderTemplate = (type, summary) => {
