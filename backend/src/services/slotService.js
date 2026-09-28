@@ -124,9 +124,11 @@ const findNextFreeSlot = ({ windows, booked, fromDate, horizonDays }) => {
 };
 
 const assertSlotAvailable = async (doctorUserId, date, startTime, endTime) => {
+  const dateKey = toDateKey(date instanceof Date ? date : new Date(date));
+
   const window = await DoctorAvailability.findOne({
     doctor: doctorUserId,
-    dayOfWeek: new Date(date).getUTCDay(),
+    dayOfWeek: new Date(dateKey).getUTCDay(),
     isAvailable: true,
     startTime: { $lte: startTime },
     endTime: { $gte: endTime },
@@ -135,15 +137,26 @@ const assertSlotAvailable = async (doctorUserId, date, startTime, endTime) => {
     throw new ApiError(400, 'Doctor is not available at the requested time');
   }
 
+  // The requested time must be one of the generated slots, otherwise a client could
+  // book an off-grid time (e.g. 09:15) that overlaps the real 09:30 slot — the
+  // unique index only covers identical startTimes.
+  const dateKeyFromDate = dateKey;
+  const available = await generateSlots(doctorUserId, dateKeyFromDate);
+  const slot = available.find((candidate) => candidate.startTime === startTime);
+  if (!slot) {
+    throw new ApiError(400, 'The requested start time is not an available slot');
+  }
+
   const conflict = await Appointment.exists({
     doctor: doctorUserId,
-    date,
+    date: dateKeyFromDate,
     status: { $in: BLOCKING_STATUSES },
     startTime,
   });
-  if (conflict) {
-    throw new ApiError(409, 'This slot is already booked');
+  if (!conflict) {
+    return;
   }
+  throw new ApiError(409, 'This slot is already booked');
 };
 
 module.exports = {

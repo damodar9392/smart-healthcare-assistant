@@ -39,6 +39,11 @@ const app = express();
 
 validateEnv();
 
+// Behind nginx/Caddy the socket peer is the proxy, not the client. Without this,
+// req.ip is the proxy's IP and every rate limit collapses into a single shared
+// bucket. Trust exactly one hop (the bundled reverse proxy), not the whole chain.
+app.set('trust proxy', 1);
+
 app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 let corsOrigins;
 if (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN.trim() !== '*') {

@@ -29,19 +29,6 @@ const DoctorList = () => {
   const [error, setError] = useState('');
   const [searched, setSearched] = useState(false);
 
-  useEffect(() => {
-    if (urlSpecialty) {
-      setMode('manual');
-      setLocationNotice(
-        `Showing verified ${urlSpecialty} doctors, ranked by match score. You can refine the search below.`
-      );
-      fetchBySpecialty(urlSpecialty);
-    } else {
-      setSpecialization('');
-      setLocationNotice('');
-    }
-  }, [urlSpecialty, fetchBySpecialty]);
-
   const runSearch = useCallback(async (buildParams, fallbackRequest) => {
     setLoading(true);
     setError('');
@@ -109,6 +96,19 @@ const DoctorList = () => {
       ),
     [runSearch]
   );
+
+  useEffect(() => {
+    if (urlSpecialty) {
+      setMode('manual');
+      setLocationNotice(
+        `Showing verified ${urlSpecialty} doctors, ranked by match score. You can refine the search below.`
+      );
+      fetchBySpecialty(urlSpecialty);
+    } else {
+      setSpecialization('');
+      setLocationNotice('');
+    }
+  }, [urlSpecialty, fetchBySpecialty]);
 
   const switchToManual = (notice) => {
     setMode('manual');

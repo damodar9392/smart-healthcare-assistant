@@ -92,7 +92,7 @@ a notification on every change.
 
 | Method | Route               | Access  | Description |
 | ------ | ------------------- | ------- | ----------- |
-| POST   | `/api/symptoms/analyze` | Public (history saved only when authenticated) | Analyze `{ symptoms[], additionalSymptoms?, durationInDays (1-365), severity (mild\|moderate\|severe), description? (≤500) }`. Forwards to the AI service `/predict` (TF-IDF + logistic regression, see `docs/ai-model.md`), returns `{ recommendedSpecialty, urgencyLevel (low\|medium\|high\|emergency), confidenceScore, summary, message, showTemporaryGuidance, matchedRules[], disclaimer }`. `urgencyLevel` is set by the rule-based safety module (see `docs/urgency-rules.md`), not the AI. Falls back to a rule-based mock if the AI service is unreachable |
+| POST   | `/api/symptoms/analyze` | Public (history saved only when authenticated) | Analyze `{ symptoms[], additionalSymptoms?, durationInDays (1-365), severity (mild\|moderate\|severe), description? (≤500) }`. Forwards to the AI service `/predict` (TF-IDF + Multinomial Naive Bayes, see `docs/ai-model.md`), returns `{ recommendedSpecialty, urgencyLevel (low\|medium\|high\|emergency), confidenceScore, summary, message, showTemporaryGuidance, matchedRules[], disclaimer }`. `urgencyLevel` is set by the rule-based safety module (see `docs/urgency-rules.md`), not the AI. Falls back to a rule-based mock if the AI service is unreachable |
 | GET    | `/api/symptoms/searches` | any authenticated | Recent analyses of the current user (latest 20) |
 | GET    | `/api/symptoms`      | Public  | List; `?category=`, `?severityLevel=`, `?q=` (name search) |
 | GET    | `/api/symptoms/:id`  | Public  | Detail |

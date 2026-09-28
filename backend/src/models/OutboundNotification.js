@@ -15,6 +15,7 @@ const outboundNotificationSchema = new mongoose.Schema(
           'appointment_cancelled',
           'appointment_rescheduled',
           'appointment_reminder',
+          'enquiry_received',
         ],
         message: '{VALUE} is not a valid outbound notification type',
       },
@@ -68,6 +69,10 @@ const outboundNotificationSchema = new mongoose.Schema(
       appointmentId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Appointment',
+      },
+      enquiryId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Enquiry',
       },
     },
   },

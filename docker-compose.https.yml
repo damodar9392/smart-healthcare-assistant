@@ -1,6 +1,9 @@
 services:
   frontend:
-    ports: []
+    # `ports` is a concatenating merge key, so a plain `ports: []` would NOT remove
+    # the base 8080 mapping — the site would stay reachable unencrypted on :8080.
+    # !override (Compose v2.24+) replaces it outright so Caddy owns 80/443.
+    ports: !override []
 
   caddy:
     image: caddy:2-alpine

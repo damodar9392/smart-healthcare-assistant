@@ -22,6 +22,7 @@ services:
       DATA_PATH: data/
       ALLOWED_ORIGINS: ${CORS_ORIGIN:-http://localhost:8080}
       LOG_LEVEL: info
+      AI_INTERNAL_TOKEN: "${AI_INTERNAL_TOKEN:?AI_INTERNAL_TOKEN is required and must be at least 32 characters - generate with openssl rand -hex 32}"
     healthcheck:
       test:
         [
@@ -44,10 +45,12 @@ services:
       PORT: 5000
       NODE_ENV: production
       MONGO_URI: ${MONGO_URI:-mongodb://mongo:27017/smart_healthcare}
-      JWT_SECRET: ${JWT_SECRET:-change-me-in-production}
+      JWT_SECRET: "${JWT_SECRET:?JWT_SECRET is required and must be at least 32 characters - generate with openssl rand -hex 32}"
+      ENCRYPTION_KEY: "${ENCRYPTION_KEY:?ENCRYPTION_KEY is required and must be at least 32 characters - generate with openssl rand -hex 32}"
       JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1h}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:8080}
       AI_SERVICE_URL: http://ai-service:8000
+      AI_INTERNAL_TOKEN: "${AI_INTERNAL_TOKEN:?AI_INTERNAL_TOKEN is required and must be at least 32 characters - generate with openssl rand -hex 32}"
       EMAIL_TRANSPORT: ${EMAIL_TRANSPORT:-console}
       EMAIL_FROM: ${EMAIL_FROM:-Smart Healthcare Assistant <no-reply@example.com>}
       SMTP_HOST: ${SMTP_HOST:-}

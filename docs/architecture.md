@@ -52,6 +52,9 @@ FastAPI (ai-service) ──► scikit-learn models
 
 - Frontend → Backend: REST JSON under `/api` (no direct frontend access to AI service).
 - Backend → AI Service: REST JSON, prediction requests forwarded from backend controllers.
+  Every request carries the shared `X-Internal-Token` secret (`AI_INTERNAL_TOKEN`);
+  the AI service rejects anything without it with a 401. The AI service has no
+  authentication of its own and must never be exposed publicly.
 - AI Service → Backend: predictions, confidence scores, and errors.
 
 ## Environment variables

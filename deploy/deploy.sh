@@ -71,8 +71,9 @@ cd "$APP_DIR"
 
 if [ ! -f .env ]; then
   cp .env.example .env
-  GENERATED_SECRET=$(openssl rand -hex 32)
-  sed -i "s/^JWT_SECRET=.*/JWT_SECRET=$GENERATED_SECRET/" .env
+  sed -i "s/^JWT_SECRET=.*/JWT_SECRET=$(openssl rand -hex 32)/" .env
+  sed -i "s/^ENCRYPTION_KEY=.*/ENCRYPTION_KEY=$(openssl rand -hex 32)/" .env
+  sed -i "s/^AI_INTERNAL_TOKEN=.*/AI_INTERNAL_TOKEN=$(openssl rand -hex 32)/" .env
   if [ -n "$DOMAIN" ]; then
     sed -i "s#^CORS_ORIGIN=.*#CORS_ORIGIN=https://$DOMAIN#" .env
   else
@@ -81,6 +82,22 @@ if [ ! -f .env ]; then
   warn ".env created — review it before going live: nano .env"
 else
   info ".env already exists (keeping it)"
+  if grep -qE '^JWT_SECRET=.{0,31}$' .env || grep -qE '^ENCRYPTION_KEY=.{0,31}$' .env || grep -qE '^AI_INTERNAL_TOKEN=.{0,31}$' .env; then
+    fail "JWT_SECRET, ENCRYPTION_KEY and AI_INTERNAL_TOKEN in .env must all be at least 32 characters. Fix them before deploying."
+  fi
+fi
+
+# The AI service and the backend must agree on the shared token.
+AI_TOKEN=$(grep -E '^AI_INTERNAL_TOKEN=' .env | tail -1 | cut -d= -f2-)
+if [ -z "$AI_TOKEN" ]; then
+  fail "AI_INTERNAL_TOKEN is missing from .env — see .env.example."
+fi
+mkdir -p ai-service
+if [ ! -f ai-service/.env ]; then
+  cp ai-service/.env.example ai-service/.env
+fi
+if grep -qE '^AI_INTERNAL_TOKEN=.{0,31}$' ai-service/.env; then
+  sed -i "s/^AI_INTERNAL_TOKEN=.*/AI_INTERNAL_TOKEN=$AI_TOKEN/" ai-service/.env
 fi
 
 if ! ls ai-service/models/*.joblib >/dev/null 2>&1; then
@@ -89,7 +106,7 @@ if ! ls ai-service/models/*.joblib >/dev/null 2>&1; then
     -v "$(pwd)/ai-service:/app" \
     -w /app \
     python:3.10-slim \
-    bash -c "pip install -q scikit-learn==1.6.0 pandas==2.2.3 joblib==1.4.2 && python training/generate_dataset.py && python -m training.train"
+    bash -c "pip install -q scikit-learn==1.6.0 pandas==2.2.3 joblib==1.4.2 numpy==2.2.1 && python training/generate_dataset.py && python -m training.train"
 fi
 
 deploy() {
@@ -119,7 +136,9 @@ sleep 8
 echo
 info "Deployment finished. Checking health:"
 BACKEND_HEALTH=$(curl -fsS http://localhost:5000/health || echo "unreachable")
-AI_HEALTH=$(curl -fsS http://localhost:8000/health || echo "unreachable")
+AI_HEALTH=$(docker compose "${COMPOSE_FILES[@]}" exec -T ai-service \
+  python -c "import urllib.request;print(urllib.request.urlopen('http://localhost:8000/health',timeout=5).read().decode())" \
+  2>/dev/null || echo "unreachable")
 echo "  backend   -> $BACKEND_HEALTH"
 echo "  ai-service-> $AI_HEALTH"
 

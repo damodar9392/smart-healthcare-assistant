@@ -33,7 +33,7 @@ const getById = asyncHandler(async (req, res) => {
   if (!invoice) {
     throw new ApiError(404, 'Payment not found');
   }
-  const isOwner = String(invoice.patient._id || invoice.patient) === String(req.user._id);
+  const isOwner = invoice.patient && String(invoice.patient._id || invoice.patient) === String(req.user._id);
   if (!isOwner && req.user.role !== 'admin') {
     throw new ApiError(403, 'Not allowed to view this payment');
   }
@@ -47,7 +47,7 @@ const payInvoice = asyncHandler(async (req, res) => {
   if (!invoice) {
     throw new ApiError(404, 'Payment not found');
   }
-  const isOwner = String(invoice.patient) === String(req.user._id);
+  const isOwner = invoice.patient && String(invoice.patient._id || invoice.patient) === String(req.user._id);
   if (!isOwner && req.user.role !== 'admin') {
     throw new ApiError(403, 'Only the patient can pay this invoice');
   }

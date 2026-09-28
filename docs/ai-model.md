@@ -3,11 +3,13 @@
 ## Overview
 
 The `ai-service/` runs a FastAPI app that classifies user-reported symptoms into one of
-eight specialist categories and a rule-based urgency level. The model never claims to
+fifteen specialist categories and a rule-based urgency level. The model never claims to
 diagnose diseases — its output is a **specialist recommendation** plus a disclaimer.
 
-Labels (MVP): `General Physician`, `Dermatologist`, `Dentist`, `Cardiologist`,
-`Neurologist`, `Orthopedic Specialist`, `ENT Specialist`, `Gastroenterologist`.
+Labels: `Cardiologist`, `Dentist`, `Dermatologist`, `Endocrinologist`,
+`ENT Specialist`, `Gastroenterologist`, `General Physician`, `Gynecologist`,
+`Neurologist`, `Ophthalmologist`, `Orthopedic Specialist`, `Pediatrician`,
+`Psychiatrist`, `Pulmonologist`, `Urologist`.
 
 ```
 ai-service/
@@ -17,14 +19,14 @@ ai-service/
 │   │   └── engine.py         # lazy artifact loading + predict/urgency logic
 │   └── routers/
 │       ├── predict.py        # POST /predict  (new contract)
-│       ├── analysis.py       # POST /analyze  (legacy contract for the Node backend)
+│   ├── analysis.py       # POST /analyze  (legacy camelCase contract, not used by the Node backend)
 │       ├── assistant.py      # POST /assistant (multilingual chat)
 │       └── metrics.py        # GET /model/metrics
 ├── training/
 │   ├── generate_dataset.py   # synthetic dataset generator (seeded, reproducible)
 │   └── train.py              # TF-IDF + 3 models + holdout & CV metrics + joblib persistence
 ├── tests/                    # pytest: preprocess, engine urgency/predict, API endpoints
-├── data/dataset.csv          # 2000 labeled rows (8 x 250)
+├── data/dataset.csv          # 4500 labeled rows (15 x 300)
 ├── models/                   # joblib artifacts (gitignored)
 │   ├── vectorizer.joblib     # fitted TF-IDF
 │   ├── model.joblib          # best classifier
@@ -101,13 +103,17 @@ Each candidate is evaluated two ways:
 
 | Model               | Holdout F1 | CV F1 (5-fold)   |
 | ------------------- | ---------- | ---------------- |
-| logistic_regression | 1.0000     | 0.9985 ± 0.0012  |
-| random_forest       | 1.0000     | 0.9980 ± 0.0019  |
-| naive_bayes         | 0.9925     | 0.9955 ± 0.0010  |
+| naive_bayes         | 0.9978     | 0.9947 ± 0.0008  |
+| logistic_regression | 0.9967     | 0.9976 ± 0.0016  |
+| random_forest       | 0.9956     | 0.9971 ± 0.0018  |
 
-Selection rule: highest weighted F1 with a preference for the simpler model on ties.
-**Logistic Regression was selected** — it matches Random Forest here, trains instantly,
-generalizes well on small text data, and exposes calibrated-ish probabilities.
+Selection rule: highest holdout F1, strictly greater than the incumbent
+(`training/train.py`). There is no tie-breaking preference for a simpler model.
+**Multinomial Naive Bayes was selected** — it has the highest holdout F1, trains
+instantly, and generalizes well on small text data. Note that its 5-fold CV F1 is
+slightly *lower* than Logistic Regression's; the holdout split is a single 20%
+sample, so treat that gap as sampling noise rather than evidence that NB
+generalizes better.
 
 ## 8. Persistence
 

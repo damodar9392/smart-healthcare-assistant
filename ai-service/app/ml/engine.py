@@ -1,4 +1,6 @@
 from pathlib import Path
+import threading
+import time
 
 import joblib
 import numpy as np
@@ -6,6 +8,7 @@ import numpy as np
 from app.ml.preprocess import clean_text
 
 MODELS_DIR = Path(__file__).resolve().parents[2] / "models"
+LOAD_RETRY_SECONDS = 30.0
 
 EMERGENCY_KEYWORDS = [
     "chest pain",
@@ -74,15 +77,30 @@ class ModelEngine:
 
 
 _engine = None
+_engine_lock = threading.Lock()
+_retry_after = 0.0
 
 
 def get_engine():
-    global _engine
-    if _engine is None:
-        _engine = ModelEngine()
+    global _engine, _retry_after
+    if _engine is not None:
+        return _engine
+    with _engine_lock:
+        if _engine is not None:
+            return _engine
+        now = time.monotonic()
+        if now < _retry_after:
+            return ModelEngine()
+        candidate = ModelEngine()
         try:
-            _engine.load()
-            print(f"[engine] Loaded model: {_engine.meta.get('model_name', 'unknown')}")
+            candidate.load()
         except Exception as exc:
-            print(f"[engine] Model artifacts unavailable: {exc}")
-    return _engine
+            _retry_after = now + LOAD_RETRY_SECONDS
+            print(f"[engine] Model artifacts unavailable: {exc}", flush=True)
+            return candidate
+        _engine = candidate
+        print(
+            f"[engine] Loaded model: {candidate.meta.get('model_name', 'unknown')}",
+            flush=True,
+        )
+        return _engine

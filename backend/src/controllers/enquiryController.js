@@ -49,8 +49,9 @@ const create = asyncHandler(async (req, res) => {
     `${req.user.name}: ${subject}`,
     enquiry._id
   );
+  let confirmationSent = true;
   try {
-    await sendTemplatedEmail({
+    const record = await sendTemplatedEmail({
       userId: req.user._id,
       type: 'enquiry_received',
       summary: {
@@ -59,12 +60,18 @@ const create = asyncHandler(async (req, res) => {
         category: enquiry.category,
         subject: enquiry.subject,
       },
-      metadata: { enquiryId: String(enquiry._id) },
+      metadata: { enquiryId: enquiry._id },
     });
+    // dispatchOutbound records provider failures instead of throwing
+    confirmationSent = record.status !== 'failed';
   } catch (err) {
+    confirmationSent = false;
     console.error(`Enquiry confirmation email failed: ${err.message}`);
   }
-  res.status(201).json({ success: true, data: enquiry });
+  if (!confirmationSent) {
+    console.error(`Enquiry ${enquiry._id} saved but its confirmation email was not delivered.`);
+  }
+  res.status(201).json({ success: true, data: enquiry, confirmationEmailSent: confirmationSent });
 });
 
 const getMine = asyncHandler(async (req, res) => {

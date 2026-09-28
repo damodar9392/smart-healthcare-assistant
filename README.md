@@ -137,8 +137,10 @@ ports, domain, go-live, security, backups).
 | --- | --- | --- | --- |
 | backend | `PORT` | `5000` | |
 | backend | `MONGO_URI` | `mongodb://localhost:27017/smart_healthcare` | required; set an Atlas connection string to skip the bundled mongo container |
-| backend | `JWT_SECRET` | `change-me-in-production` | required, change in production |
+| backend | `JWT_SECRET` | — | **required, min 32 chars**; `openssl rand -hex 32` |
+| backend | `ENCRYPTION_KEY` | — | **required in production, min 32 chars**; distinct from `JWT_SECRET` |
 | backend | `JWT_EXPIRES_IN` | `1h` | |
+| backend | `AI_INTERNAL_TOKEN` | — | **required, min 32 chars**; shared secret sent to the AI service |
 | backend | `CORS_ORIGIN` | `http://localhost:5173` | comma-separated list, or `*` in dev |
 | backend | `AI_SERVICE_URL` | `http://localhost:8000` | fastapi endpoint for predictions |
 | backend | `EMAIL_TRANSPORT` | `console` | `console` (dev preview) or `smtp` |
@@ -146,13 +148,16 @@ ports, domain, go-live, security, backups).
 | backend | `RUN_REMINDER_SCHEDULER` | `true` | background reminder job |
 | backend | `REMINDER_LEAD_HOURS` / `REMINDER_CHECK_INTERVAL_MINUTES` | `24` / `5` | reminder timing |
 | ai-service | `PORT` | `8000` | |
+| ai-service | `AI_INTERNAL_TOKEN` | — | **required, min 32 chars**; must match the backend value |
 | ai-service | `MODEL_PATH` | `models/` | joblib artifacts |
 | ai-service | `DATA_PATH` | `data/` | |
 | ai-service | `ALLOWED_ORIGINS` | — | |
 | ai-service | `LOG_LEVEL` | — | |
 | frontend | `VITE_API_URL` | `http://localhost:5000/api` | backend base URL |
 
-Never commit `.env` files — only `.env.example` is tracked.
+Never commit `.env` files — only `.env.example` is tracked. `docker compose` fails
+fast with an actionable message if `JWT_SECRET`, `ENCRYPTION_KEY` or
+`AI_INTERNAL_TOKEN` is missing or shorter than 32 characters.
 
 ## End-to-end flow
 

@@ -35,6 +35,15 @@ const EMERGENCY_KEYWORDS = [
 
 const URGENCY_MAP = { low: 'routine', medium: 'soon', high: 'urgent', emergency: 'emergency' };
 
+const internalHeaders = () => {
+  const headers = { 'Content-Type': 'application/json' };
+  const token = process.env.AI_INTERNAL_TOKEN;
+  if (token) {
+    headers['X-Internal-Token'] = token;
+  }
+  return headers;
+};
+
 const mockAnalysis = ({ symptoms, severity, durationInDays }) => {
   const text = symptoms.join(' ').toLowerCase();
   const specialtyEntry = KEYWORD_MAP.find((entry) =>
@@ -64,6 +73,7 @@ const mockAnalysis = ({ symptoms, severity, durationInDays }) => {
     recommendedSpecialty,
     urgencyLevel,
     confidenceScore: Math.round(confidenceScore * 100) / 100,
+    analysisSource: 'rule-based-fallback',
     summary: specialtyEntry
       ? `Based on the reported symptoms, the probable condition category points to ${recommendedSpecialty}. This is a category estimate, not a diagnosis.`
       : `Based on the reported symptoms, a ${recommendedSpecialty.toLowerCase()} assessment is recommended. This is a category estimate, not a diagnosis.`,
@@ -77,6 +87,7 @@ const buildResult = (body) => {
     recommendedSpecialty,
     urgencyLevel: URGENCY_MAP[body.urgency] || 'routine',
     confidenceScore: body.confidence,
+    analysisSource: 'model',
     summary: `Based on the reported symptoms, the probable condition category points to ${recommendedSpecialty}. This is a category estimate, not a diagnosis.`,
   };
 };
@@ -93,7 +104,7 @@ const analyzeSymptoms = async (payload) => {
     const timer = setTimeout(() => controller.abort(), 3000);
     const response = await fetch(`${aiServiceUrl}/predict`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: internalHeaders(),
       body: JSON.stringify(aiPayload),
       signal: controller.signal,
     });
@@ -108,7 +119,7 @@ const analyzeSymptoms = async (payload) => {
       const retryTimer = setTimeout(() => controller.abort(), 3000);
       const retry = await fetch(`${aiServiceUrl}/predict`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: internalHeaders(),
         body: JSON.stringify(aiPayload),
         signal: controller.signal,
       });

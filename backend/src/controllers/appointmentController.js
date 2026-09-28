@@ -73,6 +73,11 @@ const canTransition = (actorRole, from, to) => {
 
 const dateString = (date) => date.toISOString().slice(0, 10);
 
+const isParticipantId = (appointment, userId) =>
+  [appointment.patient, appointment.doctor]
+    .filter(Boolean)
+    .some((ref) => String(ref._id || ref) === String(userId));
+
 const validateBookingDate = (date) => {
   const today = new Date();
   today.setUTCHours(0, 0, 0, 0);
@@ -194,8 +199,8 @@ const getById = asyncHandler(async (req, res) => {
   if (!appointment) {
     throw new ApiError(404, 'Appointment not found');
   }
-  const isParticipant =
-    appointment.patient._id.equals(req.user._id) || appointment.doctor._id.equals(req.user._id);
+  // populate() yields null when the referenced user was deleted
+  const isParticipant = isParticipantId(appointment, req.user._id);
   if (!isParticipant && req.user.role !== 'admin') {
     throw new ApiError(403, 'Not allowed to view this appointment');
   }
@@ -210,8 +215,8 @@ const cancel = asyncHandler(async (req, res) => {
     throw new ApiError(404, 'Appointment not found');
   }
 
-  const isPatient = String(appointment.patient._id) === String(req.user._id);
-  const isDoctor = String(appointment.doctor._id) === String(req.user._id);
+  const isPatient = isParticipantId(appointment, req.user._id) && String(appointment.patient._id || appointment.patient) === String(req.user._id);
+  const isDoctor = isParticipantId(appointment, req.user._id) && String(appointment.doctor._id || appointment.doctor) === String(req.user._id);
   const isAdmin = req.user.role === 'admin';
   if (!isPatient && !isDoctor && !isAdmin) {
     throw new ApiError(403, 'Not allowed to cancel this appointment');
@@ -239,7 +244,7 @@ const reschedule = asyncHandler(async (req, res) => {
     throw new ApiError(404, 'Appointment not found');
   }
 
-  const isPatient = String(appointment.patient._id) === String(req.user._id);
+  const isPatient = isParticipantId(appointment, req.user._id) && String(appointment.patient._id || appointment.patient) === String(req.user._id);
   if (!isPatient && req.user.role !== 'admin') {
     throw new ApiError(403, 'Only the patient can reschedule this appointment');
   }
@@ -296,8 +301,8 @@ const updateStatus = asyncHandler(async (req, res) => {
     throw new ApiError(404, 'Appointment not found');
   }
 
-  const isPatient = String(appointment.patient._id) === String(req.user._id);
-  const isDoctor = String(appointment.doctor._id) === String(req.user._id);
+  const isPatient = isParticipantId(appointment, req.user._id) && String(appointment.patient._id || appointment.patient) === String(req.user._id);
+  const isDoctor = isParticipantId(appointment, req.user._id) && String(appointment.doctor._id || appointment.doctor) === String(req.user._id);
   const isAdmin = req.user.role === 'admin';
   if (!isPatient && !isDoctor && !isAdmin) {
     throw new ApiError(403, 'Not allowed to modify this appointment');
@@ -313,8 +318,21 @@ const updateStatus = asyncHandler(async (req, res) => {
     throw new ApiError(400, `Cannot change status from ${from} to ${to} as ${actorRole}`);
   }
 
+  // A patient cancelling through the generic status endpoint must not be able to
+  // skip the lead-time rule or keep the refund — enforce the same rules as cancel().
+  if (to === 'cancelled') {
+    assertActive(appointment, 'cancelled');
+    if (!isAdmin) {
+      assertLeadTime(appointment, bookingRules.cancelLeadHours, 'Cancellation');
+    }
+  }
+
   appointment.status = to;
   await appointment.save();
+
+  if (to === 'cancelled') {
+    await refundForAppointment(appointment);
+  }
 
   const message = `Your appointment on ${dateString(appointment.date)} at ${appointment.startTime} is now ${to}.`;
   if (isAdmin) {

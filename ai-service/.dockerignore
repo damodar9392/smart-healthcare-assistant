@@ -4,4 +4,6 @@ __pycache__/
 *.py[cod]
 .env
 data/raw/
-training/
+tests/
+conftest.py
+.pytest_cache/

@@ -108,7 +108,7 @@ setInterval(() => {
     }
   }
   for (const [key, entry] of loginAttempts.entries()) {
-    if (entry.lockedUntil && entry.lockedUntil <= now) {
+    if (!entry.lockedUntil || entry.lockedUntil <= now) {
       loginAttempts.delete(key);
     }
   }

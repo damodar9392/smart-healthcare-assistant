@@ -14,11 +14,11 @@ URGENCY_MAP = {
 
 
 class SymptomInput(BaseModel):
-    symptoms: list[str] = Field(min_length=1)
-    additionalSymptoms: list[str] = Field(default_factory=list)
+    symptoms: list[str] = Field(min_length=1, max_length=50)
+    additionalSymptoms: list[str] = Field(default_factory=list, max_length=50)
     durationInDays: int = Field(ge=1, le=365)
     severity: str = Field(pattern="^(mild|moderate|severe)$")
-    description: str = ""
+    description: str = Field(default="", max_length=500)
 
 
 class AnalysisResult(BaseModel):
@@ -30,12 +30,19 @@ class AnalysisResult(BaseModel):
 
 @router.post("/analyze", response_model=AnalysisResult)
 def analyze(payload: SymptomInput):
-    """Model-backed analysis in the legacy contract used by the Node.js backend."""
+    """Legacy camelCase contract kept for older clients. The Node backend uses /predict."""
     engine = get_engine()
     if not engine.ready:
         raise HTTPException(status_code=503, detail="Model is not available. Train the model first.")
     all_symptoms = payload.symptoms + payload.additionalSymptoms
-    result = engine.predict(all_symptoms, payload.durationInDays, payload.severity)
+    if any(len(symptom) > 300 for symptom in all_symptoms):
+        raise HTTPException(status_code=422, detail="Each symptom must be at most 300 characters.")
+    try:
+        result = engine.predict(all_symptoms, payload.durationInDays, payload.severity)
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail="Analysis failed.") from exc
     return AnalysisResult(
         recommendedSpecialty=result["recommended_specialty"],
         urgencyLevel=URGENCY_MAP.get(result["urgency"], "routine"),

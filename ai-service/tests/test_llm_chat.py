@@ -163,9 +163,10 @@ FAKE_GREETING_JSON = (
 )
 
 
+@patch("app.routers.assistant.to_english", return_value=("hello", "en"))
 @patch("app.routers.assistant.llm_enabled", return_value=True)
 @patch("app.routers.assistant.ask_llm")
-def test_assistant_uses_llm_reply(mock_ask_llm, mock_enabled, client):
+def test_assistant_uses_llm_reply(mock_ask_llm, mock_enabled, mock_translate, client):
     mock_ask_llm.return_value = {
         "reply": "Hello! How can I help you today?",
         "intent": "greeting",
@@ -184,9 +185,10 @@ def test_assistant_uses_llm_reply(mock_ask_llm, mock_enabled, client):
     mock_ask_llm.assert_called_once()
 
 
+@patch("app.routers.assistant.to_english", return_value=("hello", "en"))
 @patch("app.routers.assistant.llm_enabled", return_value=True)
 @patch("app.routers.assistant.ask_llm", side_effect=RuntimeError("API down"))
-def test_assistant_falls_back_when_llm_fails(mock_ask_llm, mock_enabled, client):
+def test_assistant_falls_back_when_llm_fails(mock_ask_llm, mock_enabled, mock_translate, client):
     response = client.post("/assistant", json={"message": "hello"})
     assert response.status_code == 200
     body = response.json()
@@ -194,9 +196,10 @@ def test_assistant_falls_back_when_llm_fails(mock_ask_llm, mock_enabled, client)
     assert body["intent"] == "greeting"
 
 
+@patch("app.routers.assistant.to_english", return_value=("I have chest pain", "en"))
 @patch("app.routers.assistant.llm_enabled", return_value=True)
 @patch("app.routers.assistant.ask_llm")
-def test_assistant_emergency_skips_llm(mock_ask_llm, mock_enabled, client):
+def test_assistant_emergency_skips_llm(mock_ask_llm, mock_enabled, mock_translate, client):
     response = client.post("/assistant", json={"message": "I have chest pain"})
     assert response.status_code == 200
     body = response.json()
@@ -205,9 +208,10 @@ def test_assistant_emergency_skips_llm(mock_ask_llm, mock_enabled, client):
     mock_ask_llm.assert_not_called()
 
 
+@patch("app.routers.assistant.to_english", return_value=("hello", "en"))
 @patch("app.routers.assistant.llm_enabled", return_value=True)
 @patch("app.routers.assistant.ask_llm")
-def test_assistant_passes_history_to_llm(mock_ask_llm, mock_enabled, client):
+def test_assistant_passes_history_to_llm(mock_ask_llm, mock_enabled, mock_translate, client):
     mock_ask_llm.return_value = {
         "reply": "Still resting.",
         "intent": "health",
@@ -216,6 +220,9 @@ def test_assistant_passes_history_to_llm(mock_ask_llm, mock_enabled, client):
         "urgencyLevel": None,
         "confidenceScore": None,
     }
-    client.post("/assistant", json={"message": "hello"})
-    _, kwargs = mock_ask_llm.call_args
-    assert kwargs.get("history") == [] or mock_ask_llm.call_args[0][1] == []
+    history = [{"role": "user", "content": "I have a fever"}]
+    response = client.post("/assistant", json={"message": "hello", "history": history})
+    assert response.status_code == 200
+    args, _ = mock_ask_llm.call_args
+    assert args[0] == "hello"
+    assert args[1] == history
